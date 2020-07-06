@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--https://bitbucket.org/snippets/Deni35-team/4eBere/-->
+<!--https://github.com/DotNetAnalyzers/StyleCopAnalyzers-->
+<RuleSet Description=" " Name="StyleCop" ToolsVersion="15.0">
+    <Rules AnalyzerId="StyleCop.Analyzers" RuleNamespace="StyleCop.Analyzers">
+        <!--Special Rules (SA0000-)-->
+        <Rule Action="None" Id="SA0001"/>
+        <!--Spacing Rules (SA1000-)-->
+        <Rule Action="None" Id="SA1003"/>
+        <Rule Action="None" Id="SA1005"/>
+        <Rule Action="None" Id="SA1008"/>
+        <Rule Action="None" Id="SA1009"/>
+        <Rule Action="None" Id="SA1010"/>
+        <Rule Action="None" Id="SA1011"/>
+        <Rule Action="None" Id="SA1019"/>
+        <Rule Action="None" Id="SA1021"/>
+        <Rule Action="None" Id="SA1025"/>
+        <Rule Action="None" Id="SA1026"/>
+        <!--Readability Rules (SA1100-)-->
+        <Rule Action="None" Id="SA1100"/>
+        <Rule Action="None" Id="SA1101"/>
+        <Rule Action="None" Id="SA1111"/>
+        <Rule Action="None" Id="SA1117"/>
+        <Rule Action="None" Id="SA1122"/>
+        <Rule Action="None" Id="SA1127"/>
+        <Rule Action="None" Id="SA1128"/>
+        <!--Ordering Rules (SA1200-)-->
+        <Rule Action="None" Id="SA1201"/>
+        <Rule Action="None" Id="SA1202"/>
+        <Rule Action="None" Id="SA1204"/>
+        <!--Naming Rules (SA1300-)-->
+        <Rule Action="None" Id="SA1310"/>
+        <!--Maintainability Rules (SA1400-)-->
+        <Rule Action="None" Id="SA1401"/>
+        <Rule Action="None" Id="SA1402"/>
+        <Rule Action="None" Id="SA1407"/>
+        <!--Layout Rules (SA1500-)-->
+        <Rule Action="None" Id="SA1500"/>
+        <Rule Action="None" Id="SA1501"/>
+        <Rule Action="None" Id="SA1503"/>
+        <Rule Action="None" Id="SA1505"/>
+        <Rule Action="None" Id="SA1507"/>
+        <Rule Action="None" Id="SA1508"/>
+        <Rule Action="None" Id="SA1512"/>
+        <Rule Action="None" Id="SA1513"/>
+        <Rule Action="None" Id="SA1515"/>
+        <Rule Action="None" Id="SA1516"/>
+        <!--Documentation Rules (SA1600-)-->
+        <Rule Action="None" Id="SA1600"/>
+        <Rule Action="None" Id="SA1601"/>
+        <Rule Action="None" Id="SA1602"/>
+        <Rule Action="None" Id="SA1649"/>
+        <Rule Action="None" Id="SA1652"/>
+        <!--Alternative Rules (SX0000-)-->
+        <Rule Action="None" Id="SX1101"/>
+        <Rule Action="None" Id="SX1309"/>
+        <Rule Action="None" Id="SX1309S"/>
+    </Rules>
+</RuleSet>

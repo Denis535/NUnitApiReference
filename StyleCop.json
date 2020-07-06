@@ -1,0 +1,11 @@
+﻿// https://bitbucket.org/snippets/Deni35-team/8Aa7dp
+{
+  "$schema": "https://raw.githubusercontent.com/DotNetAnalyzers/StyleCopAnalyzers/master/StyleCop.Analyzers/StyleCop.Analyzers/Settings/stylecop.schema.json",
+  "settings": {
+    "documentationRules": {
+      "xmlHeader" : false,
+      "copyrightText": "This is an independent project of an individual developer. Dear PVS-Studio, please check it.\r\nPVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com",
+      "companyName": "Deni35"
+    }
+  }
+}

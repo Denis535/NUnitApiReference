@@ -1,0 +1,24 @@
+<Project>
+
+  <!--Projects-->
+  <!--https://github.com/dotnet/project-system/issues/6250#issuecomment-635258518-->
+  <PropertyGroup>
+    <RootNamespace></RootNamespace>
+  </PropertyGroup>
+
+  <Target Name="DefineConstants" AfterTargets="PrepareForBuild">
+    <PropertyGroup>
+      <DefineConstants>$(DefineConstants);$(MSBuildProjectName.Replace('.', '_'))</DefineConstants>
+      <DefineConstants Condition=" '%(PackageReference.Identity)' == 'nunit' ">$(DefineConstants);NUnit</DefineConstants>
+    </PropertyGroup>
+  </Target>
+
+  <!--<Target Name="PrintProjectInfo" AfterTargets="DefineConstants">
+    <Message Text="========== ========== ========== ========== ========== ========== ========== ==========" Importance="high" />
+    <Message Text="ProjectName: $(MSBuildProjectName)" Importance="high" />
+    <Message Text="PackageReferences: @(PackageReference)" Importance="high" />
+    <Message Text="DefineConstants: $(DefineConstants)" Importance="high" />
+    <Message Text="========== ========== ========== ========== ========== ========== ========== ==========" Importance="high" />
+  </Target>-->
+
+</Project>

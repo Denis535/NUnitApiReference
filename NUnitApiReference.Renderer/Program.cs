@@ -35,11 +35,13 @@ namespace NUnitApiReference.Renderer {
         private static string Build(IEnumerable<TypeItem> items) {
             var builder = new StringBuilder();
 
+            builder.AppendLine( "**Table of contents**" );
             foreach (var item in items.Where( i => i.Header != null )) {
                 builder.AppendLine( GetHeader( item.Header! ) );
             }
             builder.AppendLine();
 
+            builder.AppendLine( "**Contents**" );
             foreach (var item in items) {
                 builder.AppendLine( GetContent( item ) );
             }
@@ -72,7 +74,7 @@ namespace NUnitApiReference.Renderer {
         }
         private static string GetContent(TypeItem value) {
             if (value.Header is string header) return header;
-            if (value.Type is Type type) return $"* *{type.Namespace}*.{type.Name}";
+            if (value.Type is Type type) return $"* {type.Name}";
             throw new ArgumentException( "Value is invalid" );
         }
 

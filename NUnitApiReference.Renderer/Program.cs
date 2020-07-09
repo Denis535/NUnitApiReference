@@ -34,6 +34,33 @@ namespace NUnitApiReference.Renderer {
         }
         private static string Build(IEnumerable<TypeItem> items) {
             var builder = new StringBuilder();
+
+            foreach (var item in items) {
+                if (item.Header is string header) {
+                    if (header.StartsWith( "# " )) {
+                        var title = header.Substring( 2 );
+                        var id = title.ToLowerInvariant();
+                        builder.AppendLine( $"- [{title}]({id})" );
+                    }
+                    if (header.StartsWith( "## " )) {
+                        var title = header.Substring( 3 );
+                        var id = title.ToLowerInvariant();
+                        builder.AppendLine( $" * [{title}]({id}-1)" );
+                    }
+                    if (header.StartsWith( "### " )) {
+                        var title = header.Substring( 4 );
+                        var id = title.ToLowerInvariant();
+                        builder.AppendLine( $"  + [{title}]({id}-2)" );
+                    }
+                    if (header.StartsWith( "#### " )) {
+                        var title = header.Substring( 5 );
+                        var id = title.ToLowerInvariant();
+                        builder.AppendLine( $"   + [{title}]({id}-3)" );
+                    }
+                }
+            }
+            builder.AppendLine();
+
             foreach (var item in items) {
                 if (item.Header is string header) {
                     builder.AppendLine( header );

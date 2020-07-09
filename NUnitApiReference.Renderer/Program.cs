@@ -39,7 +39,7 @@ namespace NUnitApiReference.Renderer {
                     builder.AppendLine( header );
                 } else
                 if (item.Type is Type type) {
-                    builder.AppendLine( $"   *{type.Namespace}*.{type.Name}" );
+                    builder.AppendLine( $"* *{type.Namespace}*.{type.Name}" );
                 }
             }
             builder.AppendLine();

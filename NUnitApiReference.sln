@@ -15,7 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.RunSettings = .RunSettings
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
+		Readme.md = Readme.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitApiReference.Renderer", "NUnitApiReference.Renderer\NUnitApiReference.Renderer.csproj", "{68EC7FB6-D838-4282-9CA1-5997EB6C4EA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +34,10 @@ Global
 		{26A22EF2-96F7-4E2E-9ECA-76D33258E9E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{26A22EF2-96F7-4E2E-9ECA-76D33258E9E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{26A22EF2-96F7-4E2E-9ECA-76D33258E9E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68EC7FB6-D838-4282-9CA1-5997EB6C4EA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68EC7FB6-D838-4282-9CA1-5997EB6C4EA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68EC7FB6-D838-4282-9CA1-5997EB6C4EA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68EC7FB6-D838-4282-9CA1-5997EB6C4EA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

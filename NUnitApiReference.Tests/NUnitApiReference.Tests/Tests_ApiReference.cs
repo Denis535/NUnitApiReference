@@ -14,7 +14,7 @@ namespace NUnitApiReference.Tests {
 
         [Test]
         public void Test_00() {
-            var actual = NUnitAssembly.Types.Concat( NUnitAssembly_Assertion.Types ).Concat( NUnitAssembly_Infrastructure.Types ).ToArray();
+            var actual = NUnitAssembly.Types.Concat( NUnitAssembly_Assertion.Types ).Concat( NUnitAssembly_Infrastructure.Types ).Select( i => i.Type ).Where( i => i != null ).ToArray();
             var expected = Assembly.Load( "nunit.framework" ).ExportedTypes.Where( IsNotObsolete ).ToArray();
             Assert.That( actual, Is.EquivalentTo( expected ) );
         }

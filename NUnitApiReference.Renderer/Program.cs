@@ -35,42 +35,45 @@ namespace NUnitApiReference.Renderer {
         private static string Build(IEnumerable<TypeItem> items) {
             var builder = new StringBuilder();
 
-            foreach (var item in items) {
-                if (item.Header is string header) {
-                    if (header.StartsWith( "# " )) {
-                        var title = header.Substring( 2 );
-                        var id = "#" + title.ToLowerInvariant();
-                        builder.AppendLine( $"- [{title}]({id})" );
-                    }
-                    if (header.StartsWith( "## " )) {
-                        var title = header.Substring( 3 );
-                        var id = "#" + title.ToLowerInvariant() + "-1";
-                        builder.AppendLine( $" * [{title}]({id})" );
-                    }
-                    if (header.StartsWith( "### " )) {
-                        var title = header.Substring( 4 );
-                        var id = "#" + title.ToLowerInvariant() + "-2";
-                        builder.AppendLine( $"  + [{title}]({id})" );
-                    }
-                    if (header.StartsWith( "#### " )) {
-                        var title = header.Substring( 5 );
-                        var id = "#" + title.ToLowerInvariant() + "-3";
-                        builder.AppendLine( $"   + [{title}]({id})" );
-                    }
-                }
+            foreach (var item in items.Where( i => i.Header != null )) {
+                builder.AppendLine( GetHeader( item.Header! ) );
             }
             builder.AppendLine();
 
             foreach (var item in items) {
-                if (item.Header is string header) {
-                    builder.AppendLine( header );
-                } else
-                if (item.Type is Type type) {
-                    builder.AppendLine( $"* *{type.Namespace}*.{type.Name}" );
-                }
+                builder.AppendLine( GetContent( item ) );
             }
             builder.AppendLine();
+
             return builder.ToString();
+        }
+        private static string GetHeader(string value) {
+            if (value.StartsWith( "# " )) {
+                var title = value.Substring( 2 );
+                var id = title.ToLowerInvariant();
+                return string.Format( "- [{0}](#{1})", title, id );
+            }
+            if (value.StartsWith( "## " )) {
+                var title = value.Substring( 3 );
+                var id = title.ToLowerInvariant();
+                return string.Format( "* [{0}](#{1})", title, id );
+            }
+            if (value.StartsWith( "### " )) {
+                var title = value.Substring( 4 );
+                var id = title.ToLowerInvariant();
+                return string.Format( "+ [{0}](#{1})", title, id );
+            }
+            if (value.StartsWith( "#### " )) {
+                var title = value.Substring( 5 );
+                var id = title.ToLowerInvariant();
+                return string.Format( "- [{0}](#{1})", title, id );
+            }
+            throw new ArgumentException( "Value is invalid" );
+        }
+        private static string GetContent(TypeItem value) {
+            if (value.Header is string header) return header;
+            if (value.Type is Type type) return $"* *{type.Namespace}*.{type.Name}";
+            throw new ArgumentException( "Value is invalid" );
         }
 
 

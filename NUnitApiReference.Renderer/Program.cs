@@ -39,23 +39,23 @@ namespace NUnitApiReference.Renderer {
                 if (item.Header is string header) {
                     if (header.StartsWith( "# " )) {
                         var title = header.Substring( 2 );
-                        var id = title.ToLowerInvariant();
+                        var id = "#" + title.ToLowerInvariant();
                         builder.AppendLine( $"- [{title}]({id})" );
                     }
                     if (header.StartsWith( "## " )) {
                         var title = header.Substring( 3 );
-                        var id = title.ToLowerInvariant();
-                        builder.AppendLine( $" * [{title}]({id}-1)" );
+                        var id = "#" + title.ToLowerInvariant() + "-1";
+                        builder.AppendLine( $" * [{title}]({id})" );
                     }
                     if (header.StartsWith( "### " )) {
                         var title = header.Substring( 4 );
-                        var id = title.ToLowerInvariant();
-                        builder.AppendLine( $"  + [{title}]({id}-2)" );
+                        var id = "#" + title.ToLowerInvariant() + "-2";
+                        builder.AppendLine( $"  + [{title}]({id})" );
                     }
                     if (header.StartsWith( "#### " )) {
                         var title = header.Substring( 5 );
-                        var id = title.ToLowerInvariant();
-                        builder.AppendLine( $"   + [{title}]({id}-3)" );
+                        var id = "#" + title.ToLowerInvariant() + "-3";
+                        builder.AppendLine( $"   + [{title}]({id})" );
                     }
                 }
             }

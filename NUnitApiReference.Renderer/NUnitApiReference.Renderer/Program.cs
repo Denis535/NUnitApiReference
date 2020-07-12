@@ -7,15 +7,14 @@ namespace NUnitApiReference.Renderer {
     using System.IO;
     using System.Linq;
     using System.Text;
-    using NUnitApiReference.Assemblies;
+    using NUnitApiReference;
 
     public static class Program {
 
 
         public static void Main(string[] args) {
-            var items = NUnitAssembly.Types.Concat( NUnitAssembly_Assertion.Types ).Concat( NUnitAssembly_Infrastructure.Types );
             var path = GetPath();
-            var content = Build( items );
+            var content = Build( NUnitModule.AllItems );
             Save( path, content );
 
             Console.WriteLine( path );
@@ -32,16 +31,14 @@ namespace NUnitApiReference.Renderer {
         private static void Save(string path, string content) {
             File.WriteAllText( path, content );
         }
-        private static string Build(IEnumerable<TypeItem> items) {
+        private static string Build(IEnumerable<Item> items) {
             var builder = new StringBuilder();
 
-            builder.AppendLine( "**Table of contents**" );
             foreach (var item in items.Where( i => i.Header != null )) {
                 builder.AppendLine( GetHeader( item.Header! ) );
             }
             builder.AppendLine();
 
-            builder.AppendLine( "**Contents**" );
             foreach (var item in items) {
                 builder.AppendLine( GetContent( item ) );
             }
@@ -72,7 +69,7 @@ namespace NUnitApiReference.Renderer {
             }
             throw new ArgumentException( "Value is invalid" );
         }
-        private static string GetContent(TypeItem value) {
+        private static string GetContent(Item value) {
             if (value.Header is string header) return header;
             if (value.Type is Type type) return $"* {type.Name}";
             throw new ArgumentException( "Value is invalid" );

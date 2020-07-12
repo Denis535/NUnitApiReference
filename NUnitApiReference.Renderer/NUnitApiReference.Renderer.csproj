@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NUnitApiReference.Assemblies\NUnitApiReference.Assemblies.csproj" />
+    <ProjectReference Include="..\NUnitApiReference\NUnitApiReference.csproj" />
   </ItemGroup>
 
 </Project>

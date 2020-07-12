@@ -1,25 +1,26 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-namespace NUnitApiReference.Assemblies {
+namespace NUnitApiReference {
     using System;
     using System.Collections.Generic;
     using System.Text;
 
-    public static class NUnitAssembly_Assertion {
+    public class NUnitModule_Assertion : Module {
 
-        public static string H1_Assertion => "# Assertion";
-        public static string H2_Attributes => "## Attributes";
-        public static string H2_Utils => "## Utils";
-        public static string H2_Infrastructure => "## Infrastructure";
-        public static string H2_Exceptions => "## Exceptions";
-        public static string H2_Delegates => "## Delegates";
+        private const string X_Assertion = "# Assertion";
+
+        private const string XX_Attributes     = "## Attributes";
+        private const string XX_Utils          = "## Utils";
+        private const string XX_Infrastructure = "## Infrastructure";
+        private const string XX_Exceptions     = "## Exceptions";
+        private const string XX_Delegates      = "## Delegates";
 
 
-        public static readonly TypeItem[] Types = new TypeItem[] {
-            H1_Assertion,
+        public override Item[] Items => new Item[] {
+            X_Assertion,
 
-            "### Assertion",
+            "#### Assertions",
             typeof( NUnit.Framework            .Assert                                           ),
             typeof( NUnit.Framework            .StringAssert                                     ),
             typeof( NUnit.Framework            .CollectionAssert                                 ),
@@ -27,7 +28,7 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework            .FileAssert                                       ),
             typeof( NUnit.Framework            .Warn                                             ),
             typeof( NUnit.Framework            .Assume                                           ),
-            "### Assertion/Constraints",
+            "#### Constraints",
             typeof( NUnit.Framework            .Is                                               ),
             typeof( NUnit.Framework            .Iz                                               ),
             typeof( NUnit.Framework            .Has                                              ),
@@ -35,15 +36,15 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework            .Contains                                         ),
             typeof( NUnit.Framework            .Throws                                           ),
 
-            H2_Utils,
+            XX_Utils,
             typeof( NUnit.Framework.Constraints.Numerics                                         ),
             typeof( NUnit.Framework.Constraints.Interval                                         ),
             typeof( NUnit.Framework.Constraints.Tolerance                                        ),
             typeof( NUnit.Framework.Constraints.Tolerance.Range                                  ),
             typeof( NUnit.Framework.Constraints.ToleranceMode                                    ),
 
-            H2_Infrastructure,
-            "### Constraints",
+            XX_Infrastructure,
+            "#### Constraints",
             typeof( NUnit.Framework.Constraints.IResolveConstraint                               ),
             typeof( NUnit.Framework.Constraints.IConstraint                                      ),
             typeof( NUnit.Framework.Constraints.Constraint                                       ),
@@ -67,7 +68,7 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework.Constraints.PredicateConstraint<>                            ),
             typeof( NUnit.Framework.Constraints.ThrowsExceptionConstraint                        ),
             typeof( NUnit.Framework.Constraints.ThrowsNothingConstraint                          ),
-            "### Constraints/Prefix",
+            "#### Constraints/Prefix",
             typeof( NUnit.Framework.Constraints.PrefixConstraint                                 ),
             typeof( NUnit.Framework.Constraints.NotConstraint                                    ),
             typeof( NUnit.Framework.Constraints.AttributeConstraint                              ),
@@ -80,21 +81,21 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework.Constraints.DelayedConstraint.WithRawDelayInterval           ),
             typeof( NUnit.Framework.Constraints.DelayedConstraint.WithDimensionedDelayInterval   ),
             typeof( NUnit.Framework.Constraints.DelayedConstraint.WithRawPollingInterval         ),
-            "### Constraints/Binary",
+            "#### Constraints/Binary",
             typeof( NUnit.Framework.Constraints.BinaryConstraint                                 ),
             typeof( NUnit.Framework.Constraints.AndConstraint                                    ),
             typeof( NUnit.Framework.Constraints.OrConstraint                                     ),
-            "### Constraints/Comparison",
+            "#### Constraints/Comparison",
             typeof( NUnit.Framework.Constraints.ComparisonConstraint                             ),
             typeof( NUnit.Framework.Constraints.LessThanConstraint                               ),
             typeof( NUnit.Framework.Constraints.LessThanOrEqualConstraint                        ),
             typeof( NUnit.Framework.Constraints.GreaterThanConstraint                            ),
             typeof( NUnit.Framework.Constraints.GreaterThanOrEqualConstraint                     ),
-            "### Constraints/Collection",
+            "#### Constraints/Collection",
             typeof( NUnit.Framework.Constraints.CollectionConstraint                             ),
             typeof( NUnit.Framework.Constraints.EmptyCollectionConstraint                        ),
             typeof( NUnit.Framework.Constraints.CollectionOrderedConstraint                      ),
-            "### Constraints/Collection/Items",
+            "#### Constraints/Collection/Items",
             typeof( NUnit.Framework.Constraints.CollectionItemsEqualConstraint                   ),
             typeof( NUnit.Framework.Constraints.CollectionEquivalentConstraint                   ),
             typeof( NUnit.Framework.Constraints.CollectionSubsetConstraint                       ),
@@ -103,69 +104,64 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework.Constraints.DictionaryContainsKeyConstraint                  ),
             typeof( NUnit.Framework.Constraints.DictionaryContainsValueConstraint                ),
             typeof( NUnit.Framework.Constraints.UniqueItemsConstraint                            ),
-            "### Constraints/String",
+            "#### Constraints/String",
             typeof( NUnit.Framework.Constraints.StringConstraint                                 ),
             typeof( NUnit.Framework.Constraints.EmptyStringConstraint                            ),
             typeof( NUnit.Framework.Constraints.StartsWithConstraint                             ),
             typeof( NUnit.Framework.Constraints.EndsWithConstraint                               ),
             typeof( NUnit.Framework.Constraints.SubstringConstraint                              ),
             typeof( NUnit.Framework.Constraints.RegexConstraint                                  ),
-            "### Constraints/Path",
+            "#### Constraints/Path",
             typeof( NUnit.Framework.Constraints.PathConstraint                                   ),
             typeof( NUnit.Framework.Constraints.SamePathConstraint                               ),
             typeof( NUnit.Framework.Constraints.SubPathConstraint                                ),
             typeof( NUnit.Framework.Constraints.SamePathOrUnderConstraint                        ),
-            "### Constraints/Type",
+            "#### Constraints/Type",
             typeof( NUnit.Framework.Constraints.TypeConstraint                                   ),
             typeof( NUnit.Framework.Constraints.ExactTypeConstraint                              ),
             typeof( NUnit.Framework.Constraints.ExceptionTypeConstraint                          ),
             typeof( NUnit.Framework.Constraints.AssignableFromConstraint                         ),
             typeof( NUnit.Framework.Constraints.AssignableToConstraint                           ),
             typeof( NUnit.Framework.Constraints.InstanceOfTypeConstraint                         ),
-            "### Constraints/Misc",
+            "#### Constraints/Reusable",
             typeof( NUnit.Framework.Constraints.ReusableConstraint                               ),
-            "### ConstraintResult",
+            "#### Constraint/Builder",
+            typeof( NUnit.Framework.Constraints.ConstraintBuilder                                ),
+            typeof( NUnit.Framework.Constraints.ConstraintBuilder.ConstraintStack                ),
+            "#### Constraint/Result",
             typeof( NUnit.Framework.Constraints.ConstraintResult                                 ),
             typeof( NUnit.Framework.Constraints.EqualConstraintResult                            ),
             typeof( NUnit.Framework.Constraints.CollectionEquivalentConstraintResult             ),
             typeof( NUnit.Framework.Constraints.ConstraintStatus                                 ),
-            "### Expressions",
+
+            "#### Expressions",
             typeof( NUnit.Framework.Constraints.ConstraintExpression                             ),
             typeof( NUnit.Framework.Constraints.ItemsConstraintExpression                        ),
             typeof( NUnit.Framework.Constraints.ResolvableConstraintExpression                   ),
-            "### Operators",
+
+            "#### Operators",
             typeof( NUnit.Framework.Constraints.ConstraintOperator                               ),
-            "### Operators/Prefix",
+            "#### Operators/Prefix",
             typeof( NUnit.Framework.Constraints.PrefixOperator                                   ),
             typeof( NUnit.Framework.Constraints.NotOperator                                      ),
             typeof( NUnit.Framework.Constraints.WithOperator                                     ),
-            "### Operators/Prefix/Collection",
+            "#### Operators/Prefix/Collection",
             typeof( NUnit.Framework.Constraints.CollectionOperator                               ),
             typeof( NUnit.Framework.Constraints.NoneOperator                                     ),
             typeof( NUnit.Framework.Constraints.SomeOperator                                     ),
             typeof( NUnit.Framework.Constraints.AllOperator                                      ),
-            "### Operators/Binary",
+            "#### Operators/Binary",
             typeof( NUnit.Framework.Constraints.BinaryOperator                                   ),
             typeof( NUnit.Framework.Constraints.AndOperator                                      ),
             typeof( NUnit.Framework.Constraints.OrOperator                                       ),
-            "### Operators/SelfResolving",
+            "#### Operators/SelfResolving",
             typeof( NUnit.Framework.Constraints.SelfResolvingOperator                            ),
             typeof( NUnit.Framework.Constraints.AttributeOperator                                ),
             typeof( NUnit.Framework.Constraints.PropOperator                                     ),
             typeof( NUnit.Framework.Constraints.ExactCountOperator                               ),
             typeof( NUnit.Framework.Constraints.ThrowsOperator                                   ),
-            "### Misc",
-            typeof( NUnit.Framework.Constraints.ConstraintBuilder                                ),
-            typeof( NUnit.Framework.Constraints.ConstraintBuilder.ConstraintStack                ),
-            typeof( NUnit.Framework.Constraints.CollectionTally                                  ),
-            typeof( NUnit.Framework.Constraints.CollectionTally.CollectionTallyResult            ),
-            typeof( NUnit.Framework.Constraints.EqualityAdapter                                  ),
-            typeof( NUnit.Framework.Constraints.ComparisonAdapter                                ),
-            typeof( NUnit.Framework.Constraints.NUnitEqualityComparer                            ),
-            typeof( NUnit.Framework.Constraints.NUnitEqualityComparer.FailurePoint               ),
-            typeof( NUnit.Framework.Constraints.NUnitComparer                                    ),
 
-            H2_Exceptions,
+            XX_Exceptions,
             typeof( NUnit.Framework            .ResultStateException                             ),
             typeof( NUnit.Framework            .AssertionException                               ),
             typeof( NUnit.Framework            .MultipleAssertException                          ),
@@ -173,7 +169,7 @@ namespace NUnitApiReference.Assemblies {
             typeof( NUnit.Framework            .IgnoreException                                  ),
             typeof( NUnit.Framework            .SuccessException                                 ),
 
-            H2_Delegates,
+            XX_Delegates,
             typeof( NUnit.Framework            .TestDelegate                                     ),
             typeof( NUnit.Framework            .AsyncTestDelegate                                ),
             typeof( NUnit.Framework.Constraints.ActualValueDelegate<>                            ),

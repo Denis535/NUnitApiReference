@@ -7,26 +7,22 @@ namespace NUnitApiReference.Tests {
     using System.Linq;
     using System.Reflection;
     using NUnit.Framework;
-    using NUnitApiReference.Assemblies;
+    using NUnitApiReference;
 
     public class Tests_ApiReference {
 
 
         [Test]
-        public void Test_00() {
-            var actual = NUnitAssembly.Types.Concat( NUnitAssembly_Assertion.Types ).Concat( NUnitAssembly_Infrastructure.Types ).Select( i => i.Type ).Where( i => i != null ).ToArray();
+        public void Test_Types() {
+            var actual = NUnitModule.AllItems.Select( i => i.Type ).Where( i => i != null ).ToArray();
             var expected = Assembly.Load( "nunit.framework" ).ExportedTypes.Where( IsNotObsolete ).ToArray();
             Assert.That( actual, Is.EquivalentTo( expected ) );
         }
 
 
-        // Helpers/Type
+        // Helpers
         private static bool IsNotObsolete(Type type) {
             return !type.IsDefined( typeof( ObsoleteAttribute ) );
-        }
-        // Helpers/Print
-        private static void Print(IEnumerable<Type> types) {
-            foreach (var item in types) TestContext.WriteLine( item );
         }
 
 

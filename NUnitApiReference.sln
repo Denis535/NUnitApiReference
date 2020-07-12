@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitApiReference.Tests", "NUnitApiReference.Tests\NUnitApiReference.Tests.csproj", "{31FAEB42-9A5C-499C-8611-8E1C05E1631A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitApiReference.Assemblies", "NUnitApiReference.Assemblies\NUnitApiReference.Assemblies.csproj", "{26A22EF2-96F7-4E2E-9ECA-76D33258E9E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitApiReference", "NUnitApiReference\NUnitApiReference.csproj", "{26A22EF2-96F7-4E2E-9ECA-76D33258E9E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{AAE4A8C6-36C5-490D-B661-27C5F898E7BF}"
 	ProjectSection(SolutionItems) = preProject

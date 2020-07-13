@@ -14,7 +14,7 @@ namespace NUnitApiReference.Tests {
 
         [Test]
         public void Test_Types() {
-            var actual = NUnitModule.AllItems.Select( i => i.Type ).Where( i => i != null ).ToArray();
+            var actual = NUnitModule.AllItems.OfType<TypeItem>().Select( i => i.Value ).ToArray();
             var expected = Assembly.Load( "nunit.framework" ).ExportedTypes.Where( IsNotObsolete ).ToArray();
             Assert.That( actual, Is.EquivalentTo( expected ) );
         }

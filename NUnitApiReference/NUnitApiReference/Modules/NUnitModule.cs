@@ -9,11 +9,10 @@ namespace NUnitApiReference {
 
     public class NUnitModule : Module {
 
-        private const string X_Main = "# Main";
-
-        private const string XX_Api            = "## Api";
-        private const string XX_Runner         = "## Runner";
-        private const string XX_Exceptions     = "## Exceptions";
+        private static readonly HeaderItem X_Main        = HeaderItem.H1( "Main" );
+        private static readonly HeaderItem XX_Api        = HeaderItem.H2( "Api" );
+        private static readonly HeaderItem XX_Runner     = HeaderItem.H2( "Runner" );
+        private static readonly HeaderItem XX_Exceptions = HeaderItem.H2( "Exceptions" );
 
 
         public static readonly Item[] AllItems =

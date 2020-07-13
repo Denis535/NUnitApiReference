@@ -8,45 +8,44 @@ namespace NUnitApiReference {
 
     public class NUnitModule_Entities : Module {
 
-        private const string X_Entities = "# Entities";
-
-        private const string XX_Test           = "## Test";
-        private const string XX_Infrastructure = "## Infrastructure";
+        private static readonly HeaderItem X_Entities        = HeaderItem.H1( "Entities" );
+        private static readonly HeaderItem XX_Test           = HeaderItem.H2( "Test" );
+        private static readonly HeaderItem XX_Infrastructure = HeaderItem.H2( "Infrastructure" );
 
 
         public override Item[] Items => new Item[] {
             X_Entities,
 
             XX_Test,
-            "#### Test",
+            "Test",
             typeof( NUnit.Framework.Interfaces        .ITest                                         ),
             typeof( NUnit.Framework.Internal          .Test                                          ),
             typeof( NUnit.Framework.Interfaces        .RunState                                      ),
-            "#### Test/Suite",
+            "Test/Suite",
             typeof( NUnit.Framework.Internal          .TestSuite                                     ),
-            "#### Test/Assembly",
+            "Test/Assembly",
             typeof( NUnit.Framework.Internal          .TestAssembly                                  ),
-            "#### Test/Fixture",
+            "Test/Fixture",
             typeof( NUnit.Framework.Internal          .SetUpFixture                                  ),
             typeof( NUnit.Framework.Internal          .TestFixture                                   ),
             typeof( NUnit.Framework.Internal          .ParameterizedFixtureSuite                     ),
-            "#### Test/Method",
+            "Test/Method",
             typeof( NUnit.Framework.Internal          .TestMethod                                    ),
             typeof( NUnit.Framework.Internal          .ParameterizedMethodSuite                      ),
 
-            "#### TestData",
+            "TestData",
             typeof( NUnit.Framework.Interfaces        .ITestData                                     ),
             typeof( NUnit.Framework.Internal          .TestParameters                                ),
-            "#### TestData/Fixture",
+            "TestData/Fixture",
             typeof( NUnit.Framework.Interfaces        .ITestFixtureData                              ),
             typeof( NUnit.Framework.Internal          .TestFixtureParameters                         ),
             typeof( NUnit.Framework                   .TestFixtureData                               ),
-            "#### TestData/Case",
+            "TestData/Case",
             typeof( NUnit.Framework.Interfaces        .ITestCaseData                                 ),
             typeof( NUnit.Framework.Internal          .TestCaseParameters                            ),
             typeof( NUnit.Framework                   .TestCaseData                                  ),
 
-            "#### TestResult",
+            "TestResult",
             typeof( NUnit.Framework.Interfaces        .ITestResult                                   ),
             typeof( NUnit.Framework.Internal          .TestResult                                    ),
             typeof( NUnit.Framework.Interfaces        .ResultState                                   ),
@@ -55,13 +54,13 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework.Interfaces        .AssertionResult                               ),
             typeof( NUnit.Framework.Interfaces        .AssertionStatus                               ),
             typeof( NUnit.Framework.Interfaces        .TestAttachment                                ),
-            "#### TestResult/Suite",
+            "TestResult/Suite",
             typeof( NUnit.Framework.Internal          .TestSuiteResult                               ),
-            "#### TestResult/Case",
+            "TestResult/Case",
             typeof( NUnit.Framework.Internal          .TestCaseResult                                ),
 
             XX_Infrastructure,
-            "#### PropertyBag",
+            "PropertyBag",
             typeof( NUnit.Framework.Interfaces        .IPropertyBag                                  ),
             typeof( NUnit.Framework.Internal          .PropertyBag                                   ),
             typeof( NUnit.Framework.Internal          .PropertyNames                                 ),

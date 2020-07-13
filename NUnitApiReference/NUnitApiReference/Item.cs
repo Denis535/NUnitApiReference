@@ -6,22 +6,26 @@ namespace NUnitApiReference {
     using System.Collections.Generic;
     using System.Text;
 
-    public class Item {
-
-        public readonly string? Header;
-        public readonly Type? Type;
-
-        // Init
-        private Item(string? header) {
-            Header = header;
-        }
-        private Item(Type? type) {
-            Type = type;
-        }
-
-        // Utils
-        public static implicit operator Item(string value) => new Item( value );
-        public static implicit operator Item(Type value) => new Item( value );
-
+    public abstract class Item {
+        public static implicit operator Item(string value) => new GroupItem( value );
+        public static implicit operator Item(Type value) => new TypeItem( value );
+    }
+    public class HeaderItem : Item {
+        public readonly string Value;
+        public readonly int Level;
+        public static HeaderItem H1(string value) => new HeaderItem( value, 1 );
+        public static HeaderItem H2(string value) => new HeaderItem( value, 2 );
+        private HeaderItem(string value, int level) => (Value, Level) = (value, level);
+        public override string ToString() => Value;
+    }
+    public class GroupItem : Item {
+        public readonly string Value;
+        public GroupItem(string value) => Value = value;
+        public override string ToString() => Value;
+    }
+    public class TypeItem : Item {
+        public readonly Type Value;
+        public TypeItem(Type value) => Value = value;
+        public override string ToString() => Value.Name;
     }
 }

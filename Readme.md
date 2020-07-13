@@ -1,102 +1,33 @@
 - [Main](#main)
-* [Api](#api)
-* [Runner](#runner)
-* [Exceptions](#exceptions)
+ * [Api](#api)
+ * [Runner](#runner)
+ * [Exceptions](#exceptions)
 - [Runner/Building](#runner/building)
-* [Runner/Building](#runner/building)
-- [Builders/Assembly](#builders/assembly)
-- [Builders/Fixture](#builders/fixture)
-- [Builders/Fixture](#builders/fixture)
-- [Builders/Fixture/SetUp](#builders/fixture/setup)
-- [Builders/Fixture/TearDown](#builders/fixture/teardown)
-- [Builders/Method](#builders/method)
-- [Builders/Method](#builders/method)
-- [Builders/Method/CombiningStrategy](#builders/method/combiningstrategy)
-- [Data/ParameterDataSources](#data/parameterdatasources)
-- [Data/Datapoints](#data/datapoints)
-* [Runner/Building/Extensibility](#runner/building/extensibility)
-- [TestAppliers](#testappliers)
-- [TestAppliers/Property](#testappliers/property)
-* [Infrastructure](#infrastructure)
-- [Builders](#builders)
-- [DataProviders](#dataproviders)
-- [DataCombiners](#datacombiners)
+ * [Runner/Building](#runner/building)
+ * [Runner/Building/Extensibility](#runner/building/extensibility)
+ * [Infrastructure](#infrastructure)
 - [Runner/Execution](#runner/execution)
-* [Runner/Execution](#runner/execution)
-- [Commands/Test](#commands/test)
-- [Commands/Test/Before](#commands/test/before)
-- [Commands/Test/After](#commands/test/after)
-- [Commands/Test/BeforeAndAfter](#commands/test/beforeandafter)
-- [Context](#context)
-- [Context/Wrapper](#context/wrapper)
-* [Runner/Execution/Extensibility](#runner/execution/extensibility)
-- [CommandWrappers](#commandwrappers)
-- [Actions](#actions)
-- [ContextAppliers](#contextappliers)
-* [Infrastructure](#infrastructure)
-- [WorkItems](#workitems)
-- [WorkItemDispatchers](#workitemdispatchers)
+ * [Runner/Execution](#runner/execution)
+ * [Runner/Execution/Extensibility](#runner/execution/extensibility)
+ * [Infrastructure](#infrastructure)
 - [Entities](#entities)
-* [Test](#test)
-- [Test](#test)
-- [Test/Suite](#test/suite)
-- [Test/Assembly](#test/assembly)
-- [Test/Fixture](#test/fixture)
-- [Test/Method](#test/method)
-- [TestData](#testdata)
-- [TestData/Fixture](#testdata/fixture)
-- [TestData/Case](#testdata/case)
-- [TestResult](#testresult)
-- [TestResult/Suite](#testresult/suite)
-- [TestResult/Case](#testresult/case)
-* [Infrastructure](#infrastructure)
-- [PropertyBag](#propertybag)
+ * [Test](#test)
+ * [Infrastructure](#infrastructure)
 - [Assertion](#assertion)
-* [Assertions](#assertions)
-* [Constraints](#constraints)
-* [Infrastructure](#infrastructure)
-- [Constraints](#constraints)
-- [Constraints/Prefix](#constraints/prefix)
-- [Constraints/Binary](#constraints/binary)
-- [Constraints/Comparison](#constraints/comparison)
-- [Constraints/Collection](#constraints/collection)
-- [Constraints/Collection/Items](#constraints/collection/items)
-- [Constraints/String](#constraints/string)
-- [Constraints/Path](#constraints/path)
-- [Constraints/Type](#constraints/type)
-- [ConstraintResults](#constraintresults)
-- [ConstraintResolvers](#constraintresolvers)
-- [ConstraintBuilder](#constraintbuilder)
-- [Expressions](#expressions)
-- [Operators](#operators)
-- [Operators/Prefix](#operators/prefix)
-- [Operators/Prefix/Collection](#operators/prefix/collection)
-- [Operators/Binary](#operators/binary)
-- [Operators/SelfResolving](#operators/selfresolving)
-- [Comparison](#comparison)
-- [Utils](#utils)
-* [Exceptions](#exceptions)
-* [Delegates](#delegates)
+ * [Assertions](#assertions)
+ * [Constraints](#constraints)
+ * [Infrastructure](#infrastructure)
+ * [Exceptions](#exceptions)
+ * [Delegates](#delegates)
 - [Infrastructure](#infrastructure)
-* [System](#system)
-- [Reflection](#reflection)
-- [Reflection/Model](#reflection/model)
-- [Environment](#environment)
-- [Logging](#logging)
-- [Xml](#xml)
-* [NUnit](#nunit)
-- [Collections](#collections)
-- [TextWriters](#textwriters)
-- [TestListeners](#testlisteners)
-- [Events](#events)
-- [EventPump](#eventpump)
-- [WorkShift](#workshift)
+ * [System](#system)
+ * [NUnit](#nunit)
 
-# Main
+Main
 * NUnitAttribute
 * NonTestAssemblyAttribute
 * TestAssemblyDirectoryResolveAttribute
-## Api
+Api
 * FrameworkController
 * FrameworkControllerAction
 * LoadTestsAction
@@ -105,65 +36,65 @@
 * RunTestsAction
 * RunAsyncAction
 * StopRunAction
-## Runner
+Runner
 * ITestAssemblyRunner
 * NUnitTestAssemblyRunner
 * IPreFilter
 * ITestFilter
 * TestFilter
-## Exceptions
+Exceptions
 * NUnitException
 * InvalidTestFixtureException
 * InvalidDataSourceException
 * TestCaseTimeoutException
-# Runner/Building
-## Runner/Building
-#### Builders/Assembly
+Runner/Building
+Runner/Building
+*Builders/Assembly*
 * ITestAssemblyBuilder
 * DefaultTestAssemblyBuilder
-#### Builders/Fixture
+*Builders/Fixture*
 * ISuiteBuilder
 * DefaultSuiteBuilder
-#### Builders/Fixture
+*Builders/Fixture*
 * IFixtureBuilder
 * IFixtureBuilder2
 * SetUpFixtureAttribute
 * TestFixtureAttribute
 * TestFixtureSourceAttribute
-#### Builders/Fixture/SetUp
+*Builders/Fixture/SetUp*
 * OneTimeSetUpAttribute
 * SetUpAttribute
-#### Builders/Fixture/TearDown
+*Builders/Fixture/TearDown*
 * OneTimeTearDownAttribute
 * TearDownAttribute
-#### Builders/Method
+*Builders/Method*
 * ITestCaseBuilder
 * DefaultTestCaseBuilder
-#### Builders/Method
+*Builders/Method*
 * ITestBuilder
 * ISimpleTestBuilder
 * IImplyFixture
 * TestAttribute
 * TestCaseAttribute
 * TestCaseSourceAttribute
-#### Builders/Method/CombiningStrategy
+*Builders/Method/CombiningStrategy*
 * CombiningStrategyAttribute
 * SequentialAttribute
 * PairwiseAttribute
 * CombinatorialAttribute
 * TheoryAttribute
-#### Data/ParameterDataSources
+*Data/ParameterDataSources*
 * IParameterDataSource
 * ValuesAttribute
 * ValueSourceAttribute
 * RandomAttribute
 * RangeAttribute
-#### Data/Datapoints
+*Data/Datapoints*
 * DatapointAttribute
 * DatapointSourceAttribute
 * DatapointsAttribute
-## Runner/Building/Extensibility
-#### TestAppliers
+Runner/Building/Extensibility
+*TestAppliers*
 * IApplyToTest
 * CategoryAttribute
 * OrderAttribute
@@ -172,7 +103,7 @@
 * IncludeExcludeAttribute
 * PlatformAttribute
 * CultureAttribute
-#### TestAppliers/Property
+*TestAppliers/Property*
 * PropertyAttribute
 * DescriptionAttribute
 * AuthorAttribute
@@ -180,64 +111,64 @@
 * ApartmentAttribute
 * RequiresThreadAttribute
 * LevelOfParallelismAttribute
-## Infrastructure
+Infrastructure
 * TestNameGenerator
 * PlatformHelper
 * CultureDetector
-#### Builders
+*Builders*
 * NamespaceTreeBuilder
 * NUnitTestFixtureBuilder
 * NUnitTestCaseBuilder
-#### DataProviders
+*DataProviders*
 * IParameterDataProvider
 * ParameterDataProvider
 * ParameterDataSourceProvider
 * DatapointProvider
-#### DataCombiners
+*DataCombiners*
 * ICombiningStrategy
 * CombinatorialStrategy
 * SequentialStrategy
 * PairwiseStrategy
-# Runner/Execution
-## Runner/Execution
-#### Commands/Test
+Runner/Execution
+Runner/Execution
+*Commands/Test*
 * TestCommand
 * TestMethodCommand
 * EmptyTestCommand
 * SkipCommand
 * DelegatingTestCommand
-#### Commands/Test/Before
+*Commands/Test/Before*
 * BeforeTestCommand
 * BeforeTestActionCommand
 * ConstructFixtureCommand
 * OneTimeSetUpCommand
-#### Commands/Test/After
+*Commands/Test/After*
 * AfterTestCommand
 * AfterTestActionCommand
 * DisposeFixtureCommand
 * OneTimeTearDownCommand
 * MaxTimeCommand
 * TheoryResultCommand
-#### Commands/Test/BeforeAndAfter
+*Commands/Test/BeforeAndAfter*
 * BeforeAndAfterTestCommand
 * TestActionCommand
 * TestActionItem
 * SetUpTearDownCommand
 * SetUpTearDownItem
 * TimeoutCommand
-#### Context
+*Context*
 * TestExecutionContext
 * IsolatedContext
 * AdhocContext
 * TestExecutionStatus
-#### Context/Wrapper
+*Context/Wrapper*
 * TestContext
 * TestAdapter
 * ResultAdapter
 * PropertyBagAdapter
 * TestParameters
-## Runner/Execution/Extensibility
-#### CommandWrappers
+Runner/Execution/Extensibility
+*CommandWrappers*
 * ICommandWrapper
 * IWrapSetUpTearDown
 * IWrapTestMethod
@@ -247,11 +178,11 @@
 * MaxTimeAttribute
 * RetryAttribute
 * RetryCommand
-#### Actions
+*Actions*
 * ITestAction
 * ActionTargets
 * TestActionAttribute
-#### ContextAppliers
+*ContextAppliers*
 * IApplyToContext
 * DefaultFloatingPointToleranceAttribute
 * SingleThreadedAttribute
@@ -260,8 +191,8 @@
 * ParallelizableAttribute
 * NonParallelizableAttribute
 * TimeoutAttribute
-## Infrastructure
-#### WorkItems
+Infrastructure
+*WorkItems*
 * WorkItem
 * SimpleWorkItem
 * CompositeWorkItem
@@ -270,40 +201,40 @@
 * WorkItemState
 * ParallelExecutionStrategy
 * ParallelScope
-#### WorkItemDispatchers
+*WorkItemDispatchers*
 * IWorkItemDispatcher
 * MainThreadWorkItemDispatcher
 * SimpleWorkItemDispatcher
 * ParallelWorkItemDispatcher
-# Entities
-## Test
-#### Test
+Entities
+Test
+*Test*
 * ITest
 * Test
 * RunState
-#### Test/Suite
+*Test/Suite*
 * TestSuite
-#### Test/Assembly
+*Test/Assembly*
 * TestAssembly
-#### Test/Fixture
+*Test/Fixture*
 * SetUpFixture
 * TestFixture
 * ParameterizedFixtureSuite
-#### Test/Method
+*Test/Method*
 * TestMethod
 * ParameterizedMethodSuite
-#### TestData
+*TestData*
 * ITestData
 * TestParameters
-#### TestData/Fixture
+*TestData/Fixture*
 * ITestFixtureData
 * TestFixtureParameters
 * TestFixtureData
-#### TestData/Case
+*TestData/Case*
 * ITestCaseData
 * TestCaseParameters
 * TestCaseData
-#### TestResult
+*TestResult*
 * ITestResult
 * TestResult
 * ResultState
@@ -312,17 +243,17 @@
 * AssertionResult
 * AssertionStatus
 * TestAttachment
-#### TestResult/Suite
+*TestResult/Suite*
 * TestSuiteResult
-#### TestResult/Case
+*TestResult/Case*
 * TestCaseResult
-## Infrastructure
-#### PropertyBag
+Infrastructure
+*PropertyBag*
 * IPropertyBag
 * PropertyBag
 * PropertyNames
-# Assertion
-## Assertions
+Assertion
+Assertions
 * Assert
 * StringAssert
 * CollectionAssert
@@ -330,15 +261,15 @@
 * FileAssert
 * Warn
 * Assume
-## Constraints
+Constraints
 * Is
 * Iz
 * Has
 * Does
 * Contains
 * Throws
-## Infrastructure
-#### Constraints
+Infrastructure
+*Constraints*
 * IConstraint
 * Constraint
 * NullConstraint
@@ -361,7 +292,7 @@
 * PredicateConstraint`1
 * ThrowsExceptionConstraint
 * ThrowsNothingConstraint
-#### Constraints/Prefix
+*Constraints/Prefix*
 * PrefixConstraint
 * NotConstraint
 * AttributeConstraint
@@ -374,21 +305,21 @@
 * WithRawDelayInterval
 * WithDimensionedDelayInterval
 * WithRawPollingInterval
-#### Constraints/Binary
+*Constraints/Binary*
 * BinaryConstraint
 * AndConstraint
 * OrConstraint
-#### Constraints/Comparison
+*Constraints/Comparison*
 * ComparisonConstraint
 * LessThanConstraint
 * LessThanOrEqualConstraint
 * GreaterThanConstraint
 * GreaterThanOrEqualConstraint
-#### Constraints/Collection
+*Constraints/Collection*
 * CollectionConstraint
 * EmptyCollectionConstraint
 * CollectionOrderedConstraint
-#### Constraints/Collection/Items
+*Constraints/Collection/Items*
 * CollectionItemsEqualConstraint
 * CollectionEquivalentConstraint
 * CollectionSubsetConstraint
@@ -397,88 +328,88 @@
 * DictionaryContainsKeyConstraint
 * DictionaryContainsValueConstraint
 * UniqueItemsConstraint
-#### Constraints/String
+*Constraints/String*
 * StringConstraint
 * EmptyStringConstraint
 * StartsWithConstraint
 * EndsWithConstraint
 * SubstringConstraint
 * RegexConstraint
-#### Constraints/Path
+*Constraints/Path*
 * PathConstraint
 * SamePathConstraint
 * SubPathConstraint
 * SamePathOrUnderConstraint
-#### Constraints/Type
+*Constraints/Type*
 * TypeConstraint
 * ExactTypeConstraint
 * ExceptionTypeConstraint
 * AssignableFromConstraint
 * AssignableToConstraint
 * InstanceOfTypeConstraint
-#### ConstraintResults
+*ConstraintResults*
 * ConstraintResult
 * EqualConstraintResult
 * CollectionEquivalentConstraintResult
 * ConstraintStatus
-#### ConstraintResolvers
+*ConstraintResolvers*
 * IResolveConstraint
 * ReusableConstraint
-#### ConstraintBuilder
+*ConstraintBuilder*
 * ConstraintBuilder
 * ConstraintStack
-#### Expressions
+*Expressions*
 * ConstraintExpression
 * ItemsConstraintExpression
 * ResolvableConstraintExpression
-#### Operators
+*perators*
 * ConstraintOperator
-#### Operators/Prefix
+*Operators/Prefix*
 * PrefixOperator
 * NotOperator
 * WithOperator
-#### Operators/Prefix/Collection
+*Operators/Prefix/Collection*
 * CollectionOperator
 * NoneOperator
 * SomeOperator
 * AllOperator
-#### Operators/Binary
+*Operators/Binary*
 * BinaryOperator
 * AndOperator
 * OrOperator
-#### Operators/SelfResolving
+*Operators/SelfResolving*
 * SelfResolvingOperator
 * AttributeOperator
 * PropOperator
 * ExactCountOperator
 * ThrowsOperator
-#### Comparison
+*Comparison*
 * EqualityAdapter
 * ComparisonAdapter
 * NUnitEqualityComparer
 * FailurePoint
 * NUnitComparer
 * Numerics
-#### Utils
+*Utils*
 * Interval
 * Tolerance
 * Range
 * ToleranceMode
-## Exceptions
+Exceptions
 * ResultStateException
 * AssertionException
 * MultipleAssertException
 * InconclusiveException
 * IgnoreException
 * SuccessException
-## Delegates
+Delegates
 * TestDelegate
 * AsyncTestDelegate
 * ActualValueDelegate`1
 * ValueFormatter
 * ValueFormatterFactory
-# Infrastructure
-## System
+Infrastructure
+System
 * LongLivedMarshalByRefObject
 * StringUtil
 * Randomizer
@@ -486,13 +417,13 @@
 * ExceptionHelper
 * StackFilter
 * ICallbackEventHandler
-#### Reflection
+*Reflection*
 * Reflect
 * AssemblyHelper
 * TypeHelper
 * GenericMethodHelper
 * AttributeHelper
-#### Reflection/Model
+*Reflection/Model*
 * IReflectionInfo
 * ITypeInfo
 * IMethodInfo
@@ -500,53 +431,53 @@
 * TypeWrapper
 * MethodWrapper
 * ParameterWrapper
-#### Environment
+*Environment*
 * OSPlatform
 * ProductType
 * RuntimeFramework
 * RuntimeType
-#### Logging
+*Logging*
 * InternalTrace
 * InternalTraceLevel
 * ILogger
 * Logger
-#### Xml
+*Xml*
 * IXmlNodeBuilder
 * NodeList
 * TNode
 * AttributeDictionary
-## NUnit
+NUnit
 * FrameworkPackageSettings
 * TypeNameDifferenceResolver
-#### Collections
+*Collections*
 * List
 * ListMapper
 * EventQueue
 * CollectionTally
 * CollectionTallyResult
-#### TextWriters
+*TextWriters*
 * TextCapture
 * EventListenerTextWriter
 * InternalTraceWriter
 * MessageWriter
 * TextMessageWriter
-#### TestListeners
+*TestListeners*
 * ITestListener
 * TestListener
 * TestProgressReporter
 * QueuingEventListener
 * TestMessage
 * TestOutput
-#### Events
+*Events*
 * Event
 * TestStartedEvent
 * TestFinishedEvent
 * TestOutputEvent
 * TestMessageEvent
-#### EventPump
+*EventPump*
 * EventPump
 * EventPumpState
-#### WorkShift
+*WorkShift*
 * WorkShift
 * TestWorker
 * TestWorkerEventHandler

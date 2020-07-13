@@ -49,7 +49,7 @@ namespace NUnitApiReference.Renderer {
             return value switch
             {
                 HeaderItem header => header.Value,
-                GroupItem group => "*" + group.Value + "*",
+                GroupItem group => "* ***" + group.Value + "***",
                 TypeItem type => "* " + type.Value.Name,
                 _ => throw new ArgumentException( "Value is invalid" ),
             };

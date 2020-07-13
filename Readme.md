@@ -49,52 +49,52 @@ Exceptions
 * TestCaseTimeoutException
 Runner/Building
 Runner/Building
-*Builders/Assembly*
+* ***Builders/Assembly***
 * ITestAssemblyBuilder
 * DefaultTestAssemblyBuilder
-*Builders/Fixture*
+* ***Builders/Fixture***
 * ISuiteBuilder
 * DefaultSuiteBuilder
-*Builders/Fixture*
+* ***Builders/Fixture***
 * IFixtureBuilder
 * IFixtureBuilder2
 * SetUpFixtureAttribute
 * TestFixtureAttribute
 * TestFixtureSourceAttribute
-*Builders/Fixture/SetUp*
+* ***Builders/Fixture/SetUp***
 * OneTimeSetUpAttribute
 * SetUpAttribute
-*Builders/Fixture/TearDown*
+* ***Builders/Fixture/TearDown***
 * OneTimeTearDownAttribute
 * TearDownAttribute
-*Builders/Method*
+* ***Builders/Method***
 * ITestCaseBuilder
 * DefaultTestCaseBuilder
-*Builders/Method*
+* ***Builders/Method***
 * ITestBuilder
 * ISimpleTestBuilder
 * IImplyFixture
 * TestAttribute
 * TestCaseAttribute
 * TestCaseSourceAttribute
-*Builders/Method/CombiningStrategy*
+* ***Builders/Method/CombiningStrategy***
 * CombiningStrategyAttribute
 * SequentialAttribute
 * PairwiseAttribute
 * CombinatorialAttribute
 * TheoryAttribute
-*Data/ParameterDataSources*
+* ***Data/ParameterDataSources***
 * IParameterDataSource
 * ValuesAttribute
 * ValueSourceAttribute
 * RandomAttribute
 * RangeAttribute
-*Data/Datapoints*
+* ***Data/Datapoints***
 * DatapointAttribute
 * DatapointSourceAttribute
 * DatapointsAttribute
 Runner/Building/Extensibility
-*TestAppliers*
+* ***TestAppliers***
 * IApplyToTest
 * CategoryAttribute
 * OrderAttribute
@@ -103,7 +103,7 @@ Runner/Building/Extensibility
 * IncludeExcludeAttribute
 * PlatformAttribute
 * CultureAttribute
-*TestAppliers/Property*
+* ***TestAppliers/Property***
 * PropertyAttribute
 * DescriptionAttribute
 * AuthorAttribute
@@ -115,60 +115,60 @@ Infrastructure
 * TestNameGenerator
 * PlatformHelper
 * CultureDetector
-*Builders*
+* ***Builders***
 * NamespaceTreeBuilder
 * NUnitTestFixtureBuilder
 * NUnitTestCaseBuilder
-*DataProviders*
+* ***DataProviders***
 * IParameterDataProvider
 * ParameterDataProvider
 * ParameterDataSourceProvider
 * DatapointProvider
-*DataCombiners*
+* ***DataCombiners***
 * ICombiningStrategy
 * CombinatorialStrategy
 * SequentialStrategy
 * PairwiseStrategy
 Runner/Execution
 Runner/Execution
-*Commands/Test*
+* ***Commands/Test***
 * TestCommand
 * TestMethodCommand
 * EmptyTestCommand
 * SkipCommand
 * DelegatingTestCommand
-*Commands/Test/Before*
+* ***Commands/Test/Before***
 * BeforeTestCommand
 * BeforeTestActionCommand
 * ConstructFixtureCommand
 * OneTimeSetUpCommand
-*Commands/Test/After*
+* ***Commands/Test/After***
 * AfterTestCommand
 * AfterTestActionCommand
 * DisposeFixtureCommand
 * OneTimeTearDownCommand
 * MaxTimeCommand
 * TheoryResultCommand
-*Commands/Test/BeforeAndAfter*
+* ***Commands/Test/BeforeAndAfter***
 * BeforeAndAfterTestCommand
 * TestActionCommand
 * TestActionItem
 * SetUpTearDownCommand
 * SetUpTearDownItem
 * TimeoutCommand
-*Context*
+* ***Context***
 * TestExecutionContext
 * IsolatedContext
 * AdhocContext
 * TestExecutionStatus
-*Context/Wrapper*
+* ***Context/Wrapper***
 * TestContext
 * TestAdapter
 * ResultAdapter
 * PropertyBagAdapter
 * TestParameters
 Runner/Execution/Extensibility
-*CommandWrappers*
+* ***CommandWrappers***
 * ICommandWrapper
 * IWrapSetUpTearDown
 * IWrapTestMethod
@@ -178,11 +178,11 @@ Runner/Execution/Extensibility
 * MaxTimeAttribute
 * RetryAttribute
 * RetryCommand
-*Actions*
+* ***Actions***
 * ITestAction
 * ActionTargets
 * TestActionAttribute
-*ContextAppliers*
+* ***ContextAppliers***
 * IApplyToContext
 * DefaultFloatingPointToleranceAttribute
 * SingleThreadedAttribute
@@ -192,7 +192,7 @@ Runner/Execution/Extensibility
 * NonParallelizableAttribute
 * TimeoutAttribute
 Infrastructure
-*WorkItems*
+* ***WorkItems***
 * WorkItem
 * SimpleWorkItem
 * CompositeWorkItem
@@ -201,40 +201,40 @@ Infrastructure
 * WorkItemState
 * ParallelExecutionStrategy
 * ParallelScope
-*WorkItemDispatchers*
+* ***WorkItemDispatchers***
 * IWorkItemDispatcher
 * MainThreadWorkItemDispatcher
 * SimpleWorkItemDispatcher
 * ParallelWorkItemDispatcher
 Entities
 Test
-*Test*
+* ***Test***
 * ITest
 * Test
 * RunState
-*Test/Suite*
+* ***Test/Suite***
 * TestSuite
-*Test/Assembly*
+* ***Test/Assembly***
 * TestAssembly
-*Test/Fixture*
+* ***Test/Fixture***
 * SetUpFixture
 * TestFixture
 * ParameterizedFixtureSuite
-*Test/Method*
+* ***Test/Method***
 * TestMethod
 * ParameterizedMethodSuite
-*TestData*
+* ***TestData***
 * ITestData
 * TestParameters
-*TestData/Fixture*
+* ***TestData/Fixture***
 * ITestFixtureData
 * TestFixtureParameters
 * TestFixtureData
-*TestData/Case*
+* ***TestData/Case***
 * ITestCaseData
 * TestCaseParameters
 * TestCaseData
-*TestResult*
+* ***TestResult***
 * ITestResult
 * TestResult
 * ResultState
@@ -243,12 +243,12 @@ Test
 * AssertionResult
 * AssertionStatus
 * TestAttachment
-*TestResult/Suite*
+* ***TestResult/Suite***
 * TestSuiteResult
-*TestResult/Case*
+* ***TestResult/Case***
 * TestCaseResult
 Infrastructure
-*PropertyBag*
+* ***PropertyBag***
 * IPropertyBag
 * PropertyBag
 * PropertyNames
@@ -269,7 +269,7 @@ Constraints
 * Contains
 * Throws
 Infrastructure
-*Constraints*
+* ***Constraints***
 * IConstraint
 * Constraint
 * NullConstraint
@@ -292,7 +292,7 @@ Infrastructure
 * PredicateConstraint`1
 * ThrowsExceptionConstraint
 * ThrowsNothingConstraint
-*Constraints/Prefix*
+* ***Constraints/Prefix***
 * PrefixConstraint
 * NotConstraint
 * AttributeConstraint
@@ -305,21 +305,21 @@ Infrastructure
 * WithRawDelayInterval
 * WithDimensionedDelayInterval
 * WithRawPollingInterval
-*Constraints/Binary*
+* ***Constraints/Binary***
 * BinaryConstraint
 * AndConstraint
 * OrConstraint
-*Constraints/Comparison*
+* ***Constraints/Comparison***
 * ComparisonConstraint
 * LessThanConstraint
 * LessThanOrEqualConstraint
 * GreaterThanConstraint
 * GreaterThanOrEqualConstraint
-*Constraints/Collection*
+* ***Constraints/Collection***
 * CollectionConstraint
 * EmptyCollectionConstraint
 * CollectionOrderedConstraint
-*Constraints/Collection/Items*
+* ***Constraints/Collection/Items***
 * CollectionItemsEqualConstraint
 * CollectionEquivalentConstraint
 * CollectionSubsetConstraint
@@ -328,69 +328,69 @@ Infrastructure
 * DictionaryContainsKeyConstraint
 * DictionaryContainsValueConstraint
 * UniqueItemsConstraint
-*Constraints/String*
+* ***Constraints/String***
 * StringConstraint
 * EmptyStringConstraint
 * StartsWithConstraint
 * EndsWithConstraint
 * SubstringConstraint
 * RegexConstraint
-*Constraints/Path*
+* ***Constraints/Path***
 * PathConstraint
 * SamePathConstraint
 * SubPathConstraint
 * SamePathOrUnderConstraint
-*Constraints/Type*
+* ***Constraints/Type***
 * TypeConstraint
 * ExactTypeConstraint
 * ExceptionTypeConstraint
 * AssignableFromConstraint
 * AssignableToConstraint
 * InstanceOfTypeConstraint
-*ConstraintResults*
+* ***ConstraintResults***
 * ConstraintResult
 * EqualConstraintResult
 * CollectionEquivalentConstraintResult
 * ConstraintStatus
-*ConstraintResolvers*
+* ***ConstraintResolvers***
 * IResolveConstraint
 * ReusableConstraint
-*ConstraintBuilder*
+* ***ConstraintBuilder***
 * ConstraintBuilder
 * ConstraintStack
-*Expressions*
+* ***Expressions***
 * ConstraintExpression
 * ItemsConstraintExpression
 * ResolvableConstraintExpression
-*perators*
+* ***Operators***
 * ConstraintOperator
-*Operators/Prefix*
+* ***Operators/Prefix***
 * PrefixOperator
 * NotOperator
 * WithOperator
-*Operators/Prefix/Collection*
+* ***Operators/Prefix/Collection***
 * CollectionOperator
 * NoneOperator
 * SomeOperator
 * AllOperator
-*Operators/Binary*
+* ***Operators/Binary***
 * BinaryOperator
 * AndOperator
 * OrOperator
-*Operators/SelfResolving*
+* ***Operators/SelfResolving***
 * SelfResolvingOperator
 * AttributeOperator
 * PropOperator
 * ExactCountOperator
 * ThrowsOperator
-*Comparison*
+* ***Comparison***
 * EqualityAdapter
 * ComparisonAdapter
 * NUnitEqualityComparer
 * FailurePoint
 * NUnitComparer
 * Numerics
-*Utils*
+* ***Utils***
 * Interval
 * Tolerance
 * Range
@@ -417,13 +417,13 @@ System
 * ExceptionHelper
 * StackFilter
 * ICallbackEventHandler
-*Reflection*
+* ***Reflection***
 * Reflect
 * AssemblyHelper
 * TypeHelper
 * GenericMethodHelper
 * AttributeHelper
-*Reflection/Model*
+* ***Reflection/Model***
 * IReflectionInfo
 * ITypeInfo
 * IMethodInfo
@@ -431,17 +431,17 @@ System
 * TypeWrapper
 * MethodWrapper
 * ParameterWrapper
-*Environment*
+* ***Environment***
 * OSPlatform
 * ProductType
 * RuntimeFramework
 * RuntimeType
-*Logging*
+* ***Logging***
 * InternalTrace
 * InternalTraceLevel
 * ILogger
 * Logger
-*Xml*
+* ***Xml***
 * IXmlNodeBuilder
 * NodeList
 * TNode
@@ -449,35 +449,35 @@ System
 NUnit
 * FrameworkPackageSettings
 * TypeNameDifferenceResolver
-*Collections*
+* ***Collections***
 * List
 * ListMapper
 * EventQueue
 * CollectionTally
 * CollectionTallyResult
-*TextWriters*
+* ***TextWriters***
 * TextCapture
 * EventListenerTextWriter
 * InternalTraceWriter
 * MessageWriter
 * TextMessageWriter
-*TestListeners*
+* ***TestListeners***
 * ITestListener
 * TestListener
 * TestProgressReporter
 * QueuingEventListener
 * TestMessage
 * TestOutput
-*Events*
+* ***Events***
 * Event
 * TestStartedEvent
 * TestFinishedEvent
 * TestOutputEvent
 * TestMessageEvent
-*EventPump*
+* ***EventPump***
 * EventPump
 * EventPumpState
-*WorkShift*
+* ***WorkShift***
 * WorkShift
 * TestWorker
 * TestWorkerEventHandler

@@ -10,16 +10,15 @@ namespace NUnitApiReference {
 
         private const string X_Runner_Execution = "# Runner/Execution";
 
-        private const string XX_Attributes     = "## Attributes";
-        private const string XX_Utils          = "## Utils";
-        private const string XX_Infrastructure = "## Infrastructure";
-        private const string XX_Exceptions     = "## Exceptions";
-        private const string XX_Delegates      = "## Delegates";
+        private const string XX_Runner_Execution               = "## Runner/Execution";
+        private const string XX_Runner_Execution_Extensibility = "## Runner/Execution/Extensibility";
+        private const string XX_Infrastructure                 = "## Infrastructure";
 
 
         public override Item[] Items => new Item[] {
             X_Runner_Execution,
 
+            XX_Runner_Execution,
             "#### Commands/Test",
             typeof( NUnit.Framework.Internal.Commands .TestCommand                                   ),
             typeof( NUnit.Framework.Internal.Commands .TestMethodCommand                             ),
@@ -57,27 +56,23 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework                   .TestContext.PropertyBagAdapter                ),
             typeof( NUnit.Framework                   .TestParameters                                ),
 
-            "#### Extensibility/CommandWrapper",
+            XX_Runner_Execution_Extensibility,
+            "#### CommandWrappers",
             typeof( NUnit.Framework.Interfaces        .ICommandWrapper                               ),
             typeof( NUnit.Framework.Interfaces        .IWrapSetUpTearDown                            ),
             typeof( NUnit.Framework.Interfaces        .IWrapTestMethod                               ),
             typeof( NUnit.Framework.Interfaces        .IRepeatTest                                   ),
-            "#### Extensibility/TestAction",
-            typeof( NUnit.Framework                   .ITestAction                                   ),
-            typeof( NUnit.Framework                   .ActionTargets                                 ),
-            "#### Extensibility/ApplyToContext",
-            typeof( NUnit.Framework.Interfaces        .IApplyToContext                               ),
-
-            XX_Attributes,
-            "#### Extensibility/CommandWrapper",
             typeof( NUnit.Framework                   .RepeatAttribute                               ),
             typeof( NUnit.Framework                   .RepeatAttribute.RepeatedTestCommand           ),
             typeof( NUnit.Framework                   .MaxTimeAttribute                              ),
             typeof( NUnit.Framework                   .RetryAttribute                                ),
             typeof( NUnit.Framework                   .RetryAttribute.RetryCommand                   ),
-            "#### Extensibility/TestAction",
+            "#### Actions",
+            typeof( NUnit.Framework                   .ITestAction                                   ),
+            typeof( NUnit.Framework                   .ActionTargets                                 ),
             typeof( NUnit.Framework                   .TestActionAttribute                           ),
-            "#### Extensibility/ApplyToContext",
+            "#### ContextAppliers",
+            typeof( NUnit.Framework.Interfaces        .IApplyToContext                               ),
             typeof( NUnit.Framework                   .DefaultFloatingPointToleranceAttribute        ),
             typeof( NUnit.Framework                   .SingleThreadedAttribute                       ),
             typeof( NUnit.Framework                   .SetCultureAttribute                           ),

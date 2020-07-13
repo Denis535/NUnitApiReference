@@ -10,25 +10,33 @@ namespace NUnitApiReference {
 
         private const string X_Runner_Building = "# Runner/Building";
 
-        private const string XX_Attributes     = "## Attributes";
-        private const string XX_Utils          = "## Utils";
-        private const string XX_Infrastructure = "## Infrastructure";
-        private const string XX_Exceptions     = "## Exceptions";
-        private const string XX_Delegates      = "## Delegates";
+        private const string XX_Runner_Building               = "## Runner/Building";
+        private const string XX_Runner_Building_Extensibility = "## Runner/Building/Extensibility";
+        private const string XX_Infrastructure                = "## Infrastructure";
 
 
         public override Item[] Items => new Item[] {
             X_Runner_Building,
 
+            XX_Runner_Building,
             "#### Builders/Assembly",
             typeof( NUnit.Framework.Api              .ITestAssemblyBuilder                          ),
             typeof( NUnit.Framework.Api              .DefaultTestAssemblyBuilder                    ),
-            "#### Builders/Type",
+            "#### Builders/Fixture",
             typeof( NUnit.Framework.Interfaces       .ISuiteBuilder                                 ),
             typeof( NUnit.Framework.Internal.Builders.DefaultSuiteBuilder                           ),
-            "#### Builders/Type",
+            "#### Builders/Fixture",
             typeof( NUnit.Framework.Interfaces       .IFixtureBuilder                               ),
             typeof( NUnit.Framework.Interfaces       .IFixtureBuilder2                              ),
+            typeof( NUnit.Framework                  .SetUpFixtureAttribute                         ),
+            typeof( NUnit.Framework                  .TestFixtureAttribute                          ),
+            typeof( NUnit.Framework                  .TestFixtureSourceAttribute                    ),
+            "#### Builders/Fixture/SetUp",
+            typeof( NUnit.Framework                  .OneTimeSetUpAttribute                         ),
+            typeof( NUnit.Framework                  .SetUpAttribute                                ),
+            "#### Builders/Fixture/TearDown",
+            typeof( NUnit.Framework                  .OneTimeTearDownAttribute                      ),
+            typeof( NUnit.Framework                  .TearDownAttribute                             ),
             "#### Builders/Method",
             typeof( NUnit.Framework.Interfaces       .ITestCaseBuilder                              ),
             typeof( NUnit.Framework.Internal.Builders.DefaultTestCaseBuilder                        ),
@@ -36,15 +44,6 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework.Interfaces       .ITestBuilder                                  ),
             typeof( NUnit.Framework.Interfaces       .ISimpleTestBuilder                            ),
             typeof( NUnit.Framework.Interfaces       .IImplyFixture                                 ),
-            "#### Extensibility/ApplyToTest",
-            typeof( NUnit.Framework.Interfaces       .IApplyToTest                                  ),
-
-            XX_Attributes,
-            "#### Builders/Type",
-            typeof( NUnit.Framework                  .SetUpFixtureAttribute                         ),
-            typeof( NUnit.Framework                  .TestFixtureAttribute                          ),
-            typeof( NUnit.Framework                  .TestFixtureSourceAttribute                    ),
-            "#### Builders/Method",
             typeof( NUnit.Framework                  .TestAttribute                                 ),
             typeof( NUnit.Framework                  .TestCaseAttribute                             ),
             typeof( NUnit.Framework                  .TestCaseSourceAttribute                       ),
@@ -54,23 +53,21 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework                  .PairwiseAttribute                             ),
             typeof( NUnit.Framework                  .CombinatorialAttribute                        ),
             typeof( NUnit.Framework                  .TheoryAttribute                               ),
-            "### SetUp",
-            typeof( NUnit.Framework                  .OneTimeSetUpAttribute                         ),
-            typeof( NUnit.Framework                  .SetUpAttribute                                ),
-            "### TearDown",
-            typeof( NUnit.Framework                  .OneTimeTearDownAttribute                      ),
-            typeof( NUnit.Framework                  .TearDownAttribute                             ),
-            "### ParameterDataSources",
+
+            "#### Data/ParameterDataSources",
             typeof( NUnit.Framework.Interfaces       .IParameterDataSource                          ),
             typeof( NUnit.Framework                  .ValuesAttribute                               ),
             typeof( NUnit.Framework                  .ValueSourceAttribute                          ),
             typeof( NUnit.Framework                  .RandomAttribute                               ),
             typeof( NUnit.Framework                  .RangeAttribute                                ),
-            "### Datapoints",
+            "#### Data/Datapoints",
             typeof( NUnit.Framework                  .DatapointAttribute                            ),
             typeof( NUnit.Framework                  .DatapointSourceAttribute                      ),
             typeof( NUnit.Framework                  .DatapointsAttribute                           ),
-            "#### Extensibility/ApplyToTest",
+
+            XX_Runner_Building_Extensibility,
+            "#### TestAppliers",
+            typeof( NUnit.Framework.Interfaces       .IApplyToTest                                  ),
             typeof( NUnit.Framework                  .CategoryAttribute                             ),
             typeof( NUnit.Framework                  .OrderAttribute                                ),
             typeof( NUnit.Framework                  .ExplicitAttribute                             ),
@@ -78,7 +75,7 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework                  .IncludeExcludeAttribute                       ),
             typeof( NUnit.Framework                  .PlatformAttribute                             ),
             typeof( NUnit.Framework                  .CultureAttribute                              ),
-            "#### Extensibility/ApplyToTest/Property",
+            "#### TestAppliers/Property",
             typeof( NUnit.Framework                  .PropertyAttribute                             ),
             typeof( NUnit.Framework                  .DescriptionAttribute                          ),
             typeof( NUnit.Framework                  .AuthorAttribute                               ),
@@ -88,20 +85,23 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework                  .LevelOfParallelismAttribute                   ),
 
             XX_Infrastructure,
+            typeof( NUnit.Framework.Internal         .TestNameGenerator                             ),
+            typeof( NUnit.Framework.Internal         .PlatformHelper                                ),
+            typeof( NUnit.Framework.Internal         .CultureDetector                               ),
             "#### Builders",
             typeof( NUnit.Framework.Internal.Builders.NamespaceTreeBuilder                          ),
             typeof( NUnit.Framework.Internal.Builders.NUnitTestFixtureBuilder                       ),
             typeof( NUnit.Framework.Internal.Builders.NUnitTestCaseBuilder                          ),
-            "#### ParameterDataProviders",
-            typeof( NUnit.Framework.Interfaces       .IParameterDataProvider                         ),
-            typeof( NUnit.Framework.Internal.Builders.ParameterDataProvider                          ),
-            typeof( NUnit.Framework.Internal.Builders.ParameterDataSourceProvider                    ),
-            typeof( NUnit.Framework.Internal.Builders.DatapointProvider                              ),
-            "#### CombiningStrategies",
-            typeof( NUnit.Framework.Interfaces       .ICombiningStrategy                             ),
-            typeof( NUnit.Framework.Internal.Builders.CombinatorialStrategy                          ),
-            typeof( NUnit.Framework.Internal.Builders.SequentialStrategy                             ),
-            typeof( NUnit.Framework.Internal.Builders.PairwiseStrategy                               ),
+            "#### DataProviders",
+            typeof( NUnit.Framework.Interfaces       .IParameterDataProvider                        ),
+            typeof( NUnit.Framework.Internal.Builders.ParameterDataProvider                         ),
+            typeof( NUnit.Framework.Internal.Builders.ParameterDataSourceProvider                   ),
+            typeof( NUnit.Framework.Internal.Builders.DatapointProvider                             ),
+            "#### DataCombiners",
+            typeof( NUnit.Framework.Interfaces       .ICombiningStrategy                            ),
+            typeof( NUnit.Framework.Internal.Builders.CombinatorialStrategy                         ),
+            typeof( NUnit.Framework.Internal.Builders.SequentialStrategy                            ),
+            typeof( NUnit.Framework.Internal.Builders.PairwiseStrategy                              ),
         };
 
 

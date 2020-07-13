@@ -10,16 +10,14 @@ namespace NUnitApiReference {
 
         private const string X_Entities = "# Entities";
 
-        private const string XX_Attributes     = "## Attributes";
-        private const string XX_Utils          = "## Utils";
+        private const string XX_Test           = "## Test";
         private const string XX_Infrastructure = "## Infrastructure";
-        private const string XX_Exceptions     = "## Exceptions";
-        private const string XX_Delegates      = "## Delegates";
 
 
         public override Item[] Items => new Item[] {
             X_Entities,
 
+            XX_Test,
             "#### Test",
             typeof( NUnit.Framework.Interfaces        .ITest                                         ),
             typeof( NUnit.Framework.Internal          .Test                                          ),

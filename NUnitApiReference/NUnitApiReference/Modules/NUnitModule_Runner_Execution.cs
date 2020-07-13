@@ -8,9 +8,9 @@ namespace NUnitApiReference {
 
     public class NUnitModule_Runner_Execution : Module {
 
-        private static readonly HeaderItem X_Runner_Execution                = HeaderItem.H1( "Runner/Execution" );
-        private static readonly HeaderItem XX_Runner_Execution               = HeaderItem.H2( "Runner/Execution" );
-        private static readonly HeaderItem XX_Runner_Execution_Extensibility = HeaderItem.H2( "Runner/Execution/Extensibility" );
+        private static readonly HeaderItem X_Runner_Execution                = HeaderItem.H1( "Runner.Execution" );
+        private static readonly HeaderItem XX_Runner_Execution               = HeaderItem.H2( "Runner.Execution" );
+        private static readonly HeaderItem XX_Runner_Execution_Extensibility = HeaderItem.H2( "Runner.Execution.Extensibility" );
         private static readonly HeaderItem XX_Infrastructure                 = HeaderItem.H2( "Infrastructure" );
 
 

@@ -48,7 +48,10 @@ namespace NUnitApiReference.Renderer {
         private static string GetContent(this Item value) {
             return value switch
             {
-                HeaderItem header => header.Value,
+                HeaderItem header when header.Level == 1 => "# " + header.Value,
+                HeaderItem header when header.Level == 2 => "## " + header.Value,
+                HeaderItem header when header.Level == 3 => "### " + header.Value,
+                HeaderItem header when header.Level == 4 => "#### " + header.Value,
                 GroupItem group => "* ***" + group.Value + "***",
                 TypeItem type => "* " + type.Value.Name,
                 _ => throw new ArgumentException( "Value is invalid" ),

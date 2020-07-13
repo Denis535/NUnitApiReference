@@ -8,9 +8,9 @@ namespace NUnitApiReference {
 
     public class NUnitModule_Runner_Building : Module {
 
-        private static readonly HeaderItem X_Runner_Building                = HeaderItem.H1( "Runner/Building" );
-        private static readonly HeaderItem XX_Runner_Building               = HeaderItem.H2( "Runner/Building" );
-        private static readonly HeaderItem XX_Runner_Building_Extensibility = HeaderItem.H2( "Runner/Building/Extensibility" );
+        private static readonly HeaderItem X_Runner_Building                = HeaderItem.H1( "Runner.Building" );
+        private static readonly HeaderItem XX_Runner_Building               = HeaderItem.H2( "Runner.Building" );
+        private static readonly HeaderItem XX_Runner_Building_Extensibility = HeaderItem.H2( "Runner.Building.Extensibility" );
         private static readonly HeaderItem XX_Infrastructure                = HeaderItem.H2( "Infrastructure" );
 
 

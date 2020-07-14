@@ -1,27 +1,27 @@
-- [Main](#main-0)
- * [Api](#api-0)
- * [Runner](#runner-0)
- * [Exceptions](#exceptions-0)
-- [Runner.Building](#runner.building-0)
- * [Runner.Building](#runner.building-0)
- * [Runner.Building.Extensibility](#runner.building.extensibility-0)
- * [Infrastructure](#infrastructure-0)
-- [Runner.Execution](#runner.execution-0)
- * [Runner.Execution](#runner.execution-0)
- * [Runner.Execution.Extensibility](#runner.execution.extensibility-0)
- * [Infrastructure](#infrastructure-1)
-- [Entities](#entities-0)
- * [Test](#test-0)
- * [Infrastructure](#infrastructure-2)
-- [Assertion](#assertion-0)
- * [Assertions](#assertions-0)
- * [Constraints](#constraints-0)
- * [Infrastructure](#infrastructure-3)
- * [Exceptions](#exceptions-1)
- * [Delegates](#delegates-0)
-- [Infrastructure](#infrastructure-0)
- * [System](#system-0)
- * [NUnit](#nunit-0)
+  - [Main](#main-0)
+    * [Api](#api-0)
+    * [Runner](#runner-0)
+    * [Exceptions](#exceptions-0)
+  - [Runner.Building](#runner.building-0)
+    * [Runner.Building](#runner.building-0)
+    * [Runner.Building.Extensibility](#runner.building.extensibility-0)
+    * [Infrastructure](#infrastructure-0)
+  - [Runner.Execution](#runner.execution-0)
+    * [Runner.Execution](#runner.execution-0)
+    * [Runner.Execution.Extensibility](#runner.execution.extensibility-0)
+    * [Infrastructure](#infrastructure-1)
+  - [Entities](#entities-0)
+    * [Test](#test-0)
+    * [Infrastructure](#infrastructure-2)
+  - [Assertion](#assertion-0)
+    * [Assertions](#assertions-0)
+    * [Constraints](#constraints-0)
+    * [Infrastructure](#infrastructure-3)
+    * [Exceptions](#exceptions-1)
+    * [Delegates](#delegates-0)
+  - [Infrastructure](#infrastructure-0)
+    * [System](#system-0)
+    * [NUnit](#nunit-0)
 
 # Main
 * NUnitAttribute
@@ -77,7 +77,7 @@
 * TestAttribute
 * TestCaseAttribute
 * TestCaseSourceAttribute
-* ***Builders/Method/CombiningStrategy***
+* ***Builders/Method/CombiningStrategies***
 * CombiningStrategyAttribute
 * SequentialAttribute
 * PairwiseAttribute
@@ -119,12 +119,12 @@
 * NamespaceTreeBuilder
 * NUnitTestFixtureBuilder
 * NUnitTestCaseBuilder
-* ***DataProviders***
+* ***Data/Providers***
 * IParameterDataProvider
 * ParameterDataProvider
 * ParameterDataSourceProvider
 * DatapointProvider
-* ***DataCombiners***
+* ***Data/Combiners***
 * ICombiningStrategy
 * CombinatorialStrategy
 * SequentialStrategy

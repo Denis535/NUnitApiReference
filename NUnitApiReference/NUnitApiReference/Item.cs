@@ -10,7 +10,7 @@ namespace NUnitApiReference {
         public static implicit operator Item(string value) => new GroupItem( value );
         public static implicit operator Item(Type value) => new TypeItem( value );
     }
-    public class HeaderItem : Item {
+    public class HeaderItem : Item { // Module or namespace
         public readonly string Value;
         public readonly int Level;
 
@@ -22,7 +22,7 @@ namespace NUnitApiReference {
         public override bool Equals(object obj) => obj is HeaderItem obj_ && (Value, Level) == (obj_.Value, obj_.Level);
         public override string ToString() => $"{Value} ({Level})";
     }
-    public class GroupItem : Item {
+    public class GroupItem : Item { // Separator
         public readonly string Value;
 
         public GroupItem(string value) => Value = value;

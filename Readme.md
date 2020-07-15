@@ -16,8 +16,6 @@
     * [Assertions](#assertions-0)
     * [Constraints](#constraints-0)
     * [Infrastructure](#infrastructure-2)
-    * [Exceptions](#exceptions-1)
-    * [Delegates](#delegates-0)
   - [Infrastructure](#infrastructure-0)
     * [System](#system-0)
     * [NUnit](#nunit-0)
@@ -51,10 +49,10 @@
 * ***AssemblyBuilder***
 * ITestAssemblyBuilder
 * DefaultTestAssemblyBuilder
-* ***FixtureBuilder***
+* ***TypeBuilder***
 * ISuiteBuilder
 * DefaultSuiteBuilder
-* ***FixtureBuilder***
+* ***TypeBuilder/Fixture***
 * IFixtureBuilder
 * IFixtureBuilder2
 * SetUpFixtureAttribute
@@ -63,7 +61,7 @@
 * ***MethodBuilder***
 * ITestCaseBuilder
 * DefaultTestCaseBuilder
-* ***MethodBuilder***
+* ***MethodBuilder/Test***
 * ITestBuilder
 * ISimpleTestBuilder
 * IImplyFixture
@@ -259,6 +257,17 @@
 * FileAssert
 * Warn
 * Assume
+* ***Delegates***
+* TestDelegate
+* AsyncTestDelegate
+* ActualValueDelegate`1
+* ***Exceptions***
+* ResultStateException
+* AssertionException
+* MultipleAssertException
+* InconclusiveException
+* IgnoreException
+* SuccessException
 ## Constraints
 * Is
 * Iz
@@ -353,7 +362,7 @@
 * ***ConstraintBuilder***
 * ConstraintBuilder
 * ConstraintStack
-* ***ResolveConstraint***
+* ***ConstraintResolver***
 * IResolveConstraint
 * ReusableConstraint
 * ***ConstraintExpression***
@@ -394,19 +403,6 @@
 * NUnitEqualityComparer
 * FailurePoint
 * NUnitComparer
-## Exceptions
-* ResultStateException
-* AssertionException
-* MultipleAssertException
-* InconclusiveException
-* IgnoreException
-* SuccessException
-## Delegates
-* TestDelegate
-* AsyncTestDelegate
-* ActualValueDelegate`1
-* ValueFormatter
-* ValueFormatterFactory
 # Infrastructure
 ## System
 * LongLivedMarshalByRefObject
@@ -454,6 +450,9 @@
 * EventQueue
 * CollectionTally
 * CollectionTallyResult
+* ***Formatter***
+* ValueFormatter
+* ValueFormatterFactory
 * ***TextWriter***
 * TextCapture
 * EventListenerTextWriter
@@ -467,15 +466,15 @@
 * QueuingEventListener
 * TestMessage
 * TestOutput
+* ***EventPump***
+* EventPump
+* EventPumpState
 * ***Event***
 * Event
 * TestStartedEvent
 * TestFinishedEvent
 * TestOutputEvent
 * TestMessageEvent
-* ***EventPump***
-* EventPump
-* EventPumpState
 * ***WorkShift***
 * WorkShift
 * TestWorker

@@ -12,8 +12,6 @@ namespace NUnitApiReference {
         private static readonly HeaderItem XX_Assertions     = HeaderItem.H2( "Assertions" );
         private static readonly HeaderItem XX_Constraints    = HeaderItem.H2( "Constraints" );
         private static readonly HeaderItem XX_Infrastructure = HeaderItem.H2( "Infrastructure" );
-        private static readonly HeaderItem XX_Exceptions     = HeaderItem.H2( "Exceptions" );
-        private static readonly HeaderItem XX_Delegates      = HeaderItem.H2( "Delegates" );
 
 
         public override Item[] Items => new Item[] {
@@ -27,6 +25,18 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework            .FileAssert                                     ),
             typeof( NUnit.Framework            .Warn                                           ),
             typeof( NUnit.Framework            .Assume                                         ),
+            "Delegates",
+            typeof( NUnit.Framework            .TestDelegate                                   ),
+            typeof( NUnit.Framework            .AsyncTestDelegate                              ),
+            typeof( NUnit.Framework.Constraints.ActualValueDelegate<>                          ),
+            "Exceptions",
+            typeof( NUnit.Framework            .ResultStateException                           ),
+            typeof( NUnit.Framework            .AssertionException                             ),
+            typeof( NUnit.Framework            .MultipleAssertException                        ),
+            typeof( NUnit.Framework            .InconclusiveException                          ),
+            typeof( NUnit.Framework            .IgnoreException                                ),
+            typeof( NUnit.Framework            .SuccessException                               ),
+
             XX_Constraints,
             typeof( NUnit.Framework            .Is                                             ),
             typeof( NUnit.Framework            .Iz                                             ),
@@ -122,7 +132,7 @@ namespace NUnitApiReference {
             "ConstraintBuilder",
             typeof( NUnit.Framework.Constraints.ConstraintBuilder                              ),
             typeof( NUnit.Framework.Constraints.ConstraintBuilder.ConstraintStack              ),
-            "ResolveConstraint",
+            "ConstraintResolver",
             typeof( NUnit.Framework.Constraints.IResolveConstraint                             ),
             typeof( NUnit.Framework.Constraints.ReusableConstraint                             ),
 
@@ -166,21 +176,6 @@ namespace NUnitApiReference {
             typeof( NUnit.Framework.Constraints.NUnitEqualityComparer                          ),
             typeof( NUnit.Framework.Constraints.NUnitEqualityComparer.FailurePoint             ),
             typeof( NUnit.Framework.Constraints.NUnitComparer                                  ),
-
-            XX_Exceptions,
-            typeof( NUnit.Framework            .ResultStateException                           ),
-            typeof( NUnit.Framework            .AssertionException                             ),
-            typeof( NUnit.Framework            .MultipleAssertException                        ),
-            typeof( NUnit.Framework            .InconclusiveException                          ),
-            typeof( NUnit.Framework            .IgnoreException                                ),
-            typeof( NUnit.Framework            .SuccessException                               ),
-
-            XX_Delegates,
-            typeof( NUnit.Framework            .TestDelegate                                   ),
-            typeof( NUnit.Framework            .AsyncTestDelegate                              ),
-            typeof( NUnit.Framework.Constraints.ActualValueDelegate<>                          ),
-            typeof( NUnit.Framework.Constraints.ValueFormatter                                 ),
-            typeof( NUnit.Framework.Constraints.ValueFormatterFactory                          ),
         };
 
 

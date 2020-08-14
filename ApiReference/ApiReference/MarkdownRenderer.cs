@@ -16,20 +16,21 @@ namespace ApiReference {
             return builder.ToString();
         }
         public static void Render(StringBuilder builder, IEnumerable<object> items) {
+            builder.AppendLine( "# Table of Contents" );
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
                     var name = proj.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
                     builder.AppendFormatLine( "  - [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Module module) {
                     var name = module.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
                     builder.AppendFormatLine( "    - [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Namespace @namespace) {
                     var name = @namespace.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
                     builder.AppendFormatLine( "      - [{0}](#{1}-{2})", name, uri, id );
                 }
             }

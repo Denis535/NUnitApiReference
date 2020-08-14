@@ -19,18 +19,18 @@ namespace ApiReference {
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
                     var name = proj.ToString();
-                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
                     builder.AppendFormatLine( "  - [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Module module) {
                     var name = module.ToString();
-                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
-                    builder.AppendFormatLine( "    * [{0}](#{1}-{2})", name, uri, id );
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
+                    builder.AppendFormatLine( "    - [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Namespace @namespace) {
                     var name = @namespace.ToString();
-                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
-                    builder.AppendFormatLine( "      + [{0}](#{1}-{2})", name, uri, id );
+                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "" );
+                    builder.AppendFormatLine( "      - [{0}](#{1}-{2})", name, uri, id );
                 }
             }
 

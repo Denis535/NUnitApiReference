@@ -18,13 +18,13 @@ namespace ApiReference {
         public static void Render(StringBuilder builder, IEnumerable<object> items) {
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
-                    builder.AppendFormatLine( "  - [{0}](#{1}-{2})", proj, proj.ToString().ToLowerInvariant(), id );
+                    builder.AppendFormatLine( "  - [{0}] (#{1}-{2})", proj, proj.ToString().ToLowerInvariant(), id );
                 }
                 if (item is Module module) {
-                    builder.AppendFormatLine( "    - [{0}](#{1}-{2})", module, module.ToString().ToLowerInvariant(), id );
+                    builder.AppendFormatLine( "    - [{0}] (#{1}-{2})", module, module.ToString().ToLowerInvariant(), id );
                 }
                 if (item is Namespace @namespace) {
-                    builder.AppendFormatLine( "      - [{0}](#{1}-{2})", @namespace, @namespace.ToString().ToLowerInvariant(), id );
+                    builder.AppendFormatLine( "      - [{0}] (#{1}-{2})", @namespace, @namespace.ToString().ToLowerInvariant(), id );
                 }
             }
 

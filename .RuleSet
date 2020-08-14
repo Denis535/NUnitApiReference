@@ -20,6 +20,7 @@
         <Rule Action="None" Id="SA1100"/>
         <Rule Action="None" Id="SA1101"/>
         <Rule Action="None" Id="SA1111"/>
+        <Rule Action="None" Id="SA1115"/>
         <Rule Action="None" Id="SA1117"/>
         <Rule Action="None" Id="SA1122"/>
         <Rule Action="None" Id="SA1127"/>

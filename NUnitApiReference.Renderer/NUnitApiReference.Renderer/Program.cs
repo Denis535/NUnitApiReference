@@ -6,13 +6,14 @@ namespace NUnitApiReference.Renderer {
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
+    using ApiReference;
 
     public static class Program {
 
 
         public static void Main(string[] args) {
             var path = GetPath();
-            var content = MarkdownRenderer.Render( NUnitModule.AllItems );
+            var content = MarkdownRenderer.Render( new NUnitProject() );
             Save( path, content );
 
             Console.WriteLine( path );

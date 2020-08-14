@@ -18,16 +18,19 @@ namespace ApiReference {
         public static void Render(StringBuilder builder, IEnumerable<object> items) {
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
-                    var name = proj.ToString().Replace( " ", "" );
-                    builder.AppendFormatLine( "  - [{0}](#{1}-{2})", name, name.ToLowerInvariant(), id );
+                    var name = proj.ToString();
+                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
+                    builder.AppendFormatLine( "  - [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Module module) {
-                    var name = module.ToString().Replace( " ", "" );
-                    builder.AppendFormatLine( "    * [{0}](#{1}-{2})", name, name.ToLowerInvariant(), id );
+                    var name = module.ToString();
+                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
+                    builder.AppendFormatLine( "    * [{0}](#{1}-{2})", name, uri, id );
                 }
                 if (item is Namespace @namespace) {
-                    var name = @namespace.ToString().Replace( " ", "" );
-                    builder.AppendFormatLine( "      + [{0}](#{1}-{2})", name, name.ToLowerInvariant(), id );
+                    var name = @namespace.ToString();
+                    var uri = name.Replace( ":", "" ).Replace( " ", "" ).ToLowerInvariant();
+                    builder.AppendFormatLine( "      + [{0}](#{1}-{2})", name, uri, id );
                 }
             }
 

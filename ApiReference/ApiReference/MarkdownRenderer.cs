@@ -41,7 +41,7 @@ namespace ApiReference {
                     builder.AppendLine( "### Namespace: " + @namespace.Name );
                 }
                 if (item is Type type) {
-                    builder.AppendLine( "#### Type: " + type.Name );
+                    builder.AppendLine( "* Type: " + type.Name );
                 }
             }
         }

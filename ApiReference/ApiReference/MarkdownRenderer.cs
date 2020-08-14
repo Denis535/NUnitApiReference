@@ -21,17 +21,17 @@ namespace ApiReference {
                 if (item is Project proj) {
                     var link = proj.ToString();
                     var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
-                    builder.AppendFormatLine( "  - [{0}] (#{1})", link, uri );
+                    builder.AppendFormatLine( "  - [{0}](#{1})", link, uri );
                 }
                 if (item is Module module) {
                     var link = module.ToString();
                     var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
-                    builder.AppendFormatLine( "    - [{0}] (#{1})", link, uri );
+                    builder.AppendFormatLine( "    - [{0}](#{1})", link, uri );
                 }
                 if (item is Namespace @namespace) {
                     var link = @namespace.ToString();
                     var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
-                    builder.AppendFormatLine( "      - [{0}] (#{1})", link, uri );
+                    builder.AppendFormatLine( "      - [{0}](#{1})", link, uri );
                 }
             }
 

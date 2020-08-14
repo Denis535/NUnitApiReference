@@ -18,15 +18,15 @@ namespace ApiReference {
         public static void Render(StringBuilder builder, IEnumerable<object> items) {
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
-                    var name = proj.ToString().Replace( ":", "" );
+                    var name = proj.ToString().Replace( ":", "" ).Replace( " ", "" );
                     builder.AppendFormatLine( "  - [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
                 }
                 if (item is Module module) {
-                    var name = module.ToString().Replace( ":", "" );
+                    var name = module.ToString().Replace( ":", "" ).Replace( " ", "" );
                     builder.AppendFormatLine( "    - [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
                 }
                 if (item is Namespace @namespace) {
-                    var name = @namespace.ToString().Replace( ":", "" );
+                    var name = @namespace.ToString().Replace( ":", "" ).Replace( " ", "" );
                     builder.AppendFormatLine( "      - [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
                 }
             }

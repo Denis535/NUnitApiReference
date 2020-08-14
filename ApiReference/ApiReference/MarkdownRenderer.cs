@@ -17,32 +17,24 @@ namespace ApiReference {
         }
         public static void Render(StringBuilder builder, IEnumerable<object> items) {
             foreach (var (item, id) in items.WithId()) {
-                if (item is Project project_) {
-                    builder.AppendLine( string.Format( "  - [Project: {0}](#{1}-{2})", project_.Name, project_.Name.ToLowerInvariant(), id ) );
+                if (item is Project proj) {
+                    builder.AppendFormatLine( "  - [{0}](#{1}-{2})", proj, proj.ToString().ToLowerInvariant(), id );
                 }
                 if (item is Module module) {
-                    builder.AppendLine( string.Format( "    - [Module: {0}](#{1}-{2})", module.Name, module.Name.ToLowerInvariant(), id ) );
+                    builder.AppendFormatLine( "    - [{0}](#{1}-{2})", module, module.ToString().ToLowerInvariant(), id );
                 }
                 if (item is Namespace @namespace) {
-                    builder.AppendLine( string.Format( "      - [Namespace: {0}](#{1}-{2})", @namespace.Name, @namespace.Name.ToLowerInvariant(), id ) );
+                    builder.AppendFormatLine( "      - [{0}](#{1}-{2})", @namespace, @namespace.ToString().ToLowerInvariant(), id );
                 }
             }
 
             builder.AppendLine();
 
             foreach (var item in items) {
-                if (item is Project project_) {
-                    builder.AppendLine( "# Project: " + project_.Name );
-                }
-                if (item is Module module) {
-                    builder.AppendLine( "## Module: " + module.Name );
-                }
-                if (item is Namespace @namespace) {
-                    builder.AppendLine( "### Namespace: " + @namespace.Name );
-                }
-                if (item is Type type) {
-                    builder.AppendLine( "* Type: " + type.Name );
-                }
+                if (item is Project proj) builder.AppendLine( "# " + proj );
+                if (item is Module module) builder.AppendLine( "## " + module );
+                if (item is Namespace @namespace) builder.AppendLine( "### " + @namespace );
+                if (item is Type type) builder.AppendLine( "* " + type.Name );
             }
         }
 
@@ -60,6 +52,11 @@ namespace ApiReference {
                 yield return (item, previous);
                 previous.Add( item );
             }
+        }
+        // Helpers/Text
+        private static StringBuilder AppendFormatLine(this StringBuilder builder, string format, params object[] args) {
+            builder.AppendFormat( format, args ).AppendLine();
+            return builder;
         }
 
 

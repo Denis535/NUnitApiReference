@@ -1,431 +1,431 @@
-  - [Project: NUnit](#nunit-0)
-    - [Module: NUnit.Main](#nunit.main-0)
-      - [Namespace: NUnit](#nunit-0)
-      - [Namespace: NUnit.Api](#nunit.api-0)
-      - [Namespace: NUnit.Runner](#nunit.runner-0)
-      - [Namespace: NUnit.Annotations](#nunit.annotations-0)
-    - [Module: NUnit.Runner.Building](#nunit.runner.building-0)
-      - [Namespace: NUnit.Runner.Building](#nunit.runner.building-0)
-      - [Namespace: NUnit.Runner.Building.Annotations](#nunit.runner.building.annotations-0)
-      - [Namespace: NUnit.Infrastructure](#nunit.infrastructure-0)
-    - [Module: NUnit.Runner.Execution](#nunit.runner.execution-0)
-      - [Namespace: NUnit.Runner.Execution](#nunit.runner.execution-0)
-      - [Namespace: NUnit.Runner.Execution.Annotations](#nunit.runner.execution.annotations-0)
-      - [Namespace: NUnit.Infrastructure](#nunit.infrastructure-1)
-    - [Module: NUnit.Entities](#nunit.entities-0)
-      - [Namespace: NUnit.Entities.Test](#nunit.entities.test-0)
-      - [Namespace: NUnit.Infrastructure](#nunit.infrastructure-2)
-    - [Module: NUnit.Assertion](#nunit.assertion-0)
-      - [Namespace: NUnit.Assertions](#nunit.assertions-0)
-      - [Namespace: NUnit.Constraints](#nunit.constraints-0)
-      - [Namespace: NUnit.Infrastructure](#nunit.infrastructure-3)
-    - [Module: NUnit.Infrastructure](#nunit.infrastructure-0)
-      - [Namespace: System](#system-0)
-      - [Namespace: System.Environment](#system.environment-0)
-      - [Namespace: System.Reflection](#system.reflection-0)
-      - [Namespace: System.Logging](#system.logging-0)
-      - [Namespace: System.Xml](#system.xml-0)
-      - [Namespace: NUnit](#nunit-1)
-      - [Namespace: NUnit.IO](#nunit.io-0)
-      - [Namespace: NUnit.Messaging](#nunit.messaging-0)
-      - [Namespace: NUnit.Utils](#nunit.utils-0)
+  - [Project: NUnit](#project: nunit-0)
+    - [Module: NUnit.Main](#module: nunit.main-0)
+      - [Namespace: NUnit](#namespace: nunit-0)
+      - [Namespace: NUnit.Api](#namespace: nunit.api-0)
+      - [Namespace: NUnit.Runner](#namespace: nunit.runner-0)
+      - [Namespace: NUnit.Annotations](#namespace: nunit.annotations-0)
+    - [Module: NUnit.Runner.Building](#module: nunit.runner.building-0)
+      - [Namespace: NUnit.Runner.Building](#namespace: nunit.runner.building-0)
+      - [Namespace: NUnit.Runner.Building.Annotations](#namespace: nunit.runner.building.annotations-0)
+      - [Namespace: NUnit.Infrastructure](#namespace: nunit.infrastructure-0)
+    - [Module: NUnit.Runner.Execution](#module: nunit.runner.execution-0)
+      - [Namespace: NUnit.Runner.Execution](#namespace: nunit.runner.execution-0)
+      - [Namespace: NUnit.Runner.Execution.Annotations](#namespace: nunit.runner.execution.annotations-0)
+      - [Namespace: NUnit.Infrastructure](#namespace: nunit.infrastructure-1)
+    - [Module: NUnit.Entities](#module: nunit.entities-0)
+      - [Namespace: NUnit.Entities.Test](#namespace: nunit.entities.test-0)
+      - [Namespace: NUnit.Infrastructure](#namespace: nunit.infrastructure-2)
+    - [Module: NUnit.Assertion](#module: nunit.assertion-0)
+      - [Namespace: NUnit.Assertions](#namespace: nunit.assertions-0)
+      - [Namespace: NUnit.Constraints](#namespace: nunit.constraints-0)
+      - [Namespace: NUnit.Infrastructure](#namespace: nunit.infrastructure-3)
+    - [Module: NUnit.Infrastructure](#module: nunit.infrastructure-0)
+      - [Namespace: System](#namespace: system-0)
+      - [Namespace: System.Environment](#namespace: system.environment-0)
+      - [Namespace: System.Reflection](#namespace: system.reflection-0)
+      - [Namespace: System.Logging](#namespace: system.logging-0)
+      - [Namespace: System.Xml](#namespace: system.xml-0)
+      - [Namespace: NUnit](#namespace: nunit-1)
+      - [Namespace: NUnit.IO](#namespace: nunit.io-0)
+      - [Namespace: NUnit.Messaging](#namespace: nunit.messaging-0)
+      - [Namespace: NUnit.Utils](#namespace: nunit.utils-0)
 
 # Project: NUnit
 ## Module: NUnit.Main
 ### Namespace: NUnit
-* Type: FrameworkPackageSettings
+* FrameworkPackageSettings
 ### Namespace: NUnit.Api
-* Type: FrameworkController
-* Type: FrameworkControllerAction
-* Type: LoadTestsAction
-* Type: CountTestsAction
-* Type: ExploreTestsAction
-* Type: RunTestsAction
-* Type: RunAsyncAction
-* Type: StopRunAction
+* FrameworkController
+* FrameworkControllerAction
+* LoadTestsAction
+* CountTestsAction
+* ExploreTestsAction
+* RunTestsAction
+* RunAsyncAction
+* StopRunAction
 ### Namespace: NUnit.Runner
-* Type: ITestAssemblyRunner
-* Type: NUnitTestAssemblyRunner
+* ITestAssemblyRunner
+* NUnitTestAssemblyRunner
 ### Namespace: NUnit.Annotations
-* Type: NUnitAttribute
-* Type: NonTestAssemblyAttribute
-* Type: TestAssemblyDirectoryResolveAttribute
+* NUnitAttribute
+* NonTestAssemblyAttribute
+* TestAssemblyDirectoryResolveAttribute
 ## Module: NUnit.Runner.Building
 ### Namespace: NUnit.Runner.Building
-* Type: ITestAssemblyBuilder
-* Type: DefaultTestAssemblyBuilder
-* Type: ISuiteBuilder
-* Type: DefaultSuiteBuilder
-* Type: ITestCaseBuilder
-* Type: DefaultTestCaseBuilder
+* ITestAssemblyBuilder
+* DefaultTestAssemblyBuilder
+* ISuiteBuilder
+* DefaultSuiteBuilder
+* ITestCaseBuilder
+* DefaultTestCaseBuilder
 ### Namespace: NUnit.Runner.Building.Annotations
-* Type: IFixtureBuilder
-* Type: IFixtureBuilder2
-* Type: SetUpFixtureAttribute
-* Type: TestFixtureAttribute
-* Type: TestFixtureSourceAttribute
-* Type: IPreFilter
-* Type: OneTimeSetUpAttribute
-* Type: SetUpAttribute
-* Type: OneTimeTearDownAttribute
-* Type: TearDownAttribute
-* Type: ITestBuilder
-* Type: ISimpleTestBuilder
-* Type: IImplyFixture
-* Type: TestAttribute
-* Type: TestCaseAttribute
-* Type: TestCaseSourceAttribute
-* Type: CombiningStrategyAttribute
-* Type: SequentialAttribute
-* Type: PairwiseAttribute
-* Type: CombinatorialAttribute
-* Type: TheoryAttribute
-* Type: IApplyToTest
-* Type: CategoryAttribute
-* Type: OrderAttribute
-* Type: ExplicitAttribute
-* Type: IgnoreAttribute
-* Type: IncludeExcludeAttribute
-* Type: PlatformAttribute
-* Type: CultureAttribute
-* Type: PropertyAttribute
-* Type: DescriptionAttribute
-* Type: AuthorAttribute
-* Type: TestOfAttribute
-* Type: ApartmentAttribute
-* Type: RequiresThreadAttribute
-* Type: LevelOfParallelismAttribute
-* Type: IParameterDataSource
-* Type: ValuesAttribute
-* Type: ValueSourceAttribute
-* Type: RandomAttribute
-* Type: RangeAttribute
-* Type: DatapointAttribute
-* Type: DatapointSourceAttribute
-* Type: DatapointsAttribute
+* IFixtureBuilder
+* IFixtureBuilder2
+* SetUpFixtureAttribute
+* TestFixtureAttribute
+* TestFixtureSourceAttribute
+* IPreFilter
+* OneTimeSetUpAttribute
+* SetUpAttribute
+* OneTimeTearDownAttribute
+* TearDownAttribute
+* ITestBuilder
+* ISimpleTestBuilder
+* IImplyFixture
+* TestAttribute
+* TestCaseAttribute
+* TestCaseSourceAttribute
+* CombiningStrategyAttribute
+* SequentialAttribute
+* PairwiseAttribute
+* CombinatorialAttribute
+* TheoryAttribute
+* IApplyToTest
+* CategoryAttribute
+* OrderAttribute
+* ExplicitAttribute
+* IgnoreAttribute
+* IncludeExcludeAttribute
+* PlatformAttribute
+* CultureAttribute
+* PropertyAttribute
+* DescriptionAttribute
+* AuthorAttribute
+* TestOfAttribute
+* ApartmentAttribute
+* RequiresThreadAttribute
+* LevelOfParallelismAttribute
+* IParameterDataSource
+* ValuesAttribute
+* ValueSourceAttribute
+* RandomAttribute
+* RangeAttribute
+* DatapointAttribute
+* DatapointSourceAttribute
+* DatapointsAttribute
 ### Namespace: NUnit.Infrastructure
-* Type: NamespaceTreeBuilder
-* Type: NUnitTestFixtureBuilder
-* Type: NUnitTestCaseBuilder
-* Type: TestNameGenerator
-* Type: IParameterDataProvider
-* Type: ParameterDataProvider
-* Type: ParameterDataSourceProvider
-* Type: DatapointProvider
-* Type: ICombiningStrategy
-* Type: CombinatorialStrategy
-* Type: SequentialStrategy
-* Type: PairwiseStrategy
-* Type: PlatformHelper
-* Type: CultureDetector
+* NamespaceTreeBuilder
+* NUnitTestFixtureBuilder
+* NUnitTestCaseBuilder
+* TestNameGenerator
+* IParameterDataProvider
+* ParameterDataProvider
+* ParameterDataSourceProvider
+* DatapointProvider
+* ICombiningStrategy
+* CombinatorialStrategy
+* SequentialStrategy
+* PairwiseStrategy
+* PlatformHelper
+* CultureDetector
 ## Module: NUnit.Runner.Execution
 ### Namespace: NUnit.Runner.Execution
-* Type: TestExecutionContext
-* Type: IsolatedContext
-* Type: AdhocContext
-* Type: TestExecutionStatus
-* Type: TestContext
-* Type: TestAdapter
-* Type: ResultAdapter
-* Type: PropertyBagAdapter
-* Type: TestParameters
-* Type: IWorkItemDispatcher
-* Type: MainThreadWorkItemDispatcher
-* Type: SimpleWorkItemDispatcher
-* Type: ParallelWorkItemDispatcher
-* Type: WorkItemBuilder
-* Type: WorkItem
-* Type: SimpleWorkItem
-* Type: CompositeWorkItem
-* Type: OneTimeTearDownWorkItem
-* Type: WorkItemState
-* Type: ParallelExecutionStrategy
-* Type: ParallelScope
-* Type: ITestFilter
-* Type: TestFilter
-* Type: TestCommand
-* Type: TestMethodCommand
-* Type: EmptyTestCommand
-* Type: SkipCommand
-* Type: DelegatingTestCommand
-* Type: BeforeTestCommand
-* Type: BeforeTestActionCommand
-* Type: ConstructFixtureCommand
-* Type: OneTimeSetUpCommand
-* Type: AfterTestCommand
-* Type: AfterTestActionCommand
-* Type: DisposeFixtureCommand
-* Type: OneTimeTearDownCommand
-* Type: MaxTimeCommand
-* Type: TheoryResultCommand
-* Type: BeforeAndAfterTestCommand
-* Type: TestActionCommand
-* Type: TestActionItem
-* Type: SetUpTearDownCommand
-* Type: SetUpTearDownItem
-* Type: TimeoutCommand
+* TestExecutionContext
+* IsolatedContext
+* AdhocContext
+* TestExecutionStatus
+* TestContext
+* TestAdapter
+* ResultAdapter
+* PropertyBagAdapter
+* TestParameters
+* IWorkItemDispatcher
+* MainThreadWorkItemDispatcher
+* SimpleWorkItemDispatcher
+* ParallelWorkItemDispatcher
+* WorkItemBuilder
+* WorkItem
+* SimpleWorkItem
+* CompositeWorkItem
+* OneTimeTearDownWorkItem
+* WorkItemState
+* ParallelExecutionStrategy
+* ParallelScope
+* ITestFilter
+* TestFilter
+* TestCommand
+* TestMethodCommand
+* EmptyTestCommand
+* SkipCommand
+* DelegatingTestCommand
+* BeforeTestCommand
+* BeforeTestActionCommand
+* ConstructFixtureCommand
+* OneTimeSetUpCommand
+* AfterTestCommand
+* AfterTestActionCommand
+* DisposeFixtureCommand
+* OneTimeTearDownCommand
+* MaxTimeCommand
+* TheoryResultCommand
+* BeforeAndAfterTestCommand
+* TestActionCommand
+* TestActionItem
+* SetUpTearDownCommand
+* SetUpTearDownItem
+* TimeoutCommand
 ### Namespace: NUnit.Runner.Execution.Annotations
-* Type: ICommandWrapper
-* Type: IWrapSetUpTearDown
-* Type: IWrapTestMethod
-* Type: IRepeatTest
-* Type: RepeatAttribute
-* Type: RepeatedTestCommand
-* Type: MaxTimeAttribute
-* Type: RetryAttribute
-* Type: RetryCommand
-* Type: IApplyToContext
-* Type: DefaultFloatingPointToleranceAttribute
-* Type: SingleThreadedAttribute
-* Type: SetCultureAttribute
-* Type: SetUICultureAttribute
-* Type: ParallelizableAttribute
-* Type: NonParallelizableAttribute
-* Type: TimeoutAttribute
-* Type: ITestAction
-* Type: TestActionAttribute
-* Type: ActionTargets
+* ICommandWrapper
+* IWrapSetUpTearDown
+* IWrapTestMethod
+* IRepeatTest
+* RepeatAttribute
+* RepeatedTestCommand
+* MaxTimeAttribute
+* RetryAttribute
+* RetryCommand
+* IApplyToContext
+* DefaultFloatingPointToleranceAttribute
+* SingleThreadedAttribute
+* SetCultureAttribute
+* SetUICultureAttribute
+* ParallelizableAttribute
+* NonParallelizableAttribute
+* TimeoutAttribute
+* ITestAction
+* TestActionAttribute
+* ActionTargets
 ### Namespace: NUnit.Infrastructure
-* Type: WorkShift
-* Type: ShiftChangeEventHandler
-* Type: WorkItemQueue
-* Type: WorkItemQueueState
-* Type: TestWorker
-* Type: TestWorkerEventHandler
+* WorkShift
+* ShiftChangeEventHandler
+* WorkItemQueue
+* WorkItemQueueState
+* TestWorker
+* TestWorkerEventHandler
 ## Module: NUnit.Entities
 ### Namespace: NUnit.Entities.Test
-* Type: ITest
-* Type: Test
-* Type: RunState
-* Type: TestSuite
-* Type: TestAssembly
-* Type: SetUpFixture
-* Type: TestFixture
-* Type: ParameterizedFixtureSuite
-* Type: ParameterizedMethodSuite
-* Type: TestMethod
-* Type: ITestResult
-* Type: TestResult
-* Type: ResultState
-* Type: TestStatus
-* Type: FailureSite
-* Type: AssertionResult
-* Type: AssertionStatus
-* Type: TestAttachment
-* Type: TestSuiteResult
-* Type: TestCaseResult
-* Type: ITestData
-* Type: TestParameters
-* Type: ITestFixtureData
-* Type: TestFixtureParameters
-* Type: TestFixtureData
-* Type: ITestCaseData
-* Type: TestCaseParameters
-* Type: TestCaseData
+* ITest
+* Test
+* RunState
+* TestSuite
+* TestAssembly
+* SetUpFixture
+* TestFixture
+* ParameterizedFixtureSuite
+* ParameterizedMethodSuite
+* TestMethod
+* ITestResult
+* TestResult
+* ResultState
+* TestStatus
+* FailureSite
+* AssertionResult
+* AssertionStatus
+* TestAttachment
+* TestSuiteResult
+* TestCaseResult
+* ITestData
+* TestParameters
+* ITestFixtureData
+* TestFixtureParameters
+* TestFixtureData
+* ITestCaseData
+* TestCaseParameters
+* TestCaseData
 ### Namespace: NUnit.Infrastructure
-* Type: IPropertyBag
-* Type: PropertyBag
-* Type: PropertyNames
+* IPropertyBag
+* PropertyBag
+* PropertyNames
 ## Module: NUnit.Assertion
 ### Namespace: NUnit.Assertions
-* Type: Assert
-* Type: StringAssert
-* Type: CollectionAssert
-* Type: DirectoryAssert
-* Type: FileAssert
-* Type: Warn
-* Type: Assume
-* Type: Is
-* Type: Iz
-* Type: Has
-* Type: Does
-* Type: Contains
-* Type: Throws
-* Type: TestDelegate
-* Type: AsyncTestDelegate
-* Type: ActualValueDelegate`1
-* Type: ResultStateException
-* Type: AssertionException
-* Type: MultipleAssertException
-* Type: InconclusiveException
-* Type: IgnoreException
-* Type: SuccessException
+* Assert
+* StringAssert
+* CollectionAssert
+* DirectoryAssert
+* FileAssert
+* Warn
+* Assume
+* Is
+* Iz
+* Has
+* Does
+* Contains
+* Throws
+* TestDelegate
+* AsyncTestDelegate
+* ActualValueDelegate`1
+* ResultStateException
+* AssertionException
+* MultipleAssertException
+* InconclusiveException
+* IgnoreException
+* SuccessException
 ### Namespace: NUnit.Constraints
-* Type: ConstraintBuilder
-* Type: ConstraintStack
-* Type: IResolveConstraint
-* Type: ReusableConstraint
-* Type: IConstraint
-* Type: Constraint
-* Type: NullConstraint
-* Type: FalseConstraint
-* Type: TrueConstraint
-* Type: NaNConstraint
-* Type: EqualConstraint
-* Type: SameAsConstraint
-* Type: RangeConstraint
-* Type: AnyOfConstraint
-* Type: ExactCountConstraint
-* Type: EmptyConstraint
-* Type: ContainsConstraint
-* Type: AttributeExistsConstraint
-* Type: PropertyExistsConstraint
-* Type: BinarySerializableConstraint
-* Type: XmlSerializableConstraint
-* Type: EmptyDirectoryConstraint
-* Type: FileOrDirectoryExistsConstraint
-* Type: PredicateConstraint`1
-* Type: ThrowsExceptionConstraint
-* Type: ThrowsNothingConstraint
-* Type: PrefixConstraint
-* Type: NotConstraint
-* Type: AttributeConstraint
-* Type: PropertyConstraint
-* Type: NoItemConstraint
-* Type: SomeItemsConstraint
-* Type: AllItemsConstraint
-* Type: ThrowsConstraint
-* Type: DelayedConstraint
-* Type: WithRawDelayInterval
-* Type: WithDimensionedDelayInterval
-* Type: WithRawPollingInterval
-* Type: Interval
-* Type: BinaryConstraint
-* Type: AndConstraint
-* Type: OrConstraint
-* Type: ComparisonConstraint
-* Type: LessThanConstraint
-* Type: LessThanOrEqualConstraint
-* Type: GreaterThanConstraint
-* Type: GreaterThanOrEqualConstraint
-* Type: CollectionConstraint
-* Type: EmptyCollectionConstraint
-* Type: CollectionOrderedConstraint
-* Type: CollectionItemsEqualConstraint
-* Type: CollectionEquivalentConstraint
-* Type: CollectionSubsetConstraint
-* Type: CollectionSupersetConstraint
-* Type: CollectionContainsConstraint
-* Type: DictionaryContainsKeyConstraint
-* Type: DictionaryContainsValueConstraint
-* Type: UniqueItemsConstraint
-* Type: StringConstraint
-* Type: EmptyStringConstraint
-* Type: StartsWithConstraint
-* Type: EndsWithConstraint
-* Type: SubstringConstraint
-* Type: RegexConstraint
-* Type: PathConstraint
-* Type: SamePathConstraint
-* Type: SubPathConstraint
-* Type: SamePathOrUnderConstraint
-* Type: TypeConstraint
-* Type: ExactTypeConstraint
-* Type: ExceptionTypeConstraint
-* Type: AssignableFromConstraint
-* Type: AssignableToConstraint
-* Type: InstanceOfTypeConstraint
-* Type: ConstraintResult
-* Type: EqualConstraintResult
-* Type: CollectionEquivalentConstraintResult
-* Type: ConstraintStatus
-* Type: ConstraintExpression
-* Type: ItemsConstraintExpression
-* Type: ResolvableConstraintExpression
-* Type: ConstraintOperator
-* Type: PrefixOperator
-* Type: NotOperator
-* Type: WithOperator
-* Type: CollectionOperator
-* Type: NoneOperator
-* Type: SomeOperator
-* Type: AllOperator
-* Type: BinaryOperator
-* Type: AndOperator
-* Type: OrOperator
-* Type: SelfResolvingOperator
-* Type: AttributeOperator
-* Type: PropOperator
-* Type: ExactCountOperator
-* Type: ThrowsOperator
+* ConstraintBuilder
+* ConstraintStack
+* IResolveConstraint
+* ReusableConstraint
+* IConstraint
+* Constraint
+* NullConstraint
+* FalseConstraint
+* TrueConstraint
+* NaNConstraint
+* EqualConstraint
+* SameAsConstraint
+* RangeConstraint
+* AnyOfConstraint
+* ExactCountConstraint
+* EmptyConstraint
+* ContainsConstraint
+* AttributeExistsConstraint
+* PropertyExistsConstraint
+* BinarySerializableConstraint
+* XmlSerializableConstraint
+* EmptyDirectoryConstraint
+* FileOrDirectoryExistsConstraint
+* PredicateConstraint`1
+* ThrowsExceptionConstraint
+* ThrowsNothingConstraint
+* PrefixConstraint
+* NotConstraint
+* AttributeConstraint
+* PropertyConstraint
+* NoItemConstraint
+* SomeItemsConstraint
+* AllItemsConstraint
+* ThrowsConstraint
+* DelayedConstraint
+* WithRawDelayInterval
+* WithDimensionedDelayInterval
+* WithRawPollingInterval
+* Interval
+* BinaryConstraint
+* AndConstraint
+* OrConstraint
+* ComparisonConstraint
+* LessThanConstraint
+* LessThanOrEqualConstraint
+* GreaterThanConstraint
+* GreaterThanOrEqualConstraint
+* CollectionConstraint
+* EmptyCollectionConstraint
+* CollectionOrderedConstraint
+* CollectionItemsEqualConstraint
+* CollectionEquivalentConstraint
+* CollectionSubsetConstraint
+* CollectionSupersetConstraint
+* CollectionContainsConstraint
+* DictionaryContainsKeyConstraint
+* DictionaryContainsValueConstraint
+* UniqueItemsConstraint
+* StringConstraint
+* EmptyStringConstraint
+* StartsWithConstraint
+* EndsWithConstraint
+* SubstringConstraint
+* RegexConstraint
+* PathConstraint
+* SamePathConstraint
+* SubPathConstraint
+* SamePathOrUnderConstraint
+* TypeConstraint
+* ExactTypeConstraint
+* ExceptionTypeConstraint
+* AssignableFromConstraint
+* AssignableToConstraint
+* InstanceOfTypeConstraint
+* ConstraintResult
+* EqualConstraintResult
+* CollectionEquivalentConstraintResult
+* ConstraintStatus
+* ConstraintExpression
+* ItemsConstraintExpression
+* ResolvableConstraintExpression
+* ConstraintOperator
+* PrefixOperator
+* NotOperator
+* WithOperator
+* CollectionOperator
+* NoneOperator
+* SomeOperator
+* AllOperator
+* BinaryOperator
+* AndOperator
+* OrOperator
+* SelfResolvingOperator
+* AttributeOperator
+* PropOperator
+* ExactCountOperator
+* ThrowsOperator
 ### Namespace: NUnit.Infrastructure
-* Type: EqualityAdapter
-* Type: ComparisonAdapter
-* Type: NUnitEqualityComparer
-* Type: FailurePoint
-* Type: NUnitComparer
-* Type: Numerics
-* Type: Tolerance
-* Type: Range
-* Type: ToleranceMode
+* EqualityAdapter
+* ComparisonAdapter
+* NUnitEqualityComparer
+* FailurePoint
+* NUnitComparer
+* Numerics
+* Tolerance
+* Range
+* ToleranceMode
 ## Module: NUnit.Infrastructure
 ### Namespace: System
-* Type: LongLivedMarshalByRefObject
-* Type: StringUtil
-* Type: Randomizer
-* Type: ThreadUtility
-* Type: ExceptionHelper
-* Type: StackFilter
-* Type: ICallbackEventHandler
+* LongLivedMarshalByRefObject
+* StringUtil
+* Randomizer
+* ThreadUtility
+* ExceptionHelper
+* StackFilter
+* ICallbackEventHandler
 ### Namespace: System.Environment
-* Type: OSPlatform
-* Type: ProductType
-* Type: RuntimeFramework
-* Type: RuntimeType
+* OSPlatform
+* ProductType
+* RuntimeFramework
+* RuntimeType
 ### Namespace: System.Reflection
-* Type: IReflectionInfo
-* Type: ITypeInfo
-* Type: IMethodInfo
-* Type: IParameterInfo
-* Type: TypeWrapper
-* Type: MethodWrapper
-* Type: ParameterWrapper
-* Type: Reflect
-* Type: AssemblyHelper
-* Type: TypeHelper
-* Type: GenericMethodHelper
-* Type: AttributeHelper
+* IReflectionInfo
+* ITypeInfo
+* IMethodInfo
+* IParameterInfo
+* TypeWrapper
+* MethodWrapper
+* ParameterWrapper
+* Reflect
+* AssemblyHelper
+* TypeHelper
+* GenericMethodHelper
+* AttributeHelper
 ### Namespace: System.Logging
-* Type: InternalTrace
-* Type: InternalTraceLevel
-* Type: ILogger
-* Type: Logger
+* InternalTrace
+* InternalTraceLevel
+* ILogger
+* Logger
 ### Namespace: System.Xml
-* Type: IXmlNodeBuilder
-* Type: NodeList
-* Type: TNode
-* Type: AttributeDictionary
+* IXmlNodeBuilder
+* NodeList
+* TNode
+* AttributeDictionary
 ### Namespace: NUnit
-* Type: ValueFormatter
-* Type: ValueFormatterFactory
-* Type: NUnitException
-* Type: InvalidTestFixtureException
-* Type: InvalidDataSourceException
-* Type: TestCaseTimeoutException
+* ValueFormatter
+* ValueFormatterFactory
+* NUnitException
+* InvalidTestFixtureException
+* InvalidDataSourceException
+* TestCaseTimeoutException
 ### Namespace: NUnit.IO
-* Type: InternalTraceWriter
-* Type: MessageWriter
-* Type: TextMessageWriter
-* Type: TextCapture
-* Type: EventListenerTextWriter
+* InternalTraceWriter
+* MessageWriter
+* TextMessageWriter
+* TextCapture
+* EventListenerTextWriter
 ### Namespace: NUnit.Messaging
-* Type: ITestListener
-* Type: TestListener
-* Type: TestProgressReporter
-* Type: QueuingEventListener
-* Type: TestMessage
-* Type: TestOutput
-* Type: EventPump
-* Type: EventPumpState
-* Type: EventQueue
-* Type: Event
-* Type: TestStartedEvent
-* Type: TestFinishedEvent
-* Type: TestOutputEvent
-* Type: TestMessageEvent
+* ITestListener
+* TestListener
+* TestProgressReporter
+* QueuingEventListener
+* TestMessage
+* TestOutput
+* EventPump
+* EventPumpState
+* EventQueue
+* Event
+* TestStartedEvent
+* TestFinishedEvent
+* TestOutputEvent
+* TestMessageEvent
 ### Namespace: NUnit.Utils
-* Type: List
-* Type: ListMapper
-* Type: CollectionTally
-* Type: CollectionTallyResult
-* Type: TypeNameDifferenceResolver
+* List
+* ListMapper
+* CollectionTally
+* CollectionTallyResult
+* TypeNameDifferenceResolver

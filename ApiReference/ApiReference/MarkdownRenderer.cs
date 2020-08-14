@@ -23,11 +23,11 @@ namespace ApiReference {
                 }
                 if (item is Module module) {
                     var name = module.ToString().Replace( ":", "" ).Replace( " ", "" );
-                    builder.AppendFormatLine( "    - [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
+                    builder.AppendFormatLine( "    * [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
                 }
                 if (item is Namespace @namespace) {
                     var name = @namespace.ToString().Replace( ":", "" ).Replace( " ", "" );
-                    builder.AppendFormatLine( "      - [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
+                    builder.AppendFormatLine( "      + [{0}] (#{1}-{2})", name, name.ToLowerInvariant(), id );
                 }
             }
 

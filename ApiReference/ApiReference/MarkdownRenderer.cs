@@ -19,19 +19,19 @@ namespace ApiReference {
             builder.AppendLine( "# Table of Contents" );
             foreach (var (item, id) in items.WithId()) {
                 if (item is Project proj) {
-                    var name = proj.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
-                    builder.AppendFormatLine( "  - [{0}](#{1}-{2})", name, uri, id );
+                    var link = proj.ToString();
+                    var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
+                    builder.AppendFormatLine( "  - [{0}] (#{1})", link, uri );
                 }
                 if (item is Module module) {
-                    var name = module.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
-                    builder.AppendFormatLine( "    - [{0}](#{1}-{2})", name, uri, id );
+                    var link = module.ToString();
+                    var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
+                    builder.AppendFormatLine( "    - [{0}] (#{1})", link, uri );
                 }
                 if (item is Namespace @namespace) {
-                    var name = @namespace.ToString();
-                    var uri = name.ToLowerInvariant().Replace( ":", "" ).Replace( " ", "-" );
-                    builder.AppendFormatLine( "      - [{0}](#{1}-{2})", name, uri, id );
+                    var link = @namespace.ToString();
+                    var uri = link.ToLowerInvariant().Replace( " ", "-" ).Replace( ":", "" ).Replace( ".", "" );
+                    builder.AppendFormatLine( "      - [{0}] (#{1})", link, uri );
                 }
             }
 

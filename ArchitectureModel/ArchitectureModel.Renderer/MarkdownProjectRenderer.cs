@@ -1,7 +1,7 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-namespace ApiReference {
+namespace ArchitectureModel.Renderer {
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -10,15 +10,15 @@ namespace ApiReference {
     public static class MarkdownProjectRenderer {
 
 
-        public static string Render(Project project) {
+        public static string Render(this Project project) {
             var builder = new StringBuilder();
-            builder.RenderTableOfContents( project.Flatten() );
-            builder.RenderBody( project.Flatten() );
+            project.RenderTableOfContents( builder );
+            project.RenderBody( builder );
             return builder.ToString();
         }
-        private static void RenderTableOfContents(this StringBuilder builder, IEnumerable<object> items) {
+        private static void RenderTableOfContents(this Project project, StringBuilder builder) {
             builder.AppendLine( "# Table of Contents" );
-            foreach (var (item, uri) in items.GetHeaderLinks()) {
+            foreach (var (item, uri) in project.Flatten().GetHeaderLinks()) {
                 if (item is Project proj) {
                     var link = proj.ToString();
                     builder.AppendFormatLine( "  - [{0}](#{1})", link, uri );
@@ -34,8 +34,8 @@ namespace ApiReference {
             }
             builder.AppendLine();
         }
-        private static void RenderBody(this StringBuilder builder, IEnumerable<object> items) {
-            foreach (var item in items) {
+        private static void RenderBody(this Project project, StringBuilder builder) {
+            foreach (var item in project.Flatten()) {
                 if (item is Project proj) builder.AppendLine( "# " + proj );
                 if (item is Module module) builder.AppendLine( "## " + module );
                 if (item is Namespace @namespace) builder.AppendLine( "### " + @namespace );

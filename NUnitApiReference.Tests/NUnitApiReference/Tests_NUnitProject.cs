@@ -6,7 +6,8 @@ namespace NUnitApiReference {
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using System.Runtime.CompilerServices;
+    using System.Text;
+    using ArchitectureModel.Utils;
     using NUnit.Framework;
 
     public class Tests_NUnitProject {
@@ -14,26 +15,25 @@ namespace NUnitApiReference {
 
         [Test]
         public void Test_NUnitProject() {
-            var actual = new NUnitProject().Flatten().OfType<Type>().ToArray();
-            var expected = Assembly.Load( "nunit.framework" ).DefinedTypes.Where( i => !IsObsolete( i ) ).Where( i => !IsCompilerGenerated( i ) ).ToArray();
-            Assert.That( actual, Is.EquivalentTo( expected ) );
-        }
+            var actual = new NUnitProject();
+            var expected = Assembly.Load( "nunit.framework" );
 
+            var missing = actual.GetMissing( expected ).ToList();
+            var extra = actual.GetExtra( expected ).ToList();
 
-        // Helpers
-        private static bool IsObsolete(Type? type) {
-            while (type != null) {
-                if (type.IsDefined( typeof( ObsoleteAttribute ) )) return true;
-                type = type.DeclaringType;
+            if (missing.Any() || extra.Any()) {
+                var builder = new StringBuilder();
+                builder.AppendLine( "NUnitProject is invalid" );
+                if (missing.Any()) {
+                    builder.AppendLine( $"Missing ({missing.Count}):" );
+                    foreach (var item in missing) builder.AppendLine( item.FullName );
+                }
+                if (extra.Any()) {
+                    builder.AppendLine( $"Extra ({extra.Count}):" );
+                    foreach (var item in extra) builder.AppendLine( item.FullName );
+                }
+                Assert.Fail( builder.ToString() );
             }
-            return false;
-        }
-        private static bool IsCompilerGenerated(Type? type) {
-            while (type != null) {
-                if (type.IsDefined( typeof( CompilerGeneratedAttribute ) )) return true;
-                type = type.DeclaringType;
-            }
-            return false;
         }
 
 

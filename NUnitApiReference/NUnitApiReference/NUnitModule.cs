@@ -6,6 +6,7 @@ namespace NUnitApiReference {
     using System.Collections.Generic;
     using System.Text;
     using ApiReference;
+    using static NUnitProject;
 
     public class NUnitModule : Module {
 
@@ -24,7 +25,8 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Api.FrameworkController.ExploreTestsAction        ),
                 typeof( NUnit.Framework.Api.FrameworkController.RunTestsAction            ),
                 typeof( NUnit.Framework.Api.FrameworkController.RunAsyncAction            ),
-                typeof( NUnit.Framework.Api.FrameworkController.StopRunAction             )
+                typeof( NUnit.Framework.Api.FrameworkController.StopRunAction             ),
+                TypeOf( "NUnit.Framework.Api.FrameworkController+ActionCallback"          )
             ),
             new Namespace(
                 "NUnit.Runner",

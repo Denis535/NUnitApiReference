@@ -4,6 +4,7 @@
 namespace ApiReference {
     using System;
     using System.Collections.Generic;
+    using System.Reflection;
     using System.Text;
 
     public abstract class Module {
@@ -22,6 +23,12 @@ namespace ApiReference {
         public override string ToString() {
             return $"{nameof( Module )}: {Name}";
         }
+
+
+        // Helpers
+        //protected static Type TypeOf(Assembly assembly, string name) {
+        //    return assembly.GetType( name.Replace( " ", "" ), true );
+        //}
 
 
     }

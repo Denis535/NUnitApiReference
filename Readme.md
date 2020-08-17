@@ -12,23 +12,26 @@
     - [Module: NUnit.Runner.Execution](#module-nunitrunnerexecution)
       - [Namespace: NUnit.Runner.Execution](#namespace-nunitrunnerexecution)
       - [Namespace: NUnit.Runner.Execution.Annotations](#namespace-nunitrunnerexecutionannotations)
-      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure)
+      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure-1)
     - [Module: NUnit.Entities](#module-nunitentities)
       - [Namespace: NUnit.Entities.Test](#namespace-nunitentitiestest)
-      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure)
+      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure-2)
     - [Module: NUnit.Assertion](#module-nunitassertion)
       - [Namespace: NUnit.Assertions](#namespace-nunitassertions)
       - [Namespace: NUnit.Constraints](#namespace-nunitconstraints)
-      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure)
+      - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure-3)
     - [Module: NUnit.Infrastructure](#module-nunitinfrastructure)
       - [Namespace: System](#namespace-system)
-      - [Namespace: System.Environment](#namespace-systemenvironment)
+      - [Namespace: System.Threading](#namespace-systemthreading)
+      - [Namespace: System.Async](#namespace-systemasync)
       - [Namespace: System.Reflection](#namespace-systemreflection)
+      - [Namespace: System.Environment](#namespace-systemenvironment)
       - [Namespace: System.Logging](#namespace-systemlogging)
       - [Namespace: System.Xml](#namespace-systemxml)
-      - [Namespace: NUnit](#namespace-nunit)
+      - [Namespace: NUnit](#namespace-nunit-1)
       - [Namespace: NUnit.IO](#namespace-nunitio)
       - [Namespace: NUnit.Messaging](#namespace-nunitmessaging)
+      - [Namespace: NUnit.Formatting](#namespace-nunitformatting)
       - [Namespace: NUnit.Utils](#namespace-nunitutils)
 
 # Project: NUnit
@@ -44,6 +47,7 @@
 * RunTestsAction
 * RunAsyncAction
 * StopRunAction
+* ActionCallback
 ### Namespace: NUnit.Runner
 * ITestAssemblyRunner
 * NUnitTestAssemblyRunner
@@ -66,6 +70,9 @@
 * TestFixtureAttribute
 * TestFixtureSourceAttribute
 * IPreFilter
+* PreFilter
+* FilterElementType
+* FilterElement
 * OneTimeSetUpAttribute
 * SetUpAttribute
 * OneTimeTearDownAttribute
@@ -100,6 +107,21 @@
 * ValuesAttribute
 * ValueSourceAttribute
 * RandomAttribute
+* RandomDataSource
+* RandomDataSource`1
+* RandomDataConverter
+* IntDataSource
+* UIntDataSource
+* LongDataSource
+* ULongDataSource
+* ShortDataSource
+* UShortDataSource
+* DoubleDataSource
+* FloatDataSource
+* ByteDataSource
+* SByteDataSource
+* EnumDataSource
+* DecimalDataSource
 * RangeAttribute
 * DatapointAttribute
 * DatapointSourceAttribute
@@ -108,7 +130,6 @@
 * NamespaceTreeBuilder
 * NUnitTestFixtureBuilder
 * NUnitTestCaseBuilder
-* TestNameGenerator
 * IParameterDataProvider
 * ParameterDataProvider
 * ParameterDataSourceProvider
@@ -117,8 +138,44 @@
 * CombinatorialStrategy
 * SequentialStrategy
 * PairwiseStrategy
+* FleaRand
+* FeatureInfo
+* FeatureTuple
+* TestCaseInfo
+* PairwiseTestCaseGenerator
 * PlatformHelper
 * CultureDetector
+* ProviderCache
+* CacheEntry
+* ParamAttributeTypeConversions
+* TestNameGenerator
+* NameFragment
+* TestIDFragment
+* FixedTextFragment
+* MethodNameFragment
+* NamespaceFragment
+* MethodFullNameFragment
+* ClassNameFragment
+* ClassFullNameFragment
+* ArgListFragment
+* ArgumentFragment
+* ValueGenerator
+* ValueGenerator`1
+* ByteValueGenerator
+* Step
+* DecimalValueGenerator
+* DefaultValueGenerator`1
+* DoubleValueGenerator
+* Int16ValueGenerator
+* Int32ValueGenerator
+* Int64ValueGenerator
+* SByteValueGenerator
+* SingleValueGenerator
+* UInt16ValueGenerator
+* UInt32ValueGenerator
+* UInt64ValueGenerator
+* ComparableStep`1
+* Step
 ## Module: NUnit.Runner.Execution
 ### Namespace: NUnit.Runner.Execution
 * TestExecutionContext
@@ -135,6 +192,7 @@
 * SimpleWorkItemDispatcher
 * ParallelWorkItemDispatcher
 * WorkItemBuilder
+* WorkItemOrderComparer
 * WorkItem
 * SimpleWorkItem
 * CompositeWorkItem
@@ -144,11 +202,26 @@
 * ParallelScope
 * ITestFilter
 * TestFilter
+* EmptyFilter
+* ValueMatchFilter
+* CategoryFilter
+* IdFilter
+* TestNameFilter
+* FullNameFilter
+* NamespaceFilter
+* ClassNameFilter
+* PropertyFilter
+* MethodNameFilter
+* CompositeFilter
+* AndFilter
+* OrFilter
+* NotFilter
 * TestCommand
 * TestMethodCommand
 * EmptyTestCommand
 * SkipCommand
 * DelegatingTestCommand
+* ApplyChangesToContextCommand
 * BeforeTestCommand
 * BeforeTestActionCommand
 * ConstructFixtureCommand
@@ -190,6 +263,7 @@
 * WorkShift
 * ShiftChangeEventHandler
 * WorkItemQueue
+* SavedState
 * WorkItemQueueState
 * TestWorker
 * TestWorkerEventHandler
@@ -200,6 +274,7 @@
 * RunState
 * TestSuite
 * TestAssembly
+* IDisposableFixture
 * SetUpFixture
 * TestFixture
 * ParameterizedFixtureSuite
@@ -207,6 +282,7 @@
 * TestMethod
 * ITestResult
 * TestResult
+* ExceptionResult
 * ResultState
 * TestStatus
 * FailureSite
@@ -254,6 +330,7 @@
 ### Namespace: NUnit.Constraints
 * ConstraintBuilder
 * ConstraintStack
+* OperatorStack
 * IResolveConstraint
 * ReusableConstraint
 * IConstraint
@@ -278,6 +355,10 @@
 * PredicateConstraint`1
 * ThrowsExceptionConstraint
 * ThrowsNothingConstraint
+* ExceptionNotThrownConstraint
+* Tolerance
+* Range
+* ToleranceMode
 * PrefixConstraint
 * NotConstraint
 * AttributeConstraint
@@ -291,6 +372,7 @@
 * WithDimensionedDelayInterval
 * WithRawPollingInterval
 * Interval
+* IntervalUnit
 * BinaryConstraint
 * AndConstraint
 * OrConstraint
@@ -302,6 +384,8 @@
 * CollectionConstraint
 * EmptyCollectionConstraint
 * CollectionOrderedConstraint
+* OrderDirection
+* OrderingStep
 * CollectionItemsEqualConstraint
 * CollectionEquivalentConstraint
 * CollectionSubsetConstraint
@@ -327,9 +411,17 @@
 * AssignableToConstraint
 * InstanceOfTypeConstraint
 * ConstraintResult
+* ExactCountConstraintResult
+* ThrowsExceptionConstraintResult
+* ConstraintStatus
+* PropertyConstraintResult
+* ThrowsConstraintResult
+* AndConstraintResult
 * EqualConstraintResult
 * CollectionEquivalentConstraintResult
-* ConstraintStatus
+* CollectionOrderedConstraintResult
+* EachItemConstraintResult
+* ExceptionTypeConstraintResult
 * ConstraintExpression
 * ItemsConstraintExpression
 * ResolvableConstraintExpression
@@ -351,14 +443,39 @@
 * ThrowsOperator
 ### Namespace: NUnit.Infrastructure
 * EqualityAdapter
+* ComparerAdapter
+* ComparerAdapter`1
+* ComparisonAdapter`1
+* EqualityComparerAdapter
+* EqualityComparerAdapter`1
+* GenericEqualityAdapter`1
+* PredicateEqualityAdapter`2
 * ComparisonAdapter
+* ComparerAdapter
+* ComparerAdapter`1
+* DefaultComparisonAdapter
+* ComparisonAdapterForComparison`1
 * NUnitEqualityComparer
 * FailurePoint
 * NUnitComparer
-* Numerics
-* Tolerance
-* Range
-* ToleranceMode
+* IChainComparer
+* NumericsComparer
+* CharsComparer
+* StringsComparer
+* TupleComparerBase
+* TupleComparer
+* ValueTupleComparer
+* TimeSpanToleranceComparer
+* DateTimeOffsetsComparer
+* ArraysComparer
+* EnumerablesComparer
+* DictionariesComparer
+* DictionaryEntriesComparer
+* KeyValuePairsComparer
+* StreamsComparer
+* EquatablesComparer
+* DirectoriesComparer
+* ConstraintUtils
 ## Module: NUnit.Infrastructure
 ### Namespace: System
 * LongLivedMarshalByRefObject
@@ -368,11 +485,24 @@
 * ExceptionHelper
 * StackFilter
 * ICallbackEventHandler
-### Namespace: System.Environment
-* OSPlatform
-* ProductType
-* RuntimeFramework
-* RuntimeType
+### Namespace: System.Threading
+* SingleThreadedTestSynchronizationContext
+* Status
+* ScheduledWork
+* SandboxedThreadState
+### Namespace: System.Async
+* AsyncToSyncAdapter
+* MessagePumpStrategy
+* NoMessagePumpStrategy
+* SingleThreadedTestMessagePumpStrategy
+* AwaitAdapter
+* DefaultBlockingAwaitAdapter
+* ReflectionAdapter
+* CSharpPatternBasedAwaitAdapter
+* AwaitShapeInfo
+* TaskAwaitAdapter
+* NonGenericAdapter
+* GenericAdapter`1
 ### Namespace: System.Reflection
 * IReflectionInfo
 * ITypeInfo
@@ -382,10 +512,19 @@
 * MethodWrapper
 * ParameterWrapper
 * Reflect
+* BaseTypesFirstComparer
 * AssemblyHelper
+* ReflectionAssemblyLoader
 * TypeHelper
 * GenericMethodHelper
+* ConflictingTypesMarkerClass
 * AttributeHelper
+### Namespace: System.Environment
+* OSPlatform
+* ProductType
+* OSVERSIONINFOEX
+* RuntimeFramework
+* RuntimeType
 ### Namespace: System.Logging
 * InternalTrace
 * InternalTraceLevel
@@ -395,14 +534,18 @@
 * IXmlNodeBuilder
 * NodeList
 * TNode
+* NodeFilter
 * AttributeDictionary
 ### Namespace: NUnit
-* ValueFormatter
-* ValueFormatterFactory
 * NUnitException
 * InvalidTestFixtureException
 * InvalidDataSourceException
 * TestCaseTimeoutException
+* InvalidPlatformException
+* Guard
+* Extensions
+* On
+* DisposableAction
 ### Namespace: NUnit.IO
 * InternalTraceWriter
 * MessageWriter
@@ -424,9 +567,17 @@
 * TestFinishedEvent
 * TestOutputEvent
 * TestMessageEvent
+### Namespace: NUnit.Formatting
+* MsgUtils
+* ValueFormatter
+* ValueFormatterFactory
 ### Namespace: NUnit.Utils
 * List
 * ListMapper
 * CollectionTally
 * CollectionTallyResult
 * TypeNameDifferenceResolver
+* Numerics
+* FloatingPointNumerics
+* FloatIntUnion
+* DoubleLongUnion

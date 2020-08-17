@@ -6,6 +6,7 @@ namespace NUnitApiReference {
     using System.Collections.Generic;
     using System.Text;
     using ApiReference;
+    using static NUnitProject;
 
     public class NUnitModule_Runner_Execution : Module {
 
@@ -31,6 +32,7 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Internal.Execution.ParallelWorkItemDispatcher                    ),
                 // WorkItemBuilder
                 typeof( NUnit.Framework.Internal.Execution.WorkItemBuilder                               ),
+                TypeOf( "NUnit.Framework.Internal.Execution.WorkItemBuilder+WorkItemOrderComparer"       ),
                 // WorkItem
                 typeof( NUnit.Framework.Internal.Execution.WorkItem                                      ),
                 typeof( NUnit.Framework.Internal.Execution.SimpleWorkItem                                ),
@@ -41,12 +43,27 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework                   .ParallelScope                                 ),
                 typeof( NUnit.Framework.Interfaces        .ITestFilter                                   ),
                 typeof( NUnit.Framework.Internal          .TestFilter                                    ),
+                TypeOf( "NUnit.Framework.Internal         .TestFilter+EmptyFilter"                       ),
+                TypeOf( "NUnit.Framework.Internal.Filters .ValueMatchFilter"                             ),
+                TypeOf( "NUnit.Framework.Internal.Filters .CategoryFilter"                               ),
+                TypeOf( "NUnit.Framework.Internal.Filters .IdFilter"                                     ),
+                TypeOf( "NUnit.Framework.Internal.Filters .TestNameFilter"                               ),
+                TypeOf( "NUnit.Framework.Internal.Filters .FullNameFilter"                               ),
+                TypeOf( "NUnit.Framework.Internal.Filters .NamespaceFilter"                              ),
+                TypeOf( "NUnit.Framework.Internal.Filters .ClassNameFilter"                              ),
+                TypeOf( "NUnit.Framework.Internal.Filters .PropertyFilter"                               ),
+                TypeOf( "NUnit.Framework.Internal.Filters .MethodNameFilter"                             ),
+                TypeOf( "NUnit.Framework.Internal.Filters .CompositeFilter"                              ),
+                TypeOf( "NUnit.Framework.Internal.Filters .AndFilter"                                    ),
+                TypeOf( "NUnit.Framework.Internal.Filters .OrFilter"                                     ),
+                TypeOf( "NUnit.Framework.Internal.Filters .NotFilter"                                    ),
                 // TestCommand
                 typeof( NUnit.Framework.Internal.Commands .TestCommand                                   ),
                 typeof( NUnit.Framework.Internal.Commands .TestMethodCommand                             ),
                 typeof( NUnit.Framework.Internal.Commands .EmptyTestCommand                              ),
                 typeof( NUnit.Framework.Internal.Commands .SkipCommand                                   ),
                 typeof( NUnit.Framework.Internal.Commands .DelegatingTestCommand                         ),
+                TypeOf( "NUnit.Framework.Internal.Commands.ApplyChangesToContextCommand"                 ),
                 // TestCommand/Before
                 typeof( NUnit.Framework.Internal.Commands .BeforeTestCommand                             ),
                 typeof( NUnit.Framework.Internal.Commands .BeforeTestActionCommand                       ),
@@ -100,6 +117,7 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Internal.Execution.ShiftChangeEventHandler                       ),
                 // WorkShift/WorkItemQueue
                 typeof( NUnit.Framework.Internal.Execution.WorkItemQueue                                 ),
+                TypeOf( "NUnit.Framework.Internal.Execution.WorkItemQueue+SavedState"                    ),
                 typeof( NUnit.Framework.Internal.Execution.WorkItemQueueState                            ),
                 // WorkShift/TestWorker
                 typeof( NUnit.Framework.Internal.Execution.TestWorker                                    ),

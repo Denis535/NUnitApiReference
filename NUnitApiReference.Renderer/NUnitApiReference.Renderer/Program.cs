@@ -13,7 +13,7 @@ namespace NUnitApiReference.Renderer {
 
         public static void Main(string[] args) {
             var path = GetPath();
-            var content = MarkdownRenderer.Render( new NUnitProject() );
+            var content = MarkdownProjectRenderer.Render( new NUnitProject() );
             Save( path, content );
 
             Console.WriteLine( path );

@@ -47,7 +47,6 @@
 * RunTestsAction
 * RunAsyncAction
 * StopRunAction
-* ActionCallback
 ### Namespace: NUnit.Runner
 * ITestAssemblyRunner
 * NUnitTestAssemblyRunner
@@ -71,8 +70,6 @@
 * TestFixtureSourceAttribute
 * IPreFilter
 * PreFilter
-* FilterElementType
-* FilterElement
 * OneTimeSetUpAttribute
 * SetUpAttribute
 * OneTimeTearDownAttribute
@@ -107,21 +104,6 @@
 * ValuesAttribute
 * ValueSourceAttribute
 * RandomAttribute
-* RandomDataSource
-* RandomDataSource`1
-* RandomDataConverter
-* IntDataSource
-* UIntDataSource
-* LongDataSource
-* ULongDataSource
-* ShortDataSource
-* UShortDataSource
-* DoubleDataSource
-* FloatDataSource
-* ByteDataSource
-* SByteDataSource
-* EnumDataSource
-* DecimalDataSource
 * RangeAttribute
 * DatapointAttribute
 * DatapointSourceAttribute
@@ -146,36 +128,13 @@
 * PlatformHelper
 * CultureDetector
 * ProviderCache
-* CacheEntry
 * ParamAttributeTypeConversions
 * TestNameGenerator
-* NameFragment
-* TestIDFragment
-* FixedTextFragment
-* MethodNameFragment
-* NamespaceFragment
-* MethodFullNameFragment
-* ClassNameFragment
-* ClassFullNameFragment
-* ArgListFragment
-* ArgumentFragment
 * ValueGenerator
 * ValueGenerator`1
-* ByteValueGenerator
 * Step
-* DecimalValueGenerator
-* DefaultValueGenerator`1
-* DoubleValueGenerator
-* Int16ValueGenerator
-* Int32ValueGenerator
-* Int64ValueGenerator
-* SByteValueGenerator
-* SingleValueGenerator
-* UInt16ValueGenerator
-* UInt32ValueGenerator
-* UInt64ValueGenerator
+* Step
 * ComparableStep`1
-* Step
 ## Module: NUnit.Runner.Execution
 ### Namespace: NUnit.Runner.Execution
 * TestExecutionContext
@@ -192,7 +151,6 @@
 * SimpleWorkItemDispatcher
 * ParallelWorkItemDispatcher
 * WorkItemBuilder
-* WorkItemOrderComparer
 * WorkItem
 * SimpleWorkItem
 * CompositeWorkItem
@@ -202,7 +160,6 @@
 * ParallelScope
 * ITestFilter
 * TestFilter
-* EmptyFilter
 * ValueMatchFilter
 * CategoryFilter
 * IdFilter
@@ -263,7 +220,6 @@
 * WorkShift
 * ShiftChangeEventHandler
 * WorkItemQueue
-* SavedState
 * WorkItemQueueState
 * TestWorker
 * TestWorkerEventHandler
@@ -282,7 +238,6 @@
 * TestMethod
 * ITestResult
 * TestResult
-* ExceptionResult
 * ResultState
 * TestStatus
 * FailureSite
@@ -330,7 +285,6 @@
 ### Namespace: NUnit.Constraints
 * ConstraintBuilder
 * ConstraintStack
-* OperatorStack
 * IResolveConstraint
 * ReusableConstraint
 * IConstraint
@@ -384,8 +338,6 @@
 * CollectionConstraint
 * EmptyCollectionConstraint
 * CollectionOrderedConstraint
-* OrderDirection
-* OrderingStep
 * CollectionItemsEqualConstraint
 * CollectionEquivalentConstraint
 * CollectionSubsetConstraint
@@ -412,16 +364,11 @@
 * InstanceOfTypeConstraint
 * ConstraintResult
 * ExactCountConstraintResult
-* ThrowsExceptionConstraintResult
 * ConstraintStatus
 * PropertyConstraintResult
-* ThrowsConstraintResult
-* AndConstraintResult
 * EqualConstraintResult
 * CollectionEquivalentConstraintResult
-* CollectionOrderedConstraintResult
 * EachItemConstraintResult
-* ExceptionTypeConstraintResult
 * ConstraintExpression
 * ItemsConstraintExpression
 * ResolvableConstraintExpression
@@ -443,18 +390,8 @@
 * ThrowsOperator
 ### Namespace: NUnit.Infrastructure
 * EqualityAdapter
-* ComparerAdapter
-* ComparerAdapter`1
-* ComparisonAdapter`1
-* EqualityComparerAdapter
-* EqualityComparerAdapter`1
-* GenericEqualityAdapter`1
 * PredicateEqualityAdapter`2
 * ComparisonAdapter
-* ComparerAdapter
-* ComparerAdapter`1
-* DefaultComparisonAdapter
-* ComparisonAdapterForComparison`1
 * NUnitEqualityComparer
 * FailurePoint
 * NUnitComparer
@@ -487,22 +424,14 @@
 * ICallbackEventHandler
 ### Namespace: System.Threading
 * SingleThreadedTestSynchronizationContext
-* Status
-* ScheduledWork
 * SandboxedThreadState
 ### Namespace: System.Async
 * AsyncToSyncAdapter
 * MessagePumpStrategy
-* NoMessagePumpStrategy
-* SingleThreadedTestMessagePumpStrategy
 * AwaitAdapter
 * DefaultBlockingAwaitAdapter
-* ReflectionAdapter
 * CSharpPatternBasedAwaitAdapter
-* AwaitShapeInfo
 * TaskAwaitAdapter
-* NonGenericAdapter
-* GenericAdapter`1
 ### Namespace: System.Reflection
 * IReflectionInfo
 * ITypeInfo
@@ -512,17 +441,13 @@
 * MethodWrapper
 * ParameterWrapper
 * Reflect
-* BaseTypesFirstComparer
 * AssemblyHelper
-* ReflectionAssemblyLoader
 * TypeHelper
 * GenericMethodHelper
-* ConflictingTypesMarkerClass
 * AttributeHelper
 ### Namespace: System.Environment
 * OSPlatform
 * ProductType
-* OSVERSIONINFOEX
 * RuntimeFramework
 * RuntimeType
 ### Namespace: System.Logging
@@ -534,7 +459,6 @@
 * IXmlNodeBuilder
 * NodeList
 * TNode
-* NodeFilter
 * AttributeDictionary
 ### Namespace: NUnit
 * NUnitException
@@ -545,7 +469,6 @@
 * Guard
 * Extensions
 * On
-* DisposableAction
 ### Namespace: NUnit.IO
 * InternalTraceWriter
 * MessageWriter
@@ -579,5 +502,3 @@
 * TypeNameDifferenceResolver
 * Numerics
 * FloatingPointNumerics
-* FloatIntUnion
-* DoubleLongUnion

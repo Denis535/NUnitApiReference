@@ -39,17 +39,17 @@ namespace ArchitectureModel.Utils {
 
 
         // Helpers/Type
-        private static bool ShouldBeInProject(Type type) {
-            return !IsObsolete( type ) && !IsCompilerGenerated( type ) && !type.IsNestedPrivate;
+        private static bool ShouldBeInProject(this Type type) {
+            return !type.IsObsolete() && !type.IsCompilerGenerated() && !type.IsNestedPrivate;
         }
-        private static bool IsObsolete(Type? type) {
+        private static bool IsObsolete(this Type? type) {
             while (type != null) {
                 if (type.IsDefined( typeof( ObsoleteAttribute ) )) return true;
                 type = type.DeclaringType;
             }
             return false;
         }
-        private static bool IsCompilerGenerated(Type? type) {
+        private static bool IsCompilerGenerated(this Type? type) {
             while (type != null) {
                 if (type.IsDefined( typeof( CompilerGeneratedAttribute ) )) return true;
                 type = type.DeclaringType;

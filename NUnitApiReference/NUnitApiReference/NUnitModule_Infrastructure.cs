@@ -25,8 +25,6 @@ namespace NUnitApiReference {
             new Namespace(
                 "System.Threading",
                 TypeOf( "NUnit.Framework.Internal         .SingleThreadedTestSynchronizationContext"                  ),
-                //TypeOf( "NUnit.Framework.Internal         .SingleThreadedTestSynchronizationContext+Status"           ),
-                //TypeOf( "NUnit.Framework.Internal         .SingleThreadedTestSynchronizationContext+ScheduledWork"    ),
                 TypeOf( "NUnit.Framework.Internal         .SandboxedThreadState"                                      )
                 ),
             new Namespace(
@@ -34,18 +32,12 @@ namespace NUnitApiReference {
                 // AsyncToSyncAdapter
                 TypeOf( "NUnit.Framework.Internal         .AsyncToSyncAdapter"                                        ),
                 TypeOf( "NUnit.Framework.Internal         .MessagePumpStrategy"                                       ),
-                //TypeOf( "NUnit.Framework.Internal         .MessagePumpStrategy+NoMessagePumpStrategy"                 ),
-                //TypeOf( "NUnit.Framework.Internal         .MessagePumpStrategy+SingleThreadedTestMessagePumpStrategy" ),
                 // AwaitAdapter
                 TypeOf( "NUnit.Framework.Internal         .AwaitAdapter" ),
                 TypeOf( "NUnit.Framework.Internal         .DefaultBlockingAwaitAdapter"                               ),
                 TypeOf( "NUnit.Framework.Internal         .CSharpPatternBasedAwaitAdapter"                            ),
-                //TypeOf( "NUnit.Framework.Internal         .CSharpPatternBasedAwaitAdapter+ReflectionAdapter"          ),
-                //TypeOf( "NUnit.Framework.Internal         .CSharpPatternBasedAwaitAdapter+AwaitShapeInfo"             ),
                 // TaskAwaitAdapter
                 TypeOf( "NUnit.Framework.Internal         .TaskAwaitAdapter"                                          )
-                //TypeOf( "NUnit.Framework.Internal         .TaskAwaitAdapter+NonGenericAdapter"                        ),
-                //TypeOf( "NUnit.Framework.Internal         .TaskAwaitAdapter+GenericAdapter`1"                         )
             ),
             new Namespace(
                 "System.Reflection",
@@ -59,19 +51,15 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Internal          .ParameterWrapper                                           ),
                 // Utils
                 typeof( NUnit.Framework.Internal          .Reflect                                                    ),
-                //TypeOf( "NUnit.Framework.Internal         .Reflect+BaseTypesFirstComparer"                            ),
                 typeof( NUnit.Framework.Internal          .AssemblyHelper                                             ),
-                //TypeOf( "NUnit.Framework.Internal         .AssemblyHelper+ReflectionAssemblyLoader"                   ),
                 typeof( NUnit.Framework.Internal          .TypeHelper                                                 ),
                 typeof( NUnit.Framework.Internal          .GenericMethodHelper                                        ),
-                //TypeOf( "NUnit.Framework.Internal         .GenericMethodHelper+ConflictingTypesMarkerClass"           ),
                 typeof( NUnit.Compatibility               .AttributeHelper                                            )
             ),
             new Namespace(
                 "System.Environment",
                 typeof( NUnit.Framework.Internal          .OSPlatform                                                 ),
                 typeof( NUnit.Framework.Internal          .OSPlatform.ProductType                                     ),
-                //TypeOf( "NUnit.Framework.Internal         .OSPlatform+OSVERSIONINFOEX"                                ),
                 typeof( NUnit.Framework.Internal          .RuntimeFramework                                           ),
                 typeof( NUnit.Framework.Internal          .RuntimeType                                                )
             ),
@@ -87,7 +75,6 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Interfaces        .IXmlNodeBuilder                                            ),
                 typeof( NUnit.Framework.Interfaces        .NodeList                                                   ),
                 typeof( NUnit.Framework.Interfaces        .TNode                                                      ),
-                //TypeOf( "NUnit.Framework.Interfaces       .TNode+NodeFilter"                                          ),
                 typeof( NUnit.Framework.Interfaces        .AttributeDictionary                                        )
             ),
             new Namespace(
@@ -102,7 +89,6 @@ namespace NUnitApiReference {
                 TypeOf( "NUnit.Framework                  .Guard"                                                     ),
                 TypeOf( "NUnit.Framework                  .Extensions"                                                ),
                 TypeOf( "NUnit.Framework.Internal         .On"                                                        )
-                //TypeOf( "NUnit.Framework.Internal         .On+DisposableAction"                                       )
             ),
             new Namespace(
                 "NUnit.IO",
@@ -147,8 +133,6 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Internal          .TypeNameDifferenceResolver                                 ),
                 typeof( NUnit.Framework.Constraints       .Numerics                                                   ),
                 TypeOf( "NUnit.Framework.Constraints      .FloatingPointNumerics"                                     )
-                //TypeOf( "NUnit.Framework.Constraints      .FloatingPointNumerics+FloatIntUnion"                       ),
-                //TypeOf( "NUnit.Framework.Constraints      .FloatingPointNumerics+DoubleLongUnion"                     )
             ),
         };
 

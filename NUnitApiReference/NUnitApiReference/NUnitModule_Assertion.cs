@@ -46,7 +46,6 @@ namespace NUnitApiReference {
                 // ConstraintBuilder
                 typeof( NUnit.Framework.Constraints           .ConstraintBuilder                                               ),
                 typeof( NUnit.Framework.Constraints           .ConstraintBuilder.ConstraintStack                               ),
-                //TypeOf( "NUnit.Framework.Constraints          .ConstraintBuilder+OperatorStack"                               ),
 
                 // ConstraintResolver
                 typeof( NUnit.Framework.Constraints           .IResolveConstraint                                              ),
@@ -108,8 +107,6 @@ namespace NUnitApiReference {
                 typeof( NUnit.Framework.Constraints           .CollectionConstraint                                            ),
                 typeof( NUnit.Framework.Constraints           .EmptyCollectionConstraint                                       ),
                 typeof( NUnit.Framework.Constraints           .CollectionOrderedConstraint                                     ),
-                //TypeOf( "NUnit.Framework.Constraints          .CollectionOrderedConstraint+OrderDirection"                     ),
-                //TypeOf( "NUnit.Framework.Constraints          .CollectionOrderedConstraint+OrderingStep"                       ),
                 // Constraint/Collection/Items
                 typeof( NUnit.Framework.Constraints           .CollectionItemsEqualConstraint                                  ),
                 typeof( NUnit.Framework.Constraints           .CollectionEquivalentConstraint                                  ),
@@ -142,22 +139,15 @@ namespace NUnitApiReference {
                 // ConstraintResult
                 typeof( NUnit.Framework.Constraints           .ConstraintResult                                               ),
                 TypeOf( "NUnit.Framework.Constraints          .ExactCountConstraintResult"                                    ),
-                //TypeOf( "NUnit.Framework.Constraints          .ThrowsExceptionConstraint+ThrowsExceptionConstraintResult"     ),
                 typeof( NUnit.Framework.Constraints           .ConstraintStatus                                               ),
                 // ConstraintResult/Prefix
                 TypeOf( "NUnit.Framework.Constraints          .PropertyConstraintResult"                                      ),
-                //TypeOf( "NUnit.Framework.Constraints          .ThrowsConstraint+ThrowsConstraintResult"                       ),
-                // ConstraintResult/Binary
-                //TypeOf( "NUnit.Framework.Constraints          .AndConstraint+AndConstraintResult"                             ),
                 // ConstraintResult/Comparison
                 typeof( NUnit.Framework.Constraints           .EqualConstraintResult                                          ),
                 // ConstraintResult/Collection
                 typeof( NUnit.Framework.Constraints           .CollectionEquivalentConstraintResult                           ),
-                //TypeOf( "NUnit.Framework.Constraints          .CollectionOrderedConstraint+CollectionOrderedConstraintResult" ),
                 // ConstraintResult/Collection/Item
                 TypeOf( "NUnit.Framework.Constraints          .EachItemConstraintResult"                                      ),
-                // ConstraintResult/Type
-                //TypeOf( "NUnit.Framework.Constraints          .ExceptionTypeConstraint+ExceptionTypeConstraintResult"         ),
 
                 // ConstraintExpression
                 typeof( NUnit.Framework.Constraints           .ConstraintExpression                                           ),
@@ -190,18 +180,8 @@ namespace NUnitApiReference {
                 "NUnit.Infrastructure",
                 // Adapters
                 typeof( NUnit.Framework.Constraints           .EqualityAdapter                                                ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+ComparerAdapter"                               ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+ComparerAdapter`1"                             ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+ComparisonAdapter`1"                           ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+EqualityComparerAdapter"                       ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+EqualityComparerAdapter`1"                     ),
-                //TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+GenericEqualityAdapter`1"                      ),
                 TypeOf( "NUnit.Framework.Constraints          .EqualityAdapter+PredicateEqualityAdapter`2"                    ),
                 typeof( NUnit.Framework.Constraints           .ComparisonAdapter                                              ),
-                //TypeOf( "NUnit.Framework.Constraints          .ComparisonAdapter+ComparerAdapter"                             ),
-                //TypeOf( "NUnit.Framework.Constraints          .ComparisonAdapter+ComparerAdapter`1"                           ),
-                //TypeOf( "NUnit.Framework.Constraints          .ComparisonAdapter+DefaultComparisonAdapter"                    ),
-                //TypeOf( "NUnit.Framework.Constraints          .ComparisonAdapter+ComparisonAdapterForComparison`1"            ),
                 // Comparers
                 typeof( NUnit.Framework.Constraints           .NUnitEqualityComparer                                          ),
                 typeof( NUnit.Framework.Constraints           .NUnitEqualityComparer.FailurePoint                             ),

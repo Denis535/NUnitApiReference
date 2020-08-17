@@ -35,7 +35,6 @@ namespace NUnitApiReference {
                 // TestResult
                 typeof( NUnit.Framework.Interfaces.ITestResult                                   ),
                 typeof( NUnit.Framework.Internal  .TestResult                                    ),
-                //TypeOf( "NUnit.Framework.Internal.TestResult+ExceptionResult"                    ),
                 typeof( NUnit.Framework.Interfaces.ResultState                                   ),
                 typeof( NUnit.Framework.Interfaces.TestStatus                                    ),
                 typeof( NUnit.Framework.Interfaces.FailureSite                                   ),

@@ -2,9 +2,9 @@
   - [Project: NUnit](#project-nunit)
     - [Module: NUnit.Main](#module-nunitmain)
       - [Namespace: NUnit](#namespace-nunit)
+      - [Namespace: NUnit.Annotations](#namespace-nunitannotations)
       - [Namespace: NUnit.Api](#namespace-nunitapi)
       - [Namespace: NUnit.Runner](#namespace-nunitrunner)
-      - [Namespace: NUnit.Annotations](#namespace-nunitannotations)
     - [Module: NUnit.Runner.Building](#module-nunitrunnerbuilding)
       - [Namespace: NUnit.Runner.Building](#namespace-nunitrunnerbuilding)
       - [Namespace: NUnit.Runner.Building.Annotations](#namespace-nunitrunnerbuildingannotations)
@@ -13,8 +13,8 @@
       - [Namespace: NUnit.Runner.Execution](#namespace-nunitrunnerexecution)
       - [Namespace: NUnit.Runner.Execution.Annotations](#namespace-nunitrunnerexecutionannotations)
       - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure-1)
-    - [Module: NUnit.Entities](#module-nunitentities)
-      - [Namespace: NUnit.Entities.Test](#namespace-nunitentitiestest)
+    - [Module: NUnit.Runner.Entities](#module-nunitrunnerentities)
+      - [Namespace: NUnit.Runner.Entities](#namespace-nunitrunnerentities)
       - [Namespace: NUnit.Infrastructure](#namespace-nunitinfrastructure-2)
     - [Module: NUnit.Assertion](#module-nunitassertion)
       - [Namespace: NUnit.Assertions](#namespace-nunitassertions)
@@ -38,6 +38,10 @@
 ## Module: NUnit.Main
 ### Namespace: NUnit
 * FrameworkPackageSettings
+### Namespace: NUnit.Annotations
+* NUnitAttribute
+* NonTestAssemblyAttribute
+* TestAssemblyDirectoryResolveAttribute
 ### Namespace: NUnit.Api
 * FrameworkController
 * FrameworkControllerAction
@@ -50,10 +54,6 @@
 ### Namespace: NUnit.Runner
 * ITestAssemblyRunner
 * NUnitTestAssemblyRunner
-### Namespace: NUnit.Annotations
-* NUnitAttribute
-* NonTestAssemblyAttribute
-* TestAssemblyDirectoryResolveAttribute
 ## Module: NUnit.Runner.Building
 ### Namespace: NUnit.Runner.Building
 * ITestAssemblyBuilder
@@ -223,8 +223,8 @@
 * WorkItemQueueState
 * TestWorker
 * TestWorkerEventHandler
-## Module: NUnit.Entities
-### Namespace: NUnit.Entities.Test
+## Module: NUnit.Runner.Entities
+### Namespace: NUnit.Runner.Entities
 * ITest
 * Test
 * RunState

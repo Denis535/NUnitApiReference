@@ -8,12 +8,12 @@ namespace NUnitApiReference {
     using ProjectArchitecture.Model;
     using static NUnitProject;
 
-    public class NUnitModule_Entities : Module {
+    public class NUnitModule_Runner_Entities : Module {
 
-        public override string Name => "NUnit.Entities";
+        public override string Name => "NUnit.Runner.Entities";
         public override Namespace[] Namespaces => new Namespace[] {
             new Namespace(
-                "NUnit.Entities.Test",
+                "NUnit.Runner.Entities",
                 // Test
                 typeof( NUnit.Framework.Interfaces.ITest                                         ),
                 typeof( NUnit.Framework.Internal  .Test                                          ),

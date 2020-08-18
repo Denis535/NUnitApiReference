@@ -14,7 +14,13 @@ namespace NUnitApiReference {
         public override Namespace[] Namespaces => new Namespace[] {
             new Namespace(
                 "NUnit",
-                typeof( NUnit.FrameworkPackageSettings )
+                typeof( NUnit              .FrameworkPackageSettings )
+            ),
+            new Namespace(
+                "NUnit.Annotations",
+                typeof( NUnit.Framework    .NUnitAttribute                                ),
+                typeof( NUnit.Framework    .NonTestAssemblyAttribute                      ),
+                typeof( NUnit.Framework    .TestAssemblyDirectoryResolveAttribute         )
             ),
             new Namespace(
                 "NUnit.Api",
@@ -31,12 +37,6 @@ namespace NUnitApiReference {
                 "NUnit.Runner",
                 typeof( NUnit.Framework.Api.ITestAssemblyRunner                           ),
                 typeof( NUnit.Framework.Api.NUnitTestAssemblyRunner                       )
-            ),
-            new Namespace(
-                "NUnit.Annotations",
-                typeof( NUnit.Framework    .NUnitAttribute                                ),
-                typeof( NUnit.Framework    .NonTestAssemblyAttribute                      ),
-                typeof( NUnit.Framework    .TestAssemblyDirectoryResolveAttribute         )
             ),
         };
 

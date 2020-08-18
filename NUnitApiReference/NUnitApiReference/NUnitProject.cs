@@ -14,7 +14,7 @@ namespace NUnitApiReference {
             new NUnitModule(),
             new NUnitModule_Runner_Building(),
             new NUnitModule_Runner_Execution(),
-            new NUnitModule_Entities(),
+            new NUnitModule_Runner_Entities(),
             new NUnitModule_Assertion(),
             new NUnitModule_Infrastructure(),
         };

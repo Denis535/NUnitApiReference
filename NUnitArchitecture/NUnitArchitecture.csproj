@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ProjectArchitecture\ProjectArchitecture.csproj" />
+    <ProjectReference Include="..\Libs\ProjectArchitecture\ProjectArchitecture.csproj" />
   </ItemGroup>
 
 </Project>

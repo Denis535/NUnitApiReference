@@ -12,32 +12,36 @@ namespace ArchitectureModel.Utils {
     public static class ProjectUtils {
 
 
-        public static IEnumerable<Type> GetMissing(this Project project, Assembly assembly) {
-            var total = assembly.DefinedTypes.Where( ShouldBeInProject );
-            return project.GetMissing( total );
+        public static void Compare(this Project project, Assembly assembly, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
+            var types = assembly.DefinedTypes.Where( ShouldBeInProject );
+            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
         }
-        public static IEnumerable<Type> GetMissing(this Project project, params Assembly[] assemblies) {
-            var total = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
-            return project.GetMissing( total );
+        public static void Compare(this Project project, Assembly[] assemblies, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
+            var types = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
+            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
         }
-        public static IEnumerable<Type> GetMissing(this Project project, IEnumerable<Type> total) {
-            return total.Except( project.Flatten().OfType<Type>() );
-        }
-
-
-        public static IEnumerable<Type> GetExtra(this Project project, Assembly assembly) {
-            var total = assembly.DefinedTypes.Where( ShouldBeInProject );
-            return project.GetExtra( total );
-        }
-        public static IEnumerable<Type> GetExtra(this Project project, params Assembly[] assemblies) {
-            var total = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
-            return project.GetExtra( total );
-        }
-        public static IEnumerable<Type> GetExtra(this Project project, IEnumerable<Type> total) {
-            return project.Flatten().OfType<Type>().Except( total );
+        public static void Compare(this Project project, IEnumerable<Type> types, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
+            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
         }
 
 
+        // Helpers/Linq
+        private static void Compare<T>(IEnumerable<T> actual, IEnumerable<T> expected, out IList<T> common, out IList<T> missing, out IList<T> extra) {
+            common = new List<T>();
+            missing = new List<T>();
+            extra = new List<T>();
+            var expected_ = new LinkedList<T>( expected );
+            foreach (var item in actual) {
+                if (expected_.Remove( item )) {
+                    common.Add( item );
+                } else {
+                    extra.Add( item );
+                }
+            }
+            foreach (var item in expected_) {
+                missing.Add( item );
+            }
+        }
         // Helpers/Type
         private static bool ShouldBeInProject(this Type type) {
             return !type.IsObsolete() && !type.IsCompilerGenerated() && !type.IsNestedPrivate;

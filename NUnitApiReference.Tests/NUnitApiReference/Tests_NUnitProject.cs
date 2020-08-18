@@ -18,9 +18,7 @@ namespace NUnitApiReference {
             var actual = new NUnitProject();
             var expected = Assembly.Load( "nunit.framework" );
 
-            var missing = actual.GetMissing( expected ).ToList();
-            var extra = actual.GetExtra( expected ).ToList();
-
+            actual.Compare( expected, out var common, out var missing, out var extra  );
             if (missing.Any() || extra.Any()) {
                 var builder = new StringBuilder();
                 builder.AppendLine( "NUnitProject is invalid" );

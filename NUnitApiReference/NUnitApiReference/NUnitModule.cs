@@ -19,7 +19,6 @@ namespace NUnitApiReference {
             new Namespace(
                 "NUnit.Api",
                 typeof( NUnit.Framework.Api.FrameworkController                           ),
-                typeof( NUnit.Framework.Api.FrameworkController                           ),
                 typeof( NUnit.Framework.Api.FrameworkController.FrameworkControllerAction ),
                 typeof( NUnit.Framework.Api.FrameworkController.LoadTestsAction           ),
                 typeof( NUnit.Framework.Api.FrameworkController.CountTestsAction          ),

@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NUnitApiReference\NUnitApiReference.csproj" />
+    <ProjectReference Include="..\NUnitArchitecture\NUnitArchitecture.csproj" />
   </ItemGroup>
 
 </Project>

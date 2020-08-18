@@ -1,27 +1,31 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-namespace ArchitectureModel.Utils {
+namespace ProjectArchitecture.Utils {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
     using System.Runtime.CompilerServices;
     using System.Text;
+    using ProjectArchitecture.Model;
 
-    public static class ProjectUtils {
+    public static class ProjectExtensions {
 
 
         public static void Compare(this Project project, Assembly assembly, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            var types = assembly.DefinedTypes.Where( ShouldBeInProject );
-            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
+            var actual = project.Flatten().OfType<Type>();
+            var expected = assembly.DefinedTypes.Where( ShouldBeInProject );
+            Compare( actual, expected, out common, out missing, out extra );
         }
         public static void Compare(this Project project, Assembly[] assemblies, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            var types = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
-            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
+            var actual = project.Flatten().OfType<Type>();
+            var expected = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
+            Compare( actual, expected, out common, out missing, out extra );
         }
         public static void Compare(this Project project, IEnumerable<Type> types, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            Compare( project.Flatten().OfType<Type>(), types, out common, out missing, out extra );
+            var actual = project.Flatten().OfType<Type>();
+            Compare( actual, types, out common, out missing, out extra );
         }
 
 

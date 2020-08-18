@@ -6,7 +6,7 @@ namespace NUnitApiReference.Renderer {
     using System.Collections.Generic;
     using System.IO;
     using System.Text;
-    using ArchitectureModel.Renderer;
+    using ProjectArchitecture.Renderer;
 
     public static class Program {
 

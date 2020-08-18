@@ -7,8 +7,8 @@ namespace NUnitApiReference {
     using System.Linq;
     using System.Reflection;
     using System.Text;
-    using ArchitectureModel.Utils;
     using NUnit.Framework;
+    using ProjectArchitecture.Utils;
 
     public class Tests_NUnitProject {
 
@@ -18,7 +18,7 @@ namespace NUnitApiReference {
             var actual = new NUnitProject();
             var expected = Assembly.Load( "nunit.framework" );
 
-            actual.Compare( expected, out var common, out var missing, out var extra  );
+            actual.Compare( expected, out var common, out var missing, out var extra );
             if (missing.Any() || extra.Any()) {
                 var builder = new StringBuilder();
                 builder.AppendLine( "NUnitProject is invalid" );

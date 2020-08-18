@@ -5,7 +5,7 @@ namespace NUnitApiReference {
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using ArchitectureModel;
+    using ProjectArchitecture.Model;
 
     public class NUnitProject : Project {
 

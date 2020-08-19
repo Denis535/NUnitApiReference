@@ -6,16 +6,17 @@ namespace ProjectArchitecture.Model {
     using System.Collections.Generic;
     using System.Text;
 
-    public class Namespace : INode {
+    public class Group : INode {
 
         public string Name { get; }
-        public Group[] Groups { get; }
-        public Namespace(string name, params Group[] groups) => (Name, Groups) = (name, groups);
+        public Type[] Types { get; }
+        public Group(string name, params Type[] types) => (Name, Types) = (name, types);
+        public Group(params Type[] types) => (Name, Types) = ("Default", types);
 
 
         // Utils
         public override string ToString() {
-            return $"{nameof( Namespace )}: {Name}";
+            return $"{nameof( Group )}: {Name}";
         }
 
 

@@ -32,6 +32,10 @@ namespace ProjectArchitecture.Renderer {
                     var link = @namespace.ToString();
                     builder.AppendFormatLine( "      - [{0}](#{1})", link, uri );
                 }
+                if (item is Group group) {
+                    var link = group.ToString();
+                    builder.AppendFormatLine( "        - [{0}](#{1})", link, uri );
+                }
             }
             builder.AppendLine();
         }
@@ -40,6 +44,7 @@ namespace ProjectArchitecture.Renderer {
                 if (item is Project proj) builder.AppendLine( "# " + proj );
                 if (item is Module module) builder.AppendLine( "## " + module );
                 if (item is Namespace @namespace) builder.AppendLine( "### " + @namespace );
+                if (item is Group group) builder.AppendLine( "#### " + group );
                 if (item is Type type) builder.AppendLine( "* " + type.Name );
             }
         }
@@ -49,7 +54,7 @@ namespace ProjectArchitecture.Renderer {
         private static IEnumerable<(object, string)> GetHeaderLinks(this IEnumerable<object> items) {
             var prevs = new List<string>();
             foreach (var item in items) {
-                if (item is Project || item is Module || item is Namespace) {
+                if (item is Project || item is Module || item is Namespace || item is Group) {
                     yield return GetHeaderLink( item, prevs );
                 }
             }

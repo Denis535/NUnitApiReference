@@ -21,8 +21,12 @@ namespace ProjectArchitecture.Model {
                 foreach (var @namespace in module.Namespaces) {
                     yield return @namespace;
 
-                    foreach (var type in @namespace.Types) {
-                        yield return type;
+                    foreach (var group in @namespace.Groups) {
+                        yield return group;
+
+                        foreach (var type in group.Types) {
+                            yield return type;
+                        }
                     }
                 }
             }
@@ -43,8 +47,12 @@ namespace ProjectArchitecture.Model {
                 foreach (var @namespace in module.Namespaces) {
                     builder.AppendLine( "Namespace: " + @namespace.Name );
 
-                    foreach (var type in @namespace.Types) {
-                        builder.AppendLine( "Type: " + type.Name );
+                    foreach (var group in @namespace.Groups) {
+                        builder.AppendLine( "Group: " + group.Name );
+
+                        foreach (var type in group.Types) {
+                            builder.AppendLine( "Type: " + type.Name );
+                        }
                     }
                 }
             }

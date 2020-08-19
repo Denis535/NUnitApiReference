@@ -66,7 +66,8 @@ namespace ProjectArchitecture.Renderer {
                 .Replace( "  ", " " )
                 .Replace( " ", "-" )
                 .Replace( ".", "" )
-                .Replace( ":", "" );
+                .Replace( ":", "" )
+                .Replace( "/", "" );
             var id = prevs.Count( i => i == uri );
             prevs.Add( uri );
             if (id == 0)

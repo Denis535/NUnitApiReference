@@ -15,12 +15,14 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit",
                 new Group(
+                    null,
                     typeof( NUnit              .FrameworkPackageSettings                      )
                 )
             ),
             new Namespace(
                 "NUnit.Annotations",
                 new Group(
+                    null,
                     typeof( NUnit.Framework    .NUnitAttribute                                ),
                     typeof( NUnit.Framework    .NonTestAssemblyAttribute                      ),
                     typeof( NUnit.Framework    .TestAssemblyDirectoryResolveAttribute         )
@@ -29,6 +31,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit.Api",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Api.FrameworkController                           ),
                     typeof( NUnit.Framework.Api.FrameworkController.FrameworkControllerAction ),
                     typeof( NUnit.Framework.Api.FrameworkController.LoadTestsAction           ),
@@ -42,6 +45,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit.Runner",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Api.ITestAssemblyRunner                           ),
                     typeof( NUnit.Framework.Api.NUnitTestAssemblyRunner                       )
                 )

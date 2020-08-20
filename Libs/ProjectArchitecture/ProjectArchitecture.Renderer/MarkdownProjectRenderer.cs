@@ -19,39 +19,39 @@ namespace ProjectArchitecture.Renderer {
         }
         private static void RenderTableOfContents(this Project project, StringBuilder builder) {
             builder.AppendLine( "# Table of Contents" );
-            foreach (var (item, uri) in project.Flatten().GetHeaderLinks()) {
-                if (item is Project proj) {
-                    var link = proj.ToString();
-                    builder.AppendFormatLine( "  - [{0}](#{1})", link, uri );
-                }
-                if (item is Module module) {
-                    var link = module.ToString();
-                    builder.AppendFormatLine( "    - [{0}](#{1})", link, uri );
-                }
-                if (item is Namespace @namespace) {
-                    var link = @namespace.ToString();
-                    builder.AppendFormatLine( "      - [{0}](#{1})", link, uri );
-                }
-                if (item is Group group) {
-                    var link = group.ToString();
-                    builder.AppendFormatLine( "        - [{0}](#{1})", link, uri );
-                }
+            foreach (var (item, link, uri) in project.Flatten().GetHeaderLinks()) {
+                var item_ = item switch
+                {
+                    Project proj         => string.Format( "  - [{0}](#{1})", link, uri ),
+                    Module module        => string.Format( "    - [{0}](#{1})", link, uri ),
+                    Namespace @namespace => string.Format( "      - [{0}](#{1})", link, uri ),
+                    Group group          => string.Format( "        - [{0}](#{1})", link, uri ),
+                    { }                  => throw new NotImplementedException( item.ToString() ),
+                    null                 => throw new NullReferenceException( "Null" ),
+                };
+                builder.AppendLine( item_ );
             }
             builder.AppendLine();
         }
         private static void RenderBody(this Project project, StringBuilder builder) {
             foreach (var item in project.Flatten()) {
-                if (item is Project proj) builder.AppendLine( "# " + proj );
-                if (item is Module module) builder.AppendLine( "## " + module );
-                if (item is Namespace @namespace) builder.AppendLine( "### " + @namespace );
-                if (item is Group group) builder.AppendLine( "#### " + group );
-                if (item is Type type) builder.AppendLine( "* " + type.Name );
+                var item_ = item switch
+                {
+                    Project proj         => "# " + proj,
+                    Module module        => "## " + module,
+                    Namespace @namespace => "### " + @namespace,
+                    Group group          => "#### " + group,
+                    TypeItem type        => "* " + type.Name,
+                    { }                  => throw new NotImplementedException( item.ToString() ),
+                    null                 => throw new NullReferenceException( "Null" ),
+                };
+                builder.AppendLine( item_ );
             }
         }
 
 
         // Helpers
-        private static IEnumerable<(object, string)> GetHeaderLinks(this IEnumerable<object> items) {
+        private static IEnumerable<(INode, string, string)> GetHeaderLinks(this IEnumerable<INode> items) {
             var prevs = new List<string>();
             foreach (var item in items) {
                 if (item is Project || item is Module || item is Namespace || item is Group) {
@@ -59,10 +59,9 @@ namespace ProjectArchitecture.Renderer {
                 }
             }
         }
-        private static (object, string) GetHeaderLink(object item, List<string> prevs) {
-            var uri = item
-                .ToString()
-                .ToLowerInvariant()
+        private static (INode, string, string) GetHeaderLink(INode item, List<string> prevs) {
+            var link = item.ToString();
+            var uri = item.ToString().ToLowerInvariant()
                 .Replace( "  ", " " )
                 .Replace( " ", "-" )
                 .Replace( ".", "" )
@@ -71,9 +70,9 @@ namespace ProjectArchitecture.Renderer {
             var id = prevs.Count( i => i == uri );
             prevs.Add( uri );
             if (id == 0)
-                return (item, uri);
+                return (item, link, uri);
             else
-                return (item, uri + "-" + id);
+                return (item, link, uri + "-" + id);
         }
         // Helpers/Linq
         //private static IEnumerable<(T, IEnumerable<T>)> WithPrevious<T>(this IEnumerable<T> source) {
@@ -83,11 +82,6 @@ namespace ProjectArchitecture.Renderer {
         //        previous.Add( item );
         //    }
         //}
-        // Helpers/Text
-        private static StringBuilder AppendFormatLine(this StringBuilder builder, string format, params object[] args) {
-            builder.AppendFormat( format, args ).AppendLine();
-            return builder;
-        }
 
 
     }

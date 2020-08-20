@@ -15,7 +15,7 @@ namespace ProjectArchitecture.Model {
 
         // Utils
         public override string ToString() {
-            return $"{nameof( Namespace )}: {Name}";
+            return "Namespace: " + Name;
         }
 
 

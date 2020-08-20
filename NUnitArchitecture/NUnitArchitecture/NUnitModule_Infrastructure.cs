@@ -15,6 +15,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "System",
                 new Group(
+                    null,
                     typeof( NUnit.Compatibility               .LongLivedMarshalByRefObject                                ),
                     typeof( NUnit.Framework.Internal          .StringUtil                                                 ),
                     typeof( NUnit.Framework.Internal          .Randomizer                                                 ),
@@ -27,6 +28,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "System.Threading",
                 new Group(
+                    null,
                     TypeOf( "NUnit.Framework.Internal         .SandboxedThreadState"                                      ),
                     TypeOf( "NUnit.Framework.Internal         .SingleThreadedTestSynchronizationContext"                  )
                 )
@@ -70,6 +72,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "System.Environment",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Internal          .OSPlatform                                                 ),
                     typeof( NUnit.Framework.Internal          .OSPlatform.ProductType                                     ),
                     typeof( NUnit.Framework.Internal          .RuntimeFramework                                           ),
@@ -79,6 +82,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "System.Logging",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Internal          .InternalTrace                                              ),
                     typeof( NUnit.Framework.Internal          .InternalTraceLevel                                         ),
                     typeof( NUnit.Framework.Internal          .ILogger                                                    ),
@@ -88,6 +92,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "System.Xml",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Interfaces        .IXmlNodeBuilder                                            ),
                     typeof( NUnit.Framework.Interfaces        .NodeList                                                   ),
                     typeof( NUnit.Framework.Interfaces        .TNode                                                      ),
@@ -114,6 +119,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit.IO",
                 new Group(
+                    null,
                     typeof( NUnit.Framework.Internal          .InternalTraceWriter                                        ),
                     typeof( NUnit.Framework.Constraints       .MessageWriter                                              ),
                     typeof( NUnit.Framework.Internal          .TextMessageWriter                                          ),
@@ -150,6 +156,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit.Formatting",
                 new Group(
+                    null,
                     TypeOf( "NUnit.Framework.Constraints      .MsgUtils" ),
                     typeof( NUnit.Framework.Constraints       .ValueFormatter                                             ),
                     typeof( NUnit.Framework.Constraints       .ValueFormatterFactory                                      )
@@ -158,6 +165,7 @@ namespace NUnitArchitecture {
             new Namespace(
                 "NUnit.Utils",
                 new Group(
+                    null,
                     typeof( NUnit.Framework                   .List                                                       ),
                     typeof( NUnit.Framework                   .ListMapper                                                 ),
                     typeof( NUnit.Framework.Constraints       .CollectionTally                                            ),

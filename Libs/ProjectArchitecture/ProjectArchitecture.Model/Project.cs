@@ -4,6 +4,7 @@
 namespace ProjectArchitecture.Model {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using System.Text;
 
     public abstract class Project : INode {
@@ -12,7 +13,7 @@ namespace ProjectArchitecture.Model {
         public abstract Module[] Modules { get; }
 
 
-        public IEnumerable<object> Flatten() {
+        public IEnumerable<INode> Flatten() {
             yield return this;
 
             foreach (var module in Modules) {
@@ -31,11 +32,14 @@ namespace ProjectArchitecture.Model {
                 }
             }
         }
+        public IEnumerable<T> Flatten<T>() where T : INode {
+            return Flatten().OfType<T>();
+        }
 
 
         // Utils
         public override string ToString() {
-            return $"{nameof( Project )}: {Name}";
+            return "Project: " + Name;
         }
         public string ToLongString() {
             var builder = new StringBuilder();

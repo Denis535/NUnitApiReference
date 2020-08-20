@@ -6,17 +6,21 @@ namespace ProjectArchitecture.Model {
     using System.Collections.Generic;
     using System.Text;
 
-    public class Group : INode {
+    public class TypeItem : INode {
 
-        public string Name { get; }
-        public TypeItem[] Types { get; }
-        public Group(string? name, params TypeItem[] types) => (Name, Types) = (name ?? "Default", types);
+        public Type Type { get; }
+        public string Name => Type.Name;
+        public TypeItem(Type type) => Type = type;
 
 
         // Utils
         public override string ToString() {
-            return "Group: " + Name;
+            return "Type: " + Name;
         }
+
+
+        // Operators
+        public static implicit operator TypeItem(Type type) => new TypeItem( type );
 
 
     }

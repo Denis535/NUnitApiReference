@@ -14,17 +14,17 @@ namespace ProjectArchitecture.Utils {
 
 
         public static void Compare(this Project project, Assembly assembly, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            var actual = project.Flatten().OfType<Type>();
+            var actual = project.Flatten<TypeItem>().Select( i => i.Type );
             var expected = assembly.DefinedTypes.Where( ShouldBeInProject );
             Compare( actual, expected, out common, out missing, out extra );
         }
         public static void Compare(this Project project, Assembly[] assemblies, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            var actual = project.Flatten().OfType<Type>();
+            var actual = project.Flatten<TypeItem>().Select( i => i.Type );
             var expected = assemblies.SelectMany( i => i.DefinedTypes ).Where( ShouldBeInProject );
             Compare( actual, expected, out common, out missing, out extra );
         }
         public static void Compare(this Project project, IEnumerable<Type> types, out IList<Type> common, out IList<Type> missing, out IList<Type> extra) {
-            var actual = project.Flatten().OfType<Type>();
+            var actual = project.Flatten<TypeItem>().Select( i => i.Type );
             Compare( actual, types, out common, out missing, out extra );
         }
 

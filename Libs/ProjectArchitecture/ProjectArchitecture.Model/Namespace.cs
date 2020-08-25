@@ -20,4 +20,25 @@ namespace ProjectArchitecture.Model {
 
 
     }
+    //public class NamespaceBuilder {
+    //    public string Name { get; }
+    //    public List<Group> Groups { get; } = new List<Group>();
+    //    public NamespaceBuilder(string name) => Name = name;
+
+    //    public static NamespaceBuilder operator +(NamespaceBuilder builder, Group group) {
+    //        builder.Groups.Add( group );
+    //        return builder;
+    //    }
+    //    public static implicit operator Namespace(NamespaceBuilder builder) {
+    //        return new Namespace( builder.Name, builder.Groups.ToArray() );
+    //    }
+
+    //}
+    //public static class NamespaceExtensions {
+
+    //    public static NamespaceBuilder AsNamespace(this string name) {
+    //        return new NamespaceBuilder( name );
+    //    }
+
+    //}
 }

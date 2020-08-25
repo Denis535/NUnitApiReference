@@ -8,7 +8,7 @@ namespace NUnitArchitecture.Tests {
     using System.Reflection;
     using System.Text;
     using NUnit.Framework;
-    using ProjectArchitecture.Utils;
+    using ProjectArchitecture.Model;
 
     public class Tests_NUnitProject {
 

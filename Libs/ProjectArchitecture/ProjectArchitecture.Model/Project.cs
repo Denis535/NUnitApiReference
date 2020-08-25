@@ -13,6 +13,7 @@ namespace ProjectArchitecture.Model {
         public abstract Module[] Modules { get; }
 
 
+        // Flatten
         public IEnumerable<INode> Flatten() {
             yield return this;
 

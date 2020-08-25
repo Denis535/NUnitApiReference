@@ -10,7 +10,7 @@ namespace ProjectArchitecture.Model {
 
         public Type Type { get; }
         public string Name => Type.Name;
-        public TypeItem(Type type) => Type = type;
+        private TypeItem(Type type) => Type = type;
 
 
         // Utils

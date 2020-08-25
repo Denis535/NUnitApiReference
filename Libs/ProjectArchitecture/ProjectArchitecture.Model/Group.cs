@@ -10,7 +10,7 @@ namespace ProjectArchitecture.Model {
 
         public string Name { get; }
         public TypeItem[] Types { get; }
-        public Group(string? name, params TypeItem[] types) => (Name, Types) = (name ?? "Default", types);
+        internal Group(string name, params TypeItem[] types) => (Name, Types) = (name, types);
 
 
         // Utils
@@ -18,6 +18,27 @@ namespace ProjectArchitecture.Model {
             return "Group: " + Name;
         }
 
+
+    }
+    public class GroupBuilder {
+        public string Name { get; }
+        public List<TypeItem> Types { get; } = new List<TypeItem>();
+        public GroupBuilder(string name) => Name = name;
+
+        public static GroupBuilder operator +(GroupBuilder builder, Type type) {
+            builder.Types.Add( type );
+            return builder;
+        }
+        public static implicit operator Group(GroupBuilder builder) {
+            return new Group( builder.Name, builder.Types.ToArray() );
+        }
+
+    }
+    public static class GroupExtensions {
+
+        public static GroupBuilder AsGroup(this string name) {
+            return new GroupBuilder( name );
+        }
 
     }
 }

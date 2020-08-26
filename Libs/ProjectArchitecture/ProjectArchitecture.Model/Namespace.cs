@@ -10,7 +10,7 @@ namespace ProjectArchitecture.Model {
 
         public string Name { get; }
         public Group[] Groups { get; }
-        public Namespace(string name, params Group[] groups) => (Name, Groups) = (name, groups);
+        internal Namespace(string name, params Group[] groups) => (Name, Groups) = (name, groups);
 
 
         // Utils
@@ -20,25 +20,11 @@ namespace ProjectArchitecture.Model {
 
 
     }
-    //public class NamespaceBuilder {
-    //    public string Name { get; }
-    //    public List<Group> Groups { get; } = new List<Group>();
-    //    public NamespaceBuilder(string name) => Name = name;
+    public static class NamespaceExtensions {
 
-    //    public static NamespaceBuilder operator +(NamespaceBuilder builder, Group group) {
-    //        builder.Groups.Add( group );
-    //        return builder;
-    //    }
-    //    public static implicit operator Namespace(NamespaceBuilder builder) {
-    //        return new Namespace( builder.Name, builder.Groups.ToArray() );
-    //    }
+        public static Namespace AsNamespace(this string name, params Group[] groups) {
+            return new Namespace( name, groups );
+        }
 
-    //}
-    //public static class NamespaceExtensions {
-
-    //    public static NamespaceBuilder AsNamespace(this string name) {
-    //        return new NamespaceBuilder( name );
-    //    }
-
-    //}
+    }
 }

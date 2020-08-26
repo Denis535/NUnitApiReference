@@ -13,35 +13,31 @@ namespace NUnitArchitecture {
 
         public override string Name => "NUnit.Main";
         public override Namespace[] Namespaces => new Namespace[] {
-            new Namespace(
-                "NUnit",
+            "NUnit".AsNamespace(
                 "".AsGroup()
-                + typeof( NUnit              .FrameworkPackageSettings                      )
+                * typeof( NUnit              .FrameworkPackageSettings                  )
             ),
-            new Namespace(
-                "NUnit.Annotations",
+            "NUnit.Annotations".AsNamespace(
                 "".AsGroup()
-                + typeof( NUnit.Framework    .NUnitAttribute                                )
-                + typeof( NUnit.Framework    .NonTestAssemblyAttribute                      )
-                + typeof( NUnit.Framework    .TestAssemblyDirectoryResolveAttribute         )
+                * typeof( NUnit.Framework    .NUnitAttribute                                )
+                * typeof( NUnit.Framework    .NonTestAssemblyAttribute                      )
+                * typeof( NUnit.Framework    .TestAssemblyDirectoryResolveAttribute         )
             ),
-            new Namespace(
-                "NUnit.Api",
+            "NUnit.Api".AsNamespace(
                 "".AsGroup()
-                + typeof( NUnit.Framework.Api.FrameworkController                           )
-                + typeof( NUnit.Framework.Api.FrameworkController.FrameworkControllerAction )
-                + typeof( NUnit.Framework.Api.FrameworkController.LoadTestsAction           )
-                + typeof( NUnit.Framework.Api.FrameworkController.CountTestsAction          )
-                + typeof( NUnit.Framework.Api.FrameworkController.ExploreTestsAction        )
-                + typeof( NUnit.Framework.Api.FrameworkController.RunTestsAction            )
-                + typeof( NUnit.Framework.Api.FrameworkController.RunAsyncAction            )
-                + typeof( NUnit.Framework.Api.FrameworkController.StopRunAction             )
+                * typeof( NUnit.Framework.Api.FrameworkController                           )
+                * typeof( NUnit.Framework.Api.FrameworkController.FrameworkControllerAction )
+                * typeof( NUnit.Framework.Api.FrameworkController.LoadTestsAction           )
+                * typeof( NUnit.Framework.Api.FrameworkController.CountTestsAction          )
+                * typeof( NUnit.Framework.Api.FrameworkController.ExploreTestsAction        )
+                * typeof( NUnit.Framework.Api.FrameworkController.RunTestsAction            )
+                * typeof( NUnit.Framework.Api.FrameworkController.RunAsyncAction            )
+                * typeof( NUnit.Framework.Api.FrameworkController.StopRunAction             )
             ),
-            new Namespace(
-                "NUnit.Runner",
+            "NUnit.Runner".AsNamespace(
                 "".AsGroup()
-                + typeof( NUnit.Framework.Api.ITestAssemblyRunner                           )
-                + typeof( NUnit.Framework.Api.NUnitTestAssemblyRunner                       )
+                * typeof( NUnit.Framework.Api.ITestAssemblyRunner                           )
+                * typeof( NUnit.Framework.Api.NUnitTestAssemblyRunner                       )
             ),
         };
 

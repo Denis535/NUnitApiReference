@@ -20,28 +20,4 @@ namespace ProjectArchitecture.Model {
 
 
     }
-    public static class GroupExtensions {
-
-        public static GroupBuilder AsGroup(this string name) {
-            return new GroupBuilder( name );
-        }
-        public static Group AsGroup(this string name, params TypeItem[] types) {
-            return new Group( name, types );
-        }
-
-    }
-    public class GroupBuilder {
-        public string Name { get; }
-        public List<TypeItem> Types { get; } = new List<TypeItem>();
-        public GroupBuilder(string name) => Name = name;
-
-        public static GroupBuilder operator *(GroupBuilder builder, Type type) {
-            builder.Types.Add( type );
-            return builder;
-        }
-        public static implicit operator Group(GroupBuilder builder) {
-            return new Group( builder.Name, builder.Types.ToArray() );
-        }
-
-    }
 }

@@ -17,36 +17,42 @@ namespace ProjectArchitecture.Renderer {
             project.RenderBody( builder );
             return builder.ToString();
         }
+
+        // Render/TableOfContents
         private static void RenderTableOfContents(this Project project, StringBuilder builder) {
             builder.AppendLine( "# Table of Contents" );
             foreach (var (item, link, uri) in project.Flatten().GetHeaderLinks()) {
-                var item_ = item switch
-                {
-                    Project proj         => string.Format( "  - [{0}](#{1})", link, uri ),
-                    Module module        => string.Format( "    - [{0}](#{1})", link, uri ),
-                    Namespace @namespace => string.Format( "      - [{0}](#{1})", link, uri ),
-                    Group group          => string.Format( "        - [{0}](#{1})", link, uri ),
-                    { }                  => throw new NotImplementedException( item.ToString() ),
-                    null                 => throw new NullReferenceException( "Null" ),
-                };
-                builder.AppendLine( item_ );
+                builder.AppendLine( RenderLink( item, link, uri ) );
             }
             builder.AppendLine();
         }
+        // Render/Body
         private static void RenderBody(this Project project, StringBuilder builder) {
             foreach (var item in project.Flatten()) {
-                var item_ = item switch
-                {
-                    Project proj         => "# " + proj,
-                    Module module        => "## " + module,
-                    Namespace @namespace => "### " + @namespace,
-                    Group group          => "#### " + group,
-                    TypeItem type        => "* " + type.Name,
-                    { }                  => throw new NotImplementedException( item.ToString() ),
-                    null                 => throw new NullReferenceException( "Null" ),
-                };
-                builder.AppendLine( item_ );
+                builder.AppendLine( RenderNode( item ) );
             }
+        }
+        // Render/Node
+        private static string RenderLink(INode node, string link, string uri) {
+            return node switch {
+                Project proj => string.Format( "  - [{0}](#{1})", link, uri ),
+                Module module => string.Format( "    - [{0}](#{1})", link, uri ),
+                Namespace @namespace => string.Format( "      - [{0}](#{1})", link, uri ),
+                //Group group => string.Format( "        - [{0}](#{1})", link, uri ),
+                { } => throw new NotImplementedException( node.ToString() ),
+                null => throw new NullReferenceException( "Null" ),
+            };
+        }
+        private static string RenderNode(INode node) {
+            return node switch {
+                Project proj => "# " + proj,
+                Module module => "## " + module,
+                Namespace @namespace => "### " + @namespace,
+                Group group => "#### " + group,
+                TypeItem type => "* " + type.Name,
+                { } => throw new NotImplementedException( node.ToString() ),
+                null => throw new NullReferenceException( "Null" ),
+            };
         }
 
 

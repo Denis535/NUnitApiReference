@@ -8,8 +8,8 @@ namespace ProjectArchitecture.Model {
 
     public class TypeItem : INode {
 
-        public Type Type { get; }
         public string Name => Type.Name;
+        public Type Type { get; }
         private TypeItem(Type type) => Type = type;
 
 

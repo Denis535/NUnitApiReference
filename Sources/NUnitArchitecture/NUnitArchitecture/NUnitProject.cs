@@ -20,10 +20,5 @@ namespace NUnitArchitecture {
         };
 
 
-        internal static Type TypeOf(string name) {
-            return typeof( NUnit.FrameworkPackageSettings ).Assembly.GetType( name.Replace( " ", "" ), true );
-        }
-
-
     }
 }

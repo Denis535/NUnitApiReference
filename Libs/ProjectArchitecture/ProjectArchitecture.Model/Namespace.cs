@@ -20,11 +20,4 @@ namespace ProjectArchitecture.Model {
 
 
     }
-    public static class NamespaceExtensions {
-
-        public static Namespace AsNamespace(this string name, params Group[] groups) {
-            return new Namespace( name, groups );
-        }
-
-    }
 }

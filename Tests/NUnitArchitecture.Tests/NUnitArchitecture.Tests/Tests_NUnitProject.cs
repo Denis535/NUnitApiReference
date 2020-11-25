@@ -14,7 +14,14 @@ namespace NUnitArchitecture.Tests {
 
 
         [Test]
-        public void Test_NUnitProject() {
+        public void Test_00_TypesAreNotNull() {
+            var actual = new NUnitProject().Flatten<TypeItem>().Select( i => i.Type );
+            Assert.That( actual, Has.No.Null );
+        }
+
+
+        [Test]
+        public void Test_01_TypesAreComplete() {
             var actual = new NUnitProject();
             var expected = Assembly.Load( "nunit.framework" );
 

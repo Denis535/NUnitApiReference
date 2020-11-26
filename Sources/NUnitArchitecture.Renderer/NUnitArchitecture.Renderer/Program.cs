@@ -24,8 +24,8 @@ namespace NUnitArchitecture.Renderer {
 
         // Helpers
         private static string GetPath() {
-            var dir = new DirectoryInfo( Directory.GetCurrentDirectory() ).Parent.Parent.Parent.Parent.FullName;
-            return Path.Combine( dir, "Readme.md" );
+            var solutionDir = new DirectoryInfo( Directory.GetCurrentDirectory() ).Parent.Parent.Parent.Parent.Parent.FullName;
+            return Path.Combine( solutionDir, "Readme.md" );
         }
         private static void Save(string path, string content) {
             File.WriteAllText( path, content );

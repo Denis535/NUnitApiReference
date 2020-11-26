@@ -14,11 +14,12 @@ namespace ProjectArchitecture.Model {
         public static Namespace AsNamespace(this string name) {
             return new Namespace( name );
         }
-
-
-        public static Namespace[] ToHierarchy(this object[] objects) {
+        public static Namespace[] ToHierarchy(this INode[] objects) {
             return objects.ToHierarchy<Namespace>().Select( i => ToNamespace( i.Object, i.Inner ) ).ToArray();
         }
+
+
+        // Helpers
         private static Namespace ToNamespace(Namespace @namespace, object[] inner) {
             if (inner.FirstOrDefault() is Group) {
                 var groups = inner.ToHierarchy<Group>().Select( i => ToGroup( i.Object, i.Inner ) ).ToArray();
@@ -28,11 +29,8 @@ namespace ProjectArchitecture.Model {
             }
         }
         private static Group ToGroup(Group group, object[] inner) {
-            return new Group( group.Name, inner.Cast<Type>().Select( i => (TypeItem) i ).ToArray() );
+            return new Group( group.Name, inner.Cast<TypeItem>().ToArray() );
         }
-
-
-        // Helpers
         private static IEnumerable<(T Object, object[] Inner)> ToHierarchy<T>(this IEnumerable enumerable) {
             var enumerator = enumerable.GetEnumerator();
             var hasNext = enumerator.MoveNext();

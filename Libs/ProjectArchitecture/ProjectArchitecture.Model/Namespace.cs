@@ -19,5 +19,9 @@ namespace ProjectArchitecture.Model {
         }
 
 
+        // Operators
+        public static implicit operator Namespace(string name) => new Namespace( name );
+
+
     }
 }

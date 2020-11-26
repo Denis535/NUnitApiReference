@@ -13,28 +13,28 @@ namespace NUnitArchitecture {
     public class NUnitModule : Module {
 
         public override string Name => "NUnit.Main";
-        public override Namespace[] Namespaces => new object[] {
+        public override Namespace[] Namespaces => new INode[] {
             "NUnit".AsNamespace(),
-            typeof( FrameworkPackageSettings ),
+            (TypeItem) typeof( FrameworkPackageSettings ),
 
             "NUnit.Annotations".AsNamespace(),
-            typeof( NUnitAttribute ),
-            typeof( NonTestAssemblyAttribute ),
-            typeof( TestAssemblyDirectoryResolveAttribute ),
+            (TypeItem) typeof( NUnitAttribute ),
+            (TypeItem) typeof( NonTestAssemblyAttribute ),
+            (TypeItem) typeof( TestAssemblyDirectoryResolveAttribute ),
 
             "NUnit.Api".AsNamespace(),
-            typeof( FrameworkController                           ),
-            typeof( FrameworkController.FrameworkControllerAction ),
-            typeof( FrameworkController.LoadTestsAction           ),
-            typeof( FrameworkController.CountTestsAction          ),
-            typeof( FrameworkController.ExploreTestsAction        ),
-            typeof( FrameworkController.RunTestsAction            ),
-            typeof( FrameworkController.RunAsyncAction            ),
-            typeof( FrameworkController.StopRunAction             ),
+            (TypeItem) typeof( FrameworkController                           ),
+            (TypeItem) typeof( FrameworkController.FrameworkControllerAction ),
+            (TypeItem) typeof( FrameworkController.LoadTestsAction           ),
+            (TypeItem) typeof( FrameworkController.CountTestsAction          ),
+            (TypeItem) typeof( FrameworkController.ExploreTestsAction        ),
+            (TypeItem) typeof( FrameworkController.RunTestsAction            ),
+            (TypeItem) typeof( FrameworkController.RunAsyncAction            ),
+            (TypeItem) typeof( FrameworkController.StopRunAction             ),
 
             "NUnit.Runner".AsNamespace(),
-            typeof( ITestAssemblyRunner                           ),
-            typeof( NUnitTestAssemblyRunner                       ),
+            (TypeItem) typeof( ITestAssemblyRunner                           ),
+            (TypeItem) typeof( NUnitTestAssemblyRunner                       ),
         }.ToHierarchy();
 
 

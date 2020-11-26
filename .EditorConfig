@@ -186,3 +186,7 @@ dotnet_code_quality_unused_parameters = non_public : warning
 # dotnet_naming_style.<style>.word_separator = <character>
 # dotnet_naming_style.<style>.required_prefix = <prefix>
 # dotnet_naming_style.<style>.required_suffix = <suffix>
+
+
+[**/IgnoresAccessChecksToAttribute.cs]
+generated_code = true

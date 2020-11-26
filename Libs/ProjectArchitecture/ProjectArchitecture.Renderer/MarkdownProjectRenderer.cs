@@ -18,27 +18,29 @@ namespace ProjectArchitecture.Renderer {
             return builder.ToString();
         }
 
-        // Render/TableOfContents
+
+        // Helpers/Render
         private static void RenderTableOfContents(this Project project, StringBuilder builder) {
             builder.AppendLine( "# Table of Contents" );
             foreach (var (item, link, uri) in project.Flatten().GetHeaderLinks()) {
-                builder.AppendLine( RenderLink( item, link, uri ) );
+                var line = RenderLink( item, link, uri );
+                if (line != null) builder.AppendLine( line );
             }
             builder.AppendLine();
         }
-        // Render/Body
         private static void RenderBody(this Project project, StringBuilder builder) {
             foreach (var item in project.Flatten()) {
                 builder.AppendLine( RenderNode( item ) );
             }
         }
-        // Render/Node
-        private static string RenderLink(INode node, string link, string uri) {
+        // Helpers/Render/Node
+        private static string? RenderLink(INode node, string link, string uri) {
             return node switch {
                 Project proj => string.Format( "  - [{0}](#{1})", link, uri ),
                 Module module => string.Format( "    - [{0}](#{1})", link, uri ),
                 Namespace @namespace => string.Format( "      - [{0}](#{1})", link, uri ),
                 //Group group => string.Format( "        - [{0}](#{1})", link, uri ),
+                Group group => null,
                 { } => throw new NotImplementedException( node.ToString() ),
                 null => throw new NullReferenceException( "Null" ),
             };
@@ -54,9 +56,7 @@ namespace ProjectArchitecture.Renderer {
                 null => throw new NullReferenceException( "Null" ),
             };
         }
-
-
-        // Helpers
+        // Helpers/Misc
         private static IEnumerable<(INode, string, string)> GetHeaderLinks(this IEnumerable<INode> items) {
             var prevs = new List<string>();
             foreach (var item in items) {

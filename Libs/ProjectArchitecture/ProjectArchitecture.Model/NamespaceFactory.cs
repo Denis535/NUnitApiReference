@@ -1,3 +1,6 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 namespace ProjectArchitecture.Model {
     using System;
     using System.Collections;
@@ -17,8 +20,12 @@ namespace ProjectArchitecture.Model {
             return objects.ToHierarchy<Namespace>().Select( i => ToNamespace( i.Object, i.Inner ) ).ToArray();
         }
         private static Namespace ToNamespace(Namespace @namespace, object[] inner) {
-            var groups = inner.ToHierarchy<Group>().Select( i => ToGroup( i.Object, i.Inner ) ).ToArray();
-            return new Namespace( @namespace.Name, groups );
+            if (inner.FirstOrDefault() is Group) {
+                var groups = inner.ToHierarchy<Group>().Select( i => ToGroup( i.Object, i.Inner ) ).ToArray();
+                return new Namespace( @namespace.Name, groups );
+            } else {
+                return new Namespace( @namespace.Name, ToGroup( new Group( "" ), inner ) );
+            }
         }
         private static Group ToGroup(Group group, object[] inner) {
             return new Group( group.Name, inner.Cast<Type>().Select( i => (TypeItem) i ).ToArray() );

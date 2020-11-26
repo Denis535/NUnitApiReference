@@ -116,8 +116,8 @@ namespace NUnitArchitecture {
             typeof( TestNameGenerator                             ),
             "Utils/ValueGenerator".AsGroup(),
             typeof( ValueGenerator                                ),
-            typeof( ValueGenerator<>                              ),
             typeof( ValueGenerator.Step                           ),
+            typeof( ValueGenerator<>                              ),
             typeof( ValueGenerator<>.Step                         ),
             typeof( ValueGenerator<>.ComparableStep<>             ),
         }.ToHierarchy();

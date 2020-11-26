@@ -15,17 +15,14 @@ namespace NUnitArchitecture {
         public override string Name => "NUnit.Main";
         public override Namespace[] Namespaces => new object[] {
             "NUnit".AsNamespace(),
-            "".AsGroup(),
             typeof( FrameworkPackageSettings ),
 
             "NUnit.Annotations".AsNamespace(),
-            "".AsGroup(),
             typeof( NUnitAttribute ),
             typeof( NonTestAssemblyAttribute ),
             typeof( TestAssemblyDirectoryResolveAttribute ),
 
             "NUnit.Api".AsNamespace(),
-            "".AsGroup(),
             typeof( FrameworkController                           ),
             typeof( FrameworkController.FrameworkControllerAction ),
             typeof( FrameworkController.LoadTestsAction           ),
@@ -36,7 +33,6 @@ namespace NUnitArchitecture {
             typeof( FrameworkController.StopRunAction             ),
 
             "NUnit.Runner".AsNamespace(),
-            "".AsGroup(),
             typeof( ITestAssemblyRunner                           ),
             typeof( NUnitTestAssemblyRunner                       ),
         }.ToHierarchy();

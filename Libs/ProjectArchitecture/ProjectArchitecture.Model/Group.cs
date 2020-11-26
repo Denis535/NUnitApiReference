@@ -6,7 +6,7 @@ namespace ProjectArchitecture.Model {
     using System.Collections.Generic;
     using System.Text;
 
-    public class Group : INode {
+    public sealed class Group : INode {
 
         public string Name { get; }
         public TypeItem[] Types { get; }

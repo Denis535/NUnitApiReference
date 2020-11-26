@@ -5,7 +5,6 @@ namespace NUnitArchitecture {
     using System;
     using System.Collections.Generic;
     using System.Text;
-    using NUnit;
     using NUnit.Framework;
     using NUnit.Framework.Api;
     using NUnit.Framework.Interfaces;

@@ -9,6 +9,7 @@ namespace ProjectArchitecture.Model {
     public sealed class Group : INode {
 
         public string Name { get; }
+        INode[] INode.Children => Types;
         public TypeItem[] Types { get; }
         internal Group(string name, params TypeItem[] types) => (Name, Types) = (name, types);
 

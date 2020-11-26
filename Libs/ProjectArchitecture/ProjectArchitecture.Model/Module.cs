@@ -9,6 +9,7 @@ namespace ProjectArchitecture.Model {
     public abstract class Module : INode {
 
         public abstract string Name { get; }
+        INode[] INode.Children => Namespaces;
         public abstract Namespace[] Namespaces { get; }
 
 

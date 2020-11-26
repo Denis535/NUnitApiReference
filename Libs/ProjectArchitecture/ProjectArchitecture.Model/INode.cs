@@ -9,6 +9,7 @@ namespace ProjectArchitecture.Model {
     public interface INode {
 
         string Name { get; }
+        INode[] Children { get; }
 
     }
 }

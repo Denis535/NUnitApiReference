@@ -9,6 +9,7 @@ namespace ProjectArchitecture.Model {
     public class TypeItem : INode {
 
         public string Name => Type.Name;
+        INode[] INode.Children => new INode[ 0 ];
         public Type Type { get; }
         private TypeItem(Type type) => Type = type;
 

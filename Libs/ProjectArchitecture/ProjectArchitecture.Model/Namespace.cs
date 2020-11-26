@@ -9,6 +9,7 @@ namespace ProjectArchitecture.Model {
     public sealed class Namespace : INode {
 
         public string Name { get; }
+        INode[] INode.Children => Groups;
         public Group[] Groups { get; }
         internal Namespace(string name, params Group[] groups) => (Name, Groups) = (name, groups);
 
